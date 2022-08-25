@@ -1,0 +1,15 @@
+{
+  "title": "デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料",
+  "description": "2022 授業資料",
+  "language": "ja",
+  "plugins": [
+    "anchors",
+    "hide-published-with",
+    "copy-code-button",
+    "intopic-toc",
+    "back-to-top-button"
+  ],
+  "styles": {
+    "website": "styles/website.css"
+  }
+}
