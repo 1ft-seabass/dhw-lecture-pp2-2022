@@ -1,0 +1,35 @@
+{
+  "name": "dhw-lecture-pp2-2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve-pdf": "honkit serve pdf src-pdf",
+    "serve": "honkit serve base src",
+    "build": "honkit build base docs",
+    "open-dev": "start http://localhost:4000/",
+    "open": "start https://1ft-seabass.github.io/dhw-lecture-pp2-2022/",
+    "gyazo": "start C:\\workspace\\_my_application\\gyazo_uploader\\GayzoUploader-win32-x64\\GayzoUploader.exe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1ft-seabass/dhw-lecture-pp2-2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1ft-seabass/dhw-lecture-pp2-2022/issues"
+  },
+  "homepage": "https://github.com/1ft-seabass/dhw-lecture-pp2-2022#readme",
+  "dependencies": {
+    "gitbook-plugin-advanced-emoji": "^0.2.2",
+    "gitbook-plugin-anchors": "^0.7.1",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-copy-code-button": "0.0.2",
+    "gitbook-plugin-hide-published-with": "0.0.1",
+    "gitbook-plugin-intopic-toc": "^1.1.1"
+  },
+  "devDependencies": {
+    "honkit": "^3.6.20"
+  }
+}
