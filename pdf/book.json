@@ -1,0 +1,13 @@
+{
+  "title": "デジタルハリウッド大学院大学 2021 プロダクトプロトタイピングII 授業資料",
+  "description": "2021 授業資料",
+  "language": "ja",
+  "plugins": [
+    "anchors",
+    "hide-published-with",
+    "intopic-toc"
+  ],
+  "styles": {
+    "website": "styles/website.css"
+  }
+}

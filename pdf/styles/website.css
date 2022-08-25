@@ -1,0 +1,17 @@
+/* 印刷用 */
+@media print {
+  @page {
+    size: 190mm 277mm;
+    margin: 0;
+  }
+
+  body{
+    /*A4縦 210mm x 297mm*/
+    width: 186mm;
+    height: 270mm;
+  }
+
+  .page-inner {
+    width: 100% !important;
+  }
+}
