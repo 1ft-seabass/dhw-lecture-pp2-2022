@@ -1,0 +1,811 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"></head>
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="lecture02/12-line-bot-create.html">
+        <meta property="og:image" content="https://i.gyazo.com/800eb533b2b3a652c4e9973a62bb9f97.png">
+        <meta property="og:title" content="デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料">
+        <meta property="og:description" content="2022 授業資料">
+        <meta property="og:locale" content="ja">
+        <title>LINE BOT 作成手順 · デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.5">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-sns-output.html" />
+    
+    
+    <link rel="prev" href="02-02-line-bot-push.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    授業全体 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第1回 プロトタイピング発展概論・環境構築
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../lecture01/">
+            
+                <a href="../lecture01/">
+            
+                    
+                    第1回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../lecture01/00-introduction.html">
+            
+                <a href="../lecture01/00-introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../lecture01/01-understanding-the-curriculum.html">
+            
+                <a href="../lecture01/01-understanding-the-curriculum.html">
+            
+                    
+                    本講義のゴールを把握する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../lecture01/02-firststep.html">
+            
+                <a href="../lecture01/02-firststep.html">
+            
+                    
+                    ファーストステップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../lecture01/99-homework.html">
+            
+                <a href="../lecture01/99-homework.html">
+            
+                    
+                    宿題
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第2回 プロトタイピング発展概論・環境構築
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第2回 README
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="10-m5stack-check.html">
+            
+                <a href="10-m5stack-check.html">
+            
+                    
+                    セットアップチェック
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="11-m5stack-trouble-shooting-tips.html">
+            
+                <a href="11-m5stack-trouble-shooting-tips.html">
+            
+                    
+                    トラブルシューティング TIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="01-00-m5stack-firststep.html">
+            
+                <a href="01-00-m5stack-firststep.html">
+            
+                    
+                    M5Stack の導入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="01-01-m5stack-wifi-list.html">
+            
+                <a href="01-01-m5stack-wifi-list.html">
+            
+                    
+                    Wi-Fi リスト確認
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="01-02-m5stack-wifi-connect.html">
+            
+                <a href="01-02-m5stack-wifi-connect.html">
+            
+                    
+                    Wi-Fi につなぐ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="01-03-m5stack-server-message.html">
+            
+                <a href="01-03-m5stack-server-message.html">
+            
+                    
+                    サーバーにメッセージを送る
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="02-00-line-firststep.html">
+            
+                <a href="02-00-line-firststep.html">
+            
+                    
+                    M5Stack から LINE 連携
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="02-01-line-notify.html">
+            
+                <a href="02-01-line-notify.html">
+            
+                    
+                    M5Stack + LINE Notify 連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="02-02-line-bot-push.md">
+            
+                <span>
+            
+                    
+                    M5Stack + LINE BOT 連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.3" data-path="12-line-bot-create.html">
+            
+                <a href="12-line-bot-create.html">
+            
+                    
+                    LINE BOT 作成手順
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="03-sns-output.html">
+            
+                <a href="03-sns-output.html">
+            
+                    
+                    SNS からのアウトプットの事例や世界観を把握する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="99-next-preparation.html">
+            
+                <a href="99-next-preparation.html">
+            
+                    
+                    次回への準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第3回 IoT開発ボード M5Stack 入門
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第4回 IoT開発ボード M5Stack 入門
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第5回 IoT開発ボード設置・外装入門
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    第6回 IoT開発ボード設置・外装実践
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    第7回 制作物デモ発表 ／ プレゼンテーション
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    第8回 フィードバックブラッシュアップ／ プレゼンテーション
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    ナレッジ
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >LINE BOT 作成手順</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="line-bot-を作成する"><a name="line-bot-を作成する" class="plugin-anchor" href="#line-bot-を作成する"><i class="fa fa-link" aria-hidden="true"></i></a>LINE BOT を作成する</h1>
+<p><a href="https://qiita.com/n0bisuke/items/ceaa09ef8898bee8369d#1-bot%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B" target="_blank">1時間でLINE BOTを作るハンズオン (資料+レポート) in Node学園祭2017 #nodefest - Qiita</a></p>
+<p>こちらの、「1. Botアカウントを作成する」～「Botと友達になろう」まで進めます。</p>
+<h2 id="line-developers-にログイン"><a name="line-developers-にログイン" class="plugin-anchor" href="#line-developers-にログイン"><i class="fa fa-link" aria-hidden="true"></i></a>LINE Developers にログイン</h2>
+<p><img src="https://i.gyazo.com/4bb4c0bffb3c961ea749ec833e2e826b.jpg" alt="image"></p>
+<p>LINE Developers の右上のメニューから自分の LINE アカウントでログインします</p>
+<p><a href="https://developers.line.biz/ja/" target="_blank">https://developers.line.biz/ja/</a></p>
+<p><img src="https://i.gyazo.com/415c9566b4b1d2e51b17f55f59345701.png" alt="image"></p>
+<p><code>LINE アカウントでログイン</code> ボタンをクリックします。</p>
+<p><img src="https://i.gyazo.com/5efe71ed2c45acc347a40b34340880f5.png" alt="image"></p>
+<p>メールアドレスとパスワード、もしくは、QRコードでログインできます。</p>
+<h3 id="言語設定が日本語になっているか確認"><a name="言語設定が日本語になっているか確認" class="plugin-anchor" href="#言語設定が日本語になっているか確認"><i class="fa fa-link" aria-hidden="true"></i></a>言語設定が日本語になっているか確認</h3>
+<p><img src="https://i.gyazo.com/8391997e7db3ce012a4e4f3010085805.png" alt="image"></p>
+<p>ログインしたあと右下に言語設定のエリアがあるので <code>日本語</code> になっているか確認しましょう。以後の流れは、日本語で設定された画面の前提で進みます。</p>
+<h3 id="ログインできない場合は"><a name="ログインできない場合は" class="plugin-anchor" href="#ログインできない場合は"><i class="fa fa-link" aria-hidden="true"></i></a>ログインできない場合は</h3>
+<ul>
+<li>LINEのスマートフォンアプリ側で設定を確認しましょう。</li>
+<li>設定がまだの方はLINEのスマートフォンアプリ画面から 設定&gt;アカウントでメールアドレスを設定できます。<ul>
+<li><a href="https://appllio.com/line-mail-address-settings" target="_blank">LINEでメールアドレスを新規登録・確認・変更・解除（削除）する方法 | アプリオ</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="プロバイダーの作成"><a name="プロバイダーの作成" class="plugin-anchor" href="#プロバイダーの作成"><i class="fa fa-link" aria-hidden="true"></i></a>プロバイダーの作成</h2>
+<p>ログインしたらプロバイダーの作成を行います。</p>
+<p>プロバイダーは、自分が作るLINE BOTなどの開発者名やチーム名、企業名になります。
+初回だけディベロッパー登録で個人情報を聞かれると思うので回答してから進めましょう。</p>
+<p><img src="https://i.gyazo.com/d69a72b6767e358c7bf4808a6546a5ec.png" alt="image"></p>
+<p>コンソール（ホーム）を押してプロバイダーの画面に行きます。</p>
+<p><img src="https://i.gyazo.com/545aeaed54b1081be46ccc97ada43006.png" alt="image"></p>
+<p>作成ボタンを押して進みます。</p>
+<p><img src="https://i.gyazo.com/4b73740ebdb9a26dfb8fa4457bd2eefc.png" alt="image"></p>
+<p>プロバイダー名は今回は デジハリ開発 と入力して作成ボタンを押して進めましょう。</p>
+<p><img src="https://i.gyazo.com/08d33da3d350eef0510f5643d4f26809.png" alt="image"></p>
+<p>デジハリ開発 の プロバイダー のチャネル設定に移動されます。</p>
+<p><img src="https://i.gyazo.com/f5dacf9f99c96cef4a5b2a7ba2b0c30d.png" alt="image"></p>
+<p>今回は LINE BOT を作るので <code>Messaging API</code> をクリックします。</p>
+<h2 id="botの情報入力"><a name="botの情報入力" class="plugin-anchor" href="#botの情報入力"><i class="fa fa-link" aria-hidden="true"></i></a>BOTの情報入力</h2>
+<p>BOTの情報を入力します。</p>
+<p><img src="https://i.gyazo.com/5e922a871132eda6c0a122f00a9d1c02.png" alt="image"></p>
+<p>チャネルの種類は先ほどMessaging API を選択して入れば、 <code>Messaging API</code> となっています。
+プロバイダーは デジハリ開発に設定されています。</p>
+<p><img src="https://i.gyazo.com/a56c6059ddb93f8a9ea0261adc19ba00.png" alt="image"></p>
+<p>チャネルアイコンは、BOTの顔になるので、お好みの画像を入れましょう。
+チャネル名は、今回は「デジハリBOT」にします。</p>
+<p>もちろん、自分の自由な名前にしていただいてもOKです！</p>
+<p><img src="https://i.gyazo.com/b69ca35da7df9ec380e826dcfafd5636.png" alt="image"></p>
+<p>チャネル説明・大業種・小業種は、とりあえず、なんでもOKですが、悩んだら画像のようにしておきましょう。</p>
+<p><img src="https://i.gyazo.com/5384b4ee7c11faa87c6bc93377971b45.png" alt="image"></p>
+<p>メールアドレスは、BOTの開発者にLINE側からお知らせがあるときに受け取るメールアドレスを入力します。
+プライバシーポリシーURL/サービス利用規約URL（任意）こちらは、今はなくても大丈夫です。</p>
+<p><img src="https://i.gyazo.com/e9ca90c74fc6b980d12f3e680fc8e21f.png" alt="image"></p>
+<p>LINE公式アカウント利用規約 の内容と、LINE公式アカウントAPI利用規約 の内容を確認して、チェックボックスを選択して、作成ボタンをクリックします。</p>
+<p><img src="https://i.gyazo.com/2c9c61b4c0e134f050dc84271fc55bd2.png" alt="image"></p>
+<p>こちらは OK をクリック。</p>
+<p>最後に、情報利用に関する同意についてというページが出るので、スクロールして内容を確認したら、同意ボタンをクリックできるようになるので、クリックして進めます。</p>
+<p><img src="https://i.gyazo.com/673c5772019b52faf8708042f926cddf.png" alt="image"></p>
+<p>作成が完了すると、作成されたデジハリBOTの設定ページに移動します。</p>
+<h2 id="チャネルシークレットをメモする"><a name="チャネルシークレットをメモする" class="plugin-anchor" href="#チャネルシークレットをメモする"><i class="fa fa-link" aria-hidden="true"></i></a>チャネルシークレットをメモする</h2>
+<p><img src="https://i.gyazo.com/673c5772019b52faf8708042f926cddf.png" alt="image"></p>
+<p>のちほど必要になるチャネルシークレット・チャネルアクセストークンをメモしておきます。</p>
+<p><img src="https://i.gyazo.com/2ecb660f54ea6642859393d38c58261f.png" alt="image"></p>
+<p>上部のメニューでチャネル基本設定をクリックします。</p>
+<p><img src="https://i.gyazo.com/2a14f044f7b5e7983868bb879b9c8464.png" alt="image"></p>
+<p>チャネル基本設定でチャネルシークレットをスクロールを探して、チャネルシークレットをコピーしてメモしておきます。</p>
+<h2 id="チャネルアクセストークンをメモする"><a name="チャネルアクセストークンをメモする" class="plugin-anchor" href="#チャネルアクセストークンをメモする"><i class="fa fa-link" aria-hidden="true"></i></a>チャネルアクセストークンをメモする</h2>
+<p><img src="https://i.gyazo.com/09da02fd0ecf211aae686575ae26f09a.png" alt="image"></p>
+<p>上部のメニューで Messageing API 設定をクリックします。</p>
+<p><img src="https://i.gyazo.com/257d7f2945334257509452089e1b2c2f.png" alt="image"></p>
+<p>Messageing API 設定からチャネルアクセストークン（ロングターム）を探します。
+チャネルアクセストークン（ロングターム）がまだ発行されていないので発行ボタンをクリックします。</p>
+<p><img src="https://i.gyazo.com/14fe620ea842aaf6ea2ce51d5782b52e.png" alt="image"></p>
+<p>チャネルアクセストークンが発行されるので、赤い矢印で示したコピーできるボタンをクリックしてコピーしてメモしておきます。</p>
+<p>これくらい長い文字列を手で選択してコピーすると、カーソルがズレたりうまく全部コピーできなくて、あとでバグを生みやすいので、コピーボタン利用でお願いします！</p>
+<h2 id="チャネルアクセストークンとチャネルシークレットは-bot-の大切な設定です"><a name="チャネルアクセストークンとチャネルシークレットは-bot-の大切な設定です" class="plugin-anchor" href="#チャネルアクセストークンとチャネルシークレットは-bot-の大切な設定です"><i class="fa fa-link" aria-hidden="true"></i></a>チャネルアクセストークンとチャネルシークレットは BOT の大切な設定です</h2>
+<p><img src="https://i.gyazo.com/19c9bce2a892144f6c514d805098b70d.png" alt="image"></p>
+<p>チャネルアクセストークンとチャネルシークレットは BOT の大切な設定です。</p>
+<p>間違いなくメモできているか、いま一度、確認しましょう。</p>
+<h2 id="bot-の設定を変更する"><a name="bot-の設定を変更する" class="plugin-anchor" href="#bot-の設定を変更する"><i class="fa fa-link" aria-hidden="true"></i></a>BOT の設定を変更する</h2>
+<p>BOT の設定をしていきます。</p>
+<p><img src="https://i.gyazo.com/463bc511b0eb7f6d489a2370c7d9705d.png" alt="image"></p>
+<p>上部のメニューで Messageing API 設定をクリックします。</p>
+<p><img src="https://i.gyazo.com/dba92aed365f3d3717448f297c420c11.png" alt="image"></p>
+<p>つづいて、LINE公式アカウント機能の欄で、たとえば、応答メッセージの横にある編集ボタンをクリックするとLINE公式アカウントマネージャーに移動します。</p>
+<p><img src="https://i.gyazo.com/d8bc8b44c44577d411a231690486c9da.png" alt="image"></p>
+<p>移動しました。</p>
+<p><img src="https://i.gyazo.com/e16e36a28c3405b9ed672f8aa707cb8b.png" alt="image"></p>
+<p>右メニューから応答設定をクリックします。</p>
+<p><img src="https://i.gyazo.com/bbbfa50856c244333e29f0c0cf080af4.png" alt="image"></p>
+<ul>
+<li>応答メッセージ<ul>
+<li>オフ</li>
+</ul>
+</li>
+<li>あいさつメッセージ<ul>
+<li>オフ</li>
+</ul>
+</li>
+<li>Webhook<ul>
+<li>オン</li>
+</ul>
+</li>
+</ul>
+<p>に設定します。</p>
+<p><img src="https://i.gyazo.com/3e5dbe3839bb48b74d90dd2ce06d214f.png" alt="image"></p>
+<p>アカウント設定をクリックします。</p>
+<p><img src="https://i.gyazo.com/087291cfb097af213b2393cc9802ce82.png" alt="image"></p>
+<p>チャットへの参加の項目で、<code>グループ・複数人チャットへの参加を許可する</code> をクリックして設定します。</p>
+<p><img src="https://i.gyazo.com/e16e36a28c3405b9ed672f8aa707cb8b.png" alt="image"></p>
+<p>Webhookのオンはうまく反映されない場合があります。もう一度、右メニューから応答設定をクリックして、確認しましょう。</p>
+<p><img src="https://i.gyazo.com/e1acdc8c35cb5427786b5d3d8a2317fa.png" alt="image"></p>
+<p>Webhook　がオンになっていればOKです。</p>
+<h2 id="botと友達になろう"><a name="botと友達になろう" class="plugin-anchor" href="#botと友達になろう"><i class="fa fa-link" aria-hidden="true"></i></a>BOTと友達になろう</h2>
+<p>ここまで準備が出来たら、BOTと友達になりましょう。</p>
+<p>LINE Developers の画面に戻り、自分のプロバイダーから、今回の LINE BOT を選択します。</p>
+<p><img src="https://i.gyazo.com/3005dee9322bd8cac7ed7c54fa394525.png" alt="image"></p>
+<p>もし、プロバイダーが見つからない方は、自分のプロフィールページに移動してから、右メニューにあるプロバイダーをクリックします。</p>
+<p><img src="https://i.gyazo.com/2dbb7bc5badd542ee4f6235a0a27ae71.png" alt="image"></p>
+<p>プロバイダーの中のチャネルを選ぶ画面に移動するので、デジハリBOT を選択しましょう。</p>
+<p><img src="https://i.gyazo.com/ce2241de3c8e56ce58b7fc2f0f7267c7.png" alt="image"></p>
+<p>上部のメニューで Messageing API 設定をクリックします。</p>
+<p><img src="https://i.gyazo.com/3c7059023e9dbc2fb5aeb3b668e2e92d.png" alt="image"></p>
+<p>ここで表示されるQRコードを使って、自分が作成したBotアカウントと友達になりましょう。</p>
+<p><img src="https://i.gyazo.com/361130735c8a807e31a7cd22383f07f7.png" alt="image"></p>
+<p>Android や iOS の LINE アプリの画面です。先ほどのQRコードに合わせて読み取ります。 OS やバージョンによって配置が違うかもしれませんのでご注意ください。</p>
+<p><img src="https://i.gyazo.com/5c39802cd9f04681c0a41928041da04f.png" alt="image"></p>
+<p>追加をクリックして、友達追加します。追加すると、友達登録され、ウェルカムメッセージが表示されます。</p>
+<p>これで、BOTの友達登録の完了です。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-02-line-bot-push.md" class="navigation navigation-prev " aria-label="Previous page: M5Stack + LINE BOT 連携">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-sns-output.html" class="navigation navigation-next " aria-label="Next page: SNS からのアウトプットの事例や世界観を把握する">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LINE BOT 作成手順","level":"1.3.3.3","depth":3,"next":{"title":"SNS からのアウトプットの事例や世界観を把握する","level":"1.3.4","depth":2,"path":"lecture02/03-sns-output.md","ref":"lecture02/03-sns-output.md","articles":[]},"previous":{"title":"M5Stack + LINE BOT 連携","level":"1.3.3.2","depth":3,"path":"lecture02/02-02-line-bot-push.md","ref":"lecture02/02-02-line-bot-push.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/12-line-bot-create.md","mtime":"2021-10-01T07:36:02.817Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-15T04:13:24.562Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

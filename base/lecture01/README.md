@@ -5,7 +5,7 @@
 ## この授業の概要
 
 ```
-第1回　2022年09月21日（水） 7限　19:20 ～ 20:50　対面授業
+第1回　2022年09月21日（水）7限　19:20 ～ 20:50　遠隔授業
 ```
 
 - [はじめに](00-introduction.md) 30分
@@ -34,7 +34,7 @@
 
 次回以降の授業の参考にします。
 
-https://docs.google.com/forms/d/e/1FAIpQLScanK13JP3mPcBrb0WUUcLsma9AxljtfdgylEMnb8WYnJYsjA/viewform
+https://docs.google.com/forms/d/e/1FAIpQLSfnxodBQFtK-2Zx0lE0-t8bIeau0UmvBaNsHdtW5KRvjyRDzQ/viewform
 
 ## お疲れ様でした！
 

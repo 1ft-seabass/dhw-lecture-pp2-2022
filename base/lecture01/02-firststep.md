@@ -24,7 +24,7 @@
 
 ## 授業フォルダへのアクセス
 
-https://drive.google.com/drive/folders/1o1pZ7ityO_P78UsNKoVVC7kEXtrbK3-M
+https://drive.google.com/drive/folders/1SQ6ue9mBdjMPEqRUxrxIIBTJhaqIZOfu
 
 - デジタルハリウッド Google アカウントでログインすると見れます
 - 今後こちらに授業を確認するデータが共有される場合があります
@@ -32,7 +32,7 @@ https://drive.google.com/drive/folders/1o1pZ7ityO_P78UsNKoVVC7kEXtrbK3-M
 
 ## M5Stack とは
 
-![image](https://i.gyazo.com/45ae963151d71934a8ba786c88ba9637.jpg)
+![image](https://d2air1d4eqhwg2.cloudfront.net/images/3647/500x500/736132de-1e8f-42ca-a777-28aca9694abe.png)
 
 [M5Stack Basic \- スイッチサイエンス](https://www.switch-science.com/catalog/3647/)
 
@@ -55,7 +55,7 @@ https://drive.google.com/drive/folders/1o1pZ7ityO_P78UsNKoVVC7kEXtrbK3-M
 
 まず、購入リストを見てみましょう。
 
-購入リスト → https://docs.google.com/spreadsheets/d/1wIQr7Tai836nZ1UZrN1AgeSWpsEOh4kjj_LGNmx6O8U/edit#gid=0
+購入リスト → https://docs.google.com/spreadsheets/d/1Zrg56YYNQ_q3FpneM_CBub8n36qtzyQ5cQ0Z1DTf-4s/edit#gid=0
 
 - デジタルハリウッド Google アカウントでログインすると見れます
 

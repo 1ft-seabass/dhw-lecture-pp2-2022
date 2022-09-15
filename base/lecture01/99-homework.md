@@ -4,17 +4,19 @@
 
 ## 1. プロダクトプロトタイピング II 機材購入リストの内容を購入しましょう
 
-https://docs.google.com/spreadsheets/d/1wIQr7Tai836nZ1UZrN1AgeSWpsEOh4kjj_LGNmx6O8U/edit#gid=0
+https://docs.google.com/spreadsheets/d/1Zrg56YYNQ_q3FpneM_CBub8n36qtzyQ5cQ0Z1DTf-4s/edit#gid=0
 
 こちらの機材購入リストにあるものを購入しましょう。
 
+※必ず、スイッチサイエンスのオンラインストアからの購入でお願いします。秋葉原の現地購入や他のオンラインストアの購入はサポート外です。
+
 - 〆切
   - この機材購入リストは本格的に機材を触る 2 回目 10月01日（金） 21:00 開始までに用意しましょう。
-  - おそらく到着までに1～2日かかるので、この土日に完了しておいたほうが安心です。
+  - おそらく到着までに2～3日かかるので、この今週木・金に完了しておいたほうが安心です。
   - 授業は機材がある前提で進行します
 - そのほか伝達事項
-  - M5Stack Gray 単体でも、ディスプレイ・ボタン・スピーカー（音）・加速度・ジャイロ・磁気（コンパス）が使えます。
-  - シラバスでは「 7000 円程度～」としていましたが 8300 円に落ち着きました。
+  - M5Stack Base 単体で、ディスプレイ・ボタン・スピーカー（音）が使えます。
+  - シラバスでは「 10000 円程度～」としていましたが近い金額に落ち着きました。
   - スイッチサイエンスに在庫があり手に入りやすいもので選びなおしました。
   - サーボや他のセンサーについては授業が進んでから、みなさんの必要度や進捗次第でいくつか加えるかもしれませんが、ひとまずこれですすめます。
 
@@ -24,7 +26,7 @@ https://docs.google.com/spreadsheets/d/1wIQr7Tai836nZ1UZrN1AgeSWpsEOh4kjj_LGNmx6
 
 という Slack のメッセージにリアクションお願いします！
 
-### 余談：私も最近の M5Stack Gray セットアップしてみました
+### 私も M5Stack Gray セットアップあらためてしてみたので、ご参考までに
 
 https://twitter.com/1ft_seabass/status/1439097633751003138
 
@@ -40,7 +42,7 @@ M5Stack 関連のインストールファイルはファイルサイズが重く
 
 ### 大まかな手順はこちらです。
 
-- [Arduino ダウンロードページ](https://www.arduino.cc/en/software) で最新 Arduino 1.8.16 のインストールをお願いします。
+- [Arduino ダウンロードページ](https://www.arduino.cc/en/software) で最新 Arduino 1.8.19 のインストールをお願いします。
 - USB シリアルドライバーをインストールする
   - Windows と Mac お使いの OS に合わせてインストールしましょう
 - ESP32 ボード定義をインストールする
@@ -64,6 +66,18 @@ M5Stack のボードマネージャでインストールするバージョンは
 M5Stack のライブラリマネージャでインストールするバージョンは 0.3.0。
 
 ![image](https://i.gyazo.com/08500d83586c5ad94f31b493d1022d1f.png)
+
+## 3. LINE BOT の作成をお願いします
+
+→ [LINE BOT を作成する](../lecture02/12-line-bot-create.md)
+
+## 4. GitHub アカウント取得をお願いします
+
+→ [GitHub のアカウント取得する](../lecture02/13-github-account.md)
+
+## 5. Gitpod アカウント取得をお願いします
+
+→ [Gitpod のアカウントを取得する](../lecture02/14-gitpod-account.md)
 
 ## 質疑応答
 

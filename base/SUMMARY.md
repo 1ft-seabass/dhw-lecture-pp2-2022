@@ -8,6 +8,19 @@
   - [ファーストステップ](lecture01/02-firststep.md)
   - [宿題](lecture01/99-homework.md)
 - 第2回 プロトタイピング発展概論・環境構築
+  - [第2回 README](lecture02/README.md)
+    - [セットアップチェック](lecture02/10-m5stack-check.md)
+    - [トラブルシューティング TIPS](lecture02/11-m5stack-trouble-shooting-tips.md)
+  - [M5Stack の導入](lecture02/01-00-m5stack-firststep.md)
+    - [Wi-Fi リスト確認](lecture02/01-01-m5stack-wifi-list.md)
+    - [Wi-Fi につなぐ](lecture02/01-02-m5stack-wifi-connect.md)
+    - [サーバーにメッセージを送る](lecture02/01-03-m5stack-server-message.md)
+  - [M5Stack から LINE 連携](lecture02/02-00-line-firststep.md)
+    - [M5Stack + LINE Notify 連携](lecture02/02-01-line-notify.md)
+    - [M5Stack + LINE BOT 連携](lecture02/02-02-line-bot-push.md)
+    - [LINE BOT 作成手順](lecture02/12-line-bot-create.md)
+  - [SNS からのアウトプットの事例や世界観を把握する](lecture02/03-sns-output.md)
+  - [次回への準備](lecture02/99-next-preparation.md)
 - 第3回 IoT開発ボード M5Stack 入門
 - 第4回 IoT開発ボード M5Stack 入門
 - 第5回 IoT開発ボード設置・外装入門

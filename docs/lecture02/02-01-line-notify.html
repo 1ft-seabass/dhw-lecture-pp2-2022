@@ -1,0 +1,879 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"></head>
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="lecture02/02-01-line-notify.html">
+        <meta property="og:image" content="https://i.gyazo.com/800eb533b2b3a652c4e9973a62bb9f97.png">
+        <meta property="og:title" content="デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料">
+        <meta property="og:description" content="2022 授業資料">
+        <meta property="og:locale" content="ja">
+        <title>M5Stack + LINE Notify 連携 · デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.5">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-02-line-bot-push.md" />
+    
+    
+    <link rel="prev" href="02-00-line-firststep.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    授業全体 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第1回 プロトタイピング発展概論・環境構築
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../lecture01/">
+            
+                <a href="../lecture01/">
+            
+                    
+                    第1回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../lecture01/00-introduction.html">
+            
+                <a href="../lecture01/00-introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../lecture01/01-understanding-the-curriculum.html">
+            
+                <a href="../lecture01/01-understanding-the-curriculum.html">
+            
+                    
+                    本講義のゴールを把握する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../lecture01/02-firststep.html">
+            
+                <a href="../lecture01/02-firststep.html">
+            
+                    
+                    ファーストステップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../lecture01/99-homework.html">
+            
+                <a href="../lecture01/99-homework.html">
+            
+                    
+                    宿題
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第2回 プロトタイピング発展概論・環境構築
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第2回 README
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="10-m5stack-check.html">
+            
+                <a href="10-m5stack-check.html">
+            
+                    
+                    セットアップチェック
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="11-m5stack-trouble-shooting-tips.html">
+            
+                <a href="11-m5stack-trouble-shooting-tips.html">
+            
+                    
+                    トラブルシューティング TIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="01-00-m5stack-firststep.html">
+            
+                <a href="01-00-m5stack-firststep.html">
+            
+                    
+                    M5Stack の導入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="01-01-m5stack-wifi-list.html">
+            
+                <a href="01-01-m5stack-wifi-list.html">
+            
+                    
+                    Wi-Fi リスト確認
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="01-02-m5stack-wifi-connect.html">
+            
+                <a href="01-02-m5stack-wifi-connect.html">
+            
+                    
+                    Wi-Fi につなぐ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="01-03-m5stack-server-message.html">
+            
+                <a href="01-03-m5stack-server-message.html">
+            
+                    
+                    サーバーにメッセージを送る
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="02-00-line-firststep.html">
+            
+                <a href="02-00-line-firststep.html">
+            
+                    
+                    M5Stack から LINE 連携
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.3.1" data-path="02-01-line-notify.html">
+            
+                <a href="02-01-line-notify.html">
+            
+                    
+                    M5Stack + LINE Notify 連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="02-02-line-bot-push.md">
+            
+                <span>
+            
+                    
+                    M5Stack + LINE BOT 連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="12-line-bot-create.html">
+            
+                <a href="12-line-bot-create.html">
+            
+                    
+                    LINE BOT 作成手順
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="03-sns-output.html">
+            
+                <a href="03-sns-output.html">
+            
+                    
+                    SNS からのアウトプットの事例や世界観を把握する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="99-next-preparation.html">
+            
+                <a href="99-next-preparation.html">
+            
+                    
+                    次回への準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第3回 IoT開発ボード M5Stack 入門
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第4回 IoT開発ボード M5Stack 入門
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第5回 IoT開発ボード設置・外装入門
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    第6回 IoT開発ボード設置・外装実践
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    第7回 制作物デモ発表 ／ プレゼンテーション
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    第8回 フィードバックブラッシュアップ／ プレゼンテーション
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    ナレッジ
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >M5Stack + LINE Notify 連携</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="m5stack-から-line-notify-にメッセージを送ろう"><a name="m5stack-から-line-notify-にメッセージを送ろう" class="plugin-anchor" href="#m5stack-から-line-notify-にメッセージを送ろう"><i class="fa fa-link" aria-hidden="true"></i></a>M5Stack から LINE Notify にメッセージを送ろう</h1>
+<h2 id="今回のプログラムはどのように動くか"><a name="今回のプログラムはどのように動くか" class="plugin-anchor" href="#今回のプログラムはどのように動くか"><i class="fa fa-link" aria-hidden="true"></i></a>今回のプログラムはどのように動くか</h2>
+<p><img src="https://i.gyazo.com/d4f219471329ee42c7d2b291e7272873.png" alt="image"></p>
+<p>このような仕組みです。</p>
+<p><img src="https://i.gyazo.com/e49942702a7683010b16a76d797d83e2.jpg" alt="image"></p>
+<p>Aボタン、Bボタン、Cボタンをクリックすると LINE Notify サーバーにメッセージが送られます。</p>
+<p><img src="https://i.gyazo.com/9bc36d121afc4ac5e8b71a2b2c8fe573.png" alt="image"></p>
+<p>先ほど設定した LINE Notify のアカウントにメッセージが表示されます。</p>
+<h2 id="line-notify-のトークンを取得します"><a name="line-notify-のトークンを取得します" class="plugin-anchor" href="#line-notify-のトークンを取得します"><i class="fa fa-link" aria-hidden="true"></i></a>LINE Notify のトークンを取得します</h2>
+<p><img src="https://i.gyazo.com/c45ee309aa6793bc12f67c24f3a905ce.png" alt="image"></p>
+<p><a href="https://notify-bot.line.me/ja/" target="_blank">https://notify-bot.line.me/ja/</a> からログインします。QR コードログインで入りましょう。（ログインメールアドレス＋パスワードのログインは設定や思い出すのに苦労すると思うので、避けましょう。）</p>
+<p><img src="https://i.gyazo.com/bf26cdcf093a783aee4ff510ec9ddb68.png" alt="image"></p>
+<p>ログインすると、右上にアカウント名が出るのでクリックします。</p>
+<p><img src="https://i.gyazo.com/7cdb07c7e588bac278a5fb0b2dbc9d83.png" alt="image"></p>
+<p>マイページをクリック。</p>
+<p><img src="https://i.gyazo.com/0c48f49af1be4e5e7c789366c0b838cf.png" alt="image"></p>
+<p>マイページの下の方に「アクセストークンの発行(開発者向け)」というエリアがあるのでスクロールします。</p>
+<p><img src="https://i.gyazo.com/bbba9909e0437e487718479953b198ff.png" alt="image"></p>
+<p>トークンを発行するボタンをクリックします。</p>
+<p><img src="https://i.gyazo.com/05b98371bcae556f578cdb96505ecb7c.jpg" alt="image"></p>
+<p>トークンを発行するウィンドウが表示されるので、以下のように対応します。</p>
+<ul>
+<li>トークン名を記入してください (通知の際に表示されます)<ul>
+<li><code>M5Stack Notify</code> と入力</li>
+</ul>
+</li>
+<li>通知を送信するトークルームを選択してください<ul>
+<li><code>1:1でLINE Notifyから通知を受け取る</code> を選択</li>
+</ul>
+</li>
+</ul>
+<p>こちらを対応すると、発行するボタンが押せるようになるのでクリックします。</p>
+<p><img src="https://i.gyazo.com/abee7f38d2db6897c61cdb42fc29a83c.png" alt="image"></p>
+<p>このようにトークンが表示されるのでメモしましょう。</p>
+<p><strong>このページから移動すると、新しく発行されたトークンは二度と表示されないので気をつけましょう</strong></p>
+<p>メモしたらウィンドウを閉じるボタンをクリックして閉じます。</p>
+<p><img src="https://i.gyazo.com/2fcf2f7f0d039737510759301a619485.png" alt="image"></p>
+<p>リストに追加されたことを確認しておきます。</p>
+<p><img src="https://i.gyazo.com/07a33eec5562fc6fd67e52aeaa5c2bc9.png" alt="image"></p>
+<p>今回選択した LINE Notify 先のアカウントにこのようなメッセージが来ていることも確認します。</p>
+<h2 id="ソースコードを反映"><a name="ソースコードを反映" class="plugin-anchor" href="#ソースコードを反映"><i class="fa fa-link" aria-hidden="true"></i></a>ソースコードを反映</h2>
+<p>Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;M5Stack.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;WiFiClientSecure.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ssl_client.h&gt;</span></span>
+
+<span class="hljs-comment">// Wi-FiのSSID</span>
+<span class="hljs-keyword">char</span> *ssid = <span class="hljs-string">&quot;Wi-FiのSSID&quot;</span>;
+<span class="hljs-comment">// Wi-Fiのパスワード</span>
+<span class="hljs-keyword">char</span> *password = <span class="hljs-string">&quot;Wi-Fiのパスワード&quot;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+
+  <span class="hljs-comment">// init lcd, serial, but don&apos;t init sd card</span>
+  <span class="hljs-comment">// LCD ディスプレイとシリアルは動かして、SDカードは動かさない設定</span>
+  M5.begin(<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>);
+
+  <span class="hljs-comment">// スタート</span>
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setCursor(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+  M5.Lcd.setTextColor(WHITE);
+  M5.Lcd.setTextSize(<span class="hljs-number">2</span>);
+
+  <span class="hljs-comment">// Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す</span>
+  Serial.print(<span class="hljs-string">&quot;START&quot;</span>);  <span class="hljs-comment">// Arduino のシリアルモニタにメッセージを出す</span>
+  M5.Lcd.print(<span class="hljs-string">&quot;START&quot;</span>);  <span class="hljs-comment">// M5Stack LCDディスプレイにメッセージを出す（英語のみ）</span>
+
+  <span class="hljs-comment">// WiFi 接続開始</span>
+  WiFi.begin(ssid, password);
+
+  <span class="hljs-keyword">while</span> (WiFi.status() != WL_CONNECTED) {
+      delay(<span class="hljs-number">500</span>);
+
+      <span class="hljs-comment">// Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す</span>
+      Serial.print(<span class="hljs-string">&quot;.&quot;</span>);
+      M5.Lcd.print(<span class="hljs-string">&quot;.&quot;</span>);
+  }
+
+  <span class="hljs-comment">// WiFi Connected</span>
+  <span class="hljs-comment">// WiFi 接続完了</span>
+  M5.Lcd.setCursor(<span class="hljs-number">10</span>, <span class="hljs-number">40</span>);
+  M5.Lcd.setTextColor(WHITE);
+  M5.Lcd.setTextSize(<span class="hljs-number">2</span>);
+
+  <span class="hljs-comment">// Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す</span>
+  <span class="hljs-comment">// 前のメッセージが print で改行入っていないので println で一つ入れる</span>
+  Serial.println(<span class="hljs-string">&quot;&quot;</span>);  <span class="hljs-comment">// Arduino のシリアルモニタにメッセージを出し改行が最後に入る</span>
+  M5.Lcd.println(<span class="hljs-string">&quot;&quot;</span>);  <span class="hljs-comment">// M5Stack LCDディスプレイにメッセージを出す改行が最後に入る（英語のみ） </span>
+
+  <span class="hljs-comment">// Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す</span>
+  Serial.println(<span class="hljs-string">&quot;WiFi Connected.&quot;</span>);  <span class="hljs-comment">// Arduino のシリアルモニタにメッセージを出す</span>
+  M5.Lcd.println(<span class="hljs-string">&quot;WiFi Connected.&quot;</span>);  <span class="hljs-comment">// M5Stack LCDディスプレイにメッセージを出す（英語のみ）</span>
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">send_message</span><span class="hljs-params">(String msg)</span> </span>{
+
+  <span class="hljs-comment">// LINE Notify のホスト</span>
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* hostLINENotify = <span class="hljs-string">&quot;notify-api.line.me&quot;</span>;
+
+  <span class="hljs-comment">// LINE Notify のトークン</span>
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* tokenLINENotify = <span class="hljs-string">&quot;LINE Notify のトークン&quot;</span>;
+
+  WiFiClientSecure clientHTTPS;
+
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setCursor(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+  M5.Lcd.println(<span class="hljs-string">&quot;-&gt; LINE Notify&quot;</span>);
+  Serial.println(<span class="hljs-string">&quot;-&gt; LINE Notify&quot;</span>);
+  M5.Lcd.print(<span class="hljs-string">&quot;msg: &quot;</span>);
+  Serial.print(<span class="hljs-string">&quot;msg: &quot;</span>);
+  M5.Lcd.println(msg);
+  Serial.println(msg);
+
+  <span class="hljs-keyword">if</span> (!clientHTTPS.connect(hostLINENotify, <span class="hljs-number">443</span>)) {
+    delay(<span class="hljs-number">2000</span>);
+    <span class="hljs-keyword">return</span>;
+  }
+  String queryString = String(<span class="hljs-string">&quot;message=&quot;</span>) + msg;
+
+  <span class="hljs-comment">// LINE Notify の API に合わせて送信内容を作る</span>
+  <span class="hljs-comment">// Content-Type は application/x-www-form-urlencoded</span>
+  <span class="hljs-comment">// Authorization: Bearer にトークンを割り当てる</span>
+  String request = String(<span class="hljs-string">&quot;&quot;</span>) +
+   <span class="hljs-string">&quot;POST /api/notify HTTP/1.1\r\n&quot;</span> +
+   <span class="hljs-string">&quot;Host: &quot;</span> + hostLINENotify + <span class="hljs-string">&quot;\r\n&quot;</span> +
+   <span class="hljs-string">&quot;Authorization: Bearer &quot;</span> + tokenLINENotify + <span class="hljs-string">&quot;\r\n&quot;</span> +
+   <span class="hljs-string">&quot;Content-Length: &quot;</span> + String(queryString.length()) +  <span class="hljs-string">&quot;\r\n&quot;</span> + 
+   <span class="hljs-string">&quot;Content-Type: application/x-www-form-urlencoded\r\n\r\n&quot;</span> +
+    queryString + <span class="hljs-string">&quot;\r\n&quot;</span>;
+
+  clientHTTPS.print(request);
+  M5.Lcd.println(<span class="hljs-string">&quot;clientHTTPS.printed&quot;</span>);
+  Serial.println(<span class="hljs-string">&quot;clientHTTPS.printed&quot;</span>);
+  <span class="hljs-keyword">while</span> (clientHTTPS.connected()) {
+    String line = clientHTTPS.readStringUntil(<span class="hljs-string">&apos;\n&apos;</span>);
+    <span class="hljs-keyword">if</span> (line == <span class="hljs-string">&quot;\r&quot;</span>) {
+      <span class="hljs-keyword">break</span>;
+    }
+  }
+
+  String response = clientHTTPS.readStringUntil(<span class="hljs-string">&apos;\n&apos;</span>);
+  M5.Lcd.println(<span class="hljs-string">&quot;sended.&quot;</span>);
+  Serial.println(<span class="hljs-string">&quot;sended.&quot;</span>);
+
+  M5.Lcd.println(<span class="hljs-string">&quot;response:&quot;</span>);
+  M5.Lcd.println(response);
+
+  delay(<span class="hljs-number">2000</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  M5.update();
+
+  <span class="hljs-keyword">if</span> (M5.BtnA.wasReleased()) {
+    <span class="hljs-comment">// A ボタンを押したらテキストメッセージを LINE Notify へ送る</span>
+    send_message(<span class="hljs-string">&quot;Pushed A&quot;</span>);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (M5.BtnB.wasReleased()) {
+    <span class="hljs-comment">// B ボタンを押したらテキストメッセージを LINE Notify へ送る</span>
+    send_message(<span class="hljs-string">&quot;Pushed B&quot;</span>);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (M5.BtnC.wasReleased()) {
+    <span class="hljs-comment">// C ボタンを押したらテキストメッセージを LINE Notify へ送る</span>
+    send_message(<span class="hljs-string">&quot;Pushed C&quot;</span>);
+  }
+}
+</code></pre>
+<p>こちらを <code>dhw-pp2-study-05-TestLINENotify</code> で保存します。</p>
+<h2 id="wi-fi-情報を反映"><a name="wi-fi-情報を反映" class="plugin-anchor" href="#wi-fi-情報を反映"><i class="fa fa-link" aria-hidden="true"></i></a>Wi-Fi 情報を反映</h2>
+<pre><code class="lang-c"><span class="hljs-comment">// Wi-FiのSSID</span>
+<span class="hljs-keyword">char</span> *ssid = <span class="hljs-string">&quot;Wi-FiのSSID&quot;</span>;
+<span class="hljs-comment">// Wi-Fiのパスワード</span>
+<span class="hljs-keyword">char</span> *password = <span class="hljs-string">&quot;Wi-Fiのパスワード&quot;</span>;
+</code></pre>
+<p>先ほどと同じように Wi-Fi 情報を反映します。</p>
+<h2 id="line-notify-のトークンを反映"><a name="line-notify-のトークンを反映" class="plugin-anchor" href="#line-notify-のトークンを反映"><i class="fa fa-link" aria-hidden="true"></i></a>LINE Notify のトークンを反映</h2>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">send_message</span><span class="hljs-params">(String msg)</span> </span>{
+
+  <span class="hljs-comment">// LINE Notify のホスト</span>
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* hostLINENotify = <span class="hljs-string">&quot;notify-api.line.me&quot;</span>;
+
+  <span class="hljs-comment">// LINE Notify のトークン</span>
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* tokenLINENotify = <span class="hljs-string">&quot;LINE Notify のトークン&quot;</span>;
+</code></pre>
+<p>send_message のすぐ近くにある <code>const char* tokenLINENotify = &quot;LINE Notify のトークン&quot;;</code> の <code>LINE Notify のトークン</code> の部分を、先ほどメモした LINE Notify のトークンに置き換えましょう。ダブルクオーテーションを消していないか気をつけましょう。</p>
+<h2 id="m5stack-に書き込んでみる"><a name="m5stack-に書き込んでみる" class="plugin-anchor" href="#m5stack-に書き込んでみる"><i class="fa fa-link" aria-hidden="true"></i></a>M5Stack に書き込んでみる</h2>
+<p>そして、もう一度保存します。（大事）</p>
+<p><img src="https://i.gyazo.com/45b0fd6ce672dc9a0055d45aa290e235.png" alt="image"></p>
+<p>M5Stack に書き込んでみましょう。</p>
+<h2 id="動かしてみる"><a name="動かしてみる" class="plugin-anchor" href="#動かしてみる"><i class="fa fa-link" aria-hidden="true"></i></a>動かしてみる</h2>
+<p><img src="https://i.gyazo.com/e49942702a7683010b16a76d797d83e2.jpg" alt="image"></p>
+<p>Aボタン、Bボタン、Cボタンをクリックすると LINE Notify サーバーにメッセージが送られます。</p>
+<p><img src="https://i.gyazo.com/9bc36d121afc4ac5e8b71a2b2c8fe573.png" alt="image"></p>
+<p>先ほど設定した LINE Notify のアカウントにメッセージが表示されます。</p>
+<h1 id="次にすすみましょう"><a name="次にすすみましょう" class="plugin-anchor" href="#次にすすみましょう"><i class="fa fa-link" aria-hidden="true"></i></a>次にすすみましょう</h1>
+<p>左のナビゲーションから「M5Stack + LINE BOT 連携」にすすみましょう。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-00-line-firststep.html" class="navigation navigation-prev " aria-label="Previous page: M5Stack から LINE 連携">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-02-line-bot-push.md" class="navigation navigation-next " aria-label="Next page: M5Stack + LINE BOT 連携">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"M5Stack + LINE Notify 連携","level":"1.3.3.1","depth":3,"next":{"title":"M5Stack + LINE BOT 連携","level":"1.3.3.2","depth":3,"path":"lecture02/02-02-line-bot-push.md","ref":"lecture02/02-02-line-bot-push.md","articles":[]},"previous":{"title":"M5Stack から LINE 連携","level":"1.3.3","depth":2,"path":"lecture02/02-00-line-firststep.md","ref":"lecture02/02-00-line-firststep.md","articles":[{"title":"M5Stack + LINE Notify 連携","level":"1.3.3.1","depth":3,"path":"lecture02/02-01-line-notify.md","ref":"lecture02/02-01-line-notify.md","articles":[]},{"title":"M5Stack + LINE BOT 連携","level":"1.3.3.2","depth":3,"path":"lecture02/02-02-line-bot-push.md","ref":"lecture02/02-02-line-bot-push.md","articles":[]},{"title":"LINE BOT 作成手順","level":"1.3.3.3","depth":3,"path":"lecture02/12-line-bot-create.md","ref":"lecture02/12-line-bot-create.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/02-01-line-notify.md","mtime":"2022-09-15T02:55:44.612Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-15T04:13:24.562Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

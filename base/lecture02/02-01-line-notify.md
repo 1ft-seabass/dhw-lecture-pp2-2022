@@ -18,7 +18,7 @@ Aボタン、Bボタン、Cボタンをクリックすると LINE Notify サー�
 
 ![image](https://i.gyazo.com/c45ee309aa6793bc12f67c24f3a905ce.png)
 
-https://notify-bot.line.me/ja/ からログインします。
+https://notify-bot.line.me/ja/ からログインします。QR コードログインで入りましょう。（ログインメールアドレス＋パスワードのログインは設定や思い出すのに苦労すると思うので、避けましょう。）
 
 ![image](https://i.gyazo.com/bf26cdcf093a783aee4ff510ec9ddb68.png)
 
