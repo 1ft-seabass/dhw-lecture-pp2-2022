@@ -54,7 +54,8 @@ void loop() {
 - ツール > シリアルポート に M5Stack のポートが認識されている
   - Windows 10 の場合 `COM` が頭にあるシリアルポート名が表示 例: `COM3`
   - Mac の場合は `/dev/tty.SLAB_` が頭にあるシリアルポート名が表示 例: `/dev/tty.SLAB_USBtoUART`
-- `#include <M5Stack.h>` などに色がついている 例: ![image](https://i.gyazo.com/377362c26b20027e2a6fd3d6a6801227.png)
+- `#include <M5Stack.h>` などに色がついている
+  - 例: ![image](https://i.gyazo.com/377362c26b20027e2a6fd3d6a6801227.png)
 
 確認できたら、
 

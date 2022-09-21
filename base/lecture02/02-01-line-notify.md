@@ -65,12 +65,13 @@ https://notify-bot.line.me/ja/ からログインします。QR コードログ�
 
 ## ソースコードを反映
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-05-TestLINENotify` で保存します。
 
 ```c
 #include <M5Stack.h>
-#include <WiFiClientSecure.h>
-#include <ssl_client.h>
+
+// HTTP 通信を行うライブラリ
+#include <HTTPClient.h>
 
 // Wi-FiのSSID
 char *ssid = "Wi-FiのSSID";
@@ -124,12 +125,13 @@ void setup() {
 void send_message(String msg) {
 
   // LINE Notify のホスト
-  const char* hostLINENotify = "notify-api.line.me";
+  String hostLINENotify = "notify-api.line.me";
 
   // LINE Notify のトークン
-  const char* tokenLINENotify = "LINE Notify のトークン";
-  
-  WiFiClientSecure clientHTTPS;
+  String tokenLINENotify = "LINE Notify のトークン";
+
+  // 今回送るURL
+  String url = "https://" + hostLINENotify + "/api/notify";
 
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 10);
@@ -139,40 +141,30 @@ void send_message(String msg) {
   Serial.print("msg: ");
   M5.Lcd.println(msg);
   Serial.println(msg);
-  
-  if (!clientHTTPS.connect(hostLINENotify, 443)) {
-    delay(2000);
-    return;
-  }
-  String queryString = String("message=") + msg;
 
-  // LINE Notify の API に合わせて送信内容を作る
-  // Content-Type は application/x-www-form-urlencoded
-  // Authorization: Bearer にトークンを割り当てる
-  String request = String("") +
-   "POST /api/notify HTTP/1.1\r\n" +
-   "Host: " + hostLINENotify + "\r\n" +
-   "Authorization: Bearer " + tokenLINENotify + "\r\n" +
-   "Content-Length: " + String(queryString.length()) +  "\r\n" + 
-   "Content-Type: application/x-www-form-urlencoded\r\n\r\n" +
-    queryString + "\r\n";
-  
-  clientHTTPS.print(request);
-  M5.Lcd.println("clientHTTPS.printed");
-  Serial.println("clientHTTPS.printed");
-  while (clientHTTPS.connected()) {
-    String line = clientHTTPS.readStringUntil('\n');
-    if (line == "\r") {
-      break;
-    }
-  }
-  
-  String response = clientHTTPS.readStringUntil('\n');
+  // 送るデータ
+  String queryString = String("message=") + msg;
+  // HTTPClient 準備
+  HTTPClient httpClient;
+  // URL 設定
+  httpClient.begin(url);
+  // Content-Type
+  httpClient.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  // Authorization
+  httpClient.addHeader("Authorization", "Bearer " + tokenLINENotify);
+
   M5.Lcd.println("sended.");
   Serial.println("sended.");
-
-  M5.Lcd.println("response:");
-  M5.Lcd.println(response);
+   
+  // ポストする
+  int status_code = httpClient.POST(queryString);
+  if( status_code == 200 ){
+    String response = httpClient.getString();
+    
+    M5.Lcd.println("response:");
+    M5.Lcd.println(response);
+  }
+  httpClient.end();
   
   delay(2000);
 }
@@ -193,8 +185,6 @@ void loop() {
 }
 ```
 
-こちらを `dhw-pp2-study-05-TestLINENotify` で保存します。
-
 ## Wi-Fi 情報を反映
 
 ```c
@@ -212,13 +202,13 @@ char *password = "Wi-Fiのパスワード";
 void send_message(String msg) {
 
   // LINE Notify のホスト
-  const char* hostLINENotify = "notify-api.line.me";
+  String hostLINENotify = "notify-api.line.me";
 
   // LINE Notify のトークン
-  const char* tokenLINENotify = "LINE Notify のトークン";
+  String tokenLINENotify = "LINE Notify のトークン";
 ```
 
-send_message のすぐ近くにある `const char* tokenLINENotify = "LINE Notify のトークン";` の `LINE Notify のトークン` の部分を、先ほどメモした LINE Notify のトークンに置き換えましょう。ダブルクオーテーションを消していないか気をつけましょう。
+send_message のすぐ近くにある `String tokenLINENotify = "LINE Notify のトークン";` の `LINE Notify のトークン` の部分を、先ほどメモした LINE Notify のトークンに置き換えましょう。ダブルクオーテーションを消していないか気をつけましょう。
 
 ## M5Stack に書き込んでみる
 

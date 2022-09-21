@@ -8,7 +8,7 @@
 
 ## ソースコードを反映
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-02-TestWiFiList` で保存します。
 
 ```c
 #include <M5Stack.h>
@@ -85,8 +85,6 @@ void loop(){
     M5.update();
 }
 ```
-
-こちらを `dhw-pp2-study-02-TestWiFiList` で保存します。
 
 ![image](https://i.gyazo.com/45b0fd6ce672dc9a0055d45aa290e235.png)
 

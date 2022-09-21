@@ -17,7 +17,7 @@
 
 授業のためにテストサーバーを用意しました
 
-http://dhw-pp2-2021-test01.herokuapp.com/ui/
+https://dhw-pp2-test01.herokuapp.com/ui
 
 - こういうサーバーがあるとデータがちゃんと届いているかのチェックがしやすいです
 - ひとまず今回は HTTP で受信するとログが出ます
@@ -25,14 +25,13 @@ http://dhw-pp2-2021-test01.herokuapp.com/ui/
 
 ## ソースコードを反映
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-04-TestHTTP` で保存します。
 
 ```c
 #include <M5Stack.h>
 
-// 以下2つはHTTPSでデータを送るためのライブラリ
-#include <WiFiClientSecure.h>
-#include <ssl_client.h>
+// HTTP 通信を行うライブラリ
+#include <HTTPClient.h>
 
 // Wi-FiのSSID
 char *ssid = "Wi-FiのSSID";
@@ -88,10 +87,8 @@ void setup() {
 // HTTP でメッセージ送信部分
 void send_message(String msg) {
 
-  // 今回送るホスト名
-  const char* hostName = "dhw-pp2-2021-test01.herokuapp.com";
-  
-  WiFiClientSecure clientHTTPS;
+  // 今回送るURL
+  String url = "https://dhw-pp2-test01.herokuapp.com/dhw/pp2/http/message";
 
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 10);
@@ -99,45 +96,28 @@ void send_message(String msg) {
   M5.Lcd.println("-> send_message");
   M5.Lcd.print("msg: ");
   M5.Lcd.println(msg);
-  
-  Serial.println("-> send_messagey");
-  Serial.print("msg: ");
-  Serial.println(msg);
-  
-  if (!clientHTTPS.connect(hostName, 443)) {
-    delay(2000);
-    return;
-  }
+
+  // 送るデータ
   String queryString = msg;
+  // HTTPClient 準備
+  HTTPClient httpClient;
+  // URL 設定
+  httpClient.begin(url);
+  // Content-Type
+  httpClient.addHeader("Content-Type", "application/json");
 
-  // Content-Type: application/json
-  // で POST 送信で /dhw/pp2/http/message に送信
-  String request = String("") +
-   "POST /dhw/pp2/http/message HTTP/1.1\r\n" +
-   "Host: " + hostName + "\r\n" +
-   "Content-Length: " + String(queryString.length()) +  "\r\n" + 
-   "Content-Type: application/json\r\n\r\n" +
-    queryString + "\r\n";
-  
-  clientHTTPS.print(request);
-  M5.Lcd.println("clientHTTPS.printed");
-  Serial.println("clientHTTPS.printed");
-  while (clientHTTPS.connected()) {
-    String response = clientHTTPS.readStringUntil('\n');
-    if (response == "\r") {
-      break;
-    }
-  }
-
-  // データ送信完了
   M5.Lcd.println("sended.");
   Serial.println("sended.");
-
-  // サーバーから返答を受け取ったらデータを表示
-  String response = clientHTTPS.readStringUntil('\n');
-
-  M5.Lcd.println("response:");
-  M5.Lcd.println(response);
+  
+  // ポストする
+  int status_code = httpClient.POST(queryString);
+  if( status_code == 200 ){
+    String response = httpClient.getString();
+    
+    M5.Lcd.println("response:");
+    M5.Lcd.println(response);
+  }
+  httpClient.end();
   
   delay(2000);
 }
@@ -158,8 +138,6 @@ void loop() {
   }
 }
 ```
-
-こちらを `dhw-pp2-study-04-TestHTTP` で保存します。
 
 ## Wi-Fi 情報を反映して、また保存
 

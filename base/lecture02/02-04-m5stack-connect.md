@@ -176,7 +176,7 @@ char *password = "Wi-Fiのパスワード";
 ```c
   // 今回送るホスト名 Gitpod のホスト名 (https://なし)を反映
   // https://3000-hoge-fuga-scnzIUgdS.gitpod.io/ の場合は 3000-hoge-fuga-scnzIUgdS.gitpod.io
-  const char* hostName = "*********************.gitpod.io";
+  String hostName = "*********************.gitpod.io";
 ```
 
 今回送るホスト名 Gitpod のホスト名を反映します。
