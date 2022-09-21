@@ -18,7 +18,7 @@ https://developers.line.biz/ja/
 
 ![image](https://i.gyazo.com/5efe71ed2c45acc347a40b34340880f5.png)
 
-メールアドレスとパスワード、もしくは、QRコードでログインできます。
+QRコードでログインできます。
 
 ### 言語設定が日本語になっているか確認
 
