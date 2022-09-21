@@ -5,7 +5,7 @@
 次回、第 3 回目への準備についてのご連絡です。
 
 - いよいよ次回センサーを扱うので機材リストを揃えるのをよろしくお願いします
-  - https://docs.google.com/spreadsheets/d/1wIQr7Tai836nZ1UZrN1AgeSWpsEOh4kjj_LGNmx6O8U/edit#gid=0
+  - https://docs.google.com/spreadsheets/d/1Zrg56YYNQ_q3FpneM_CBub8n36qtzyQ5cQ0Z1DTf-4s/edit#gid=0
   - 現地で探すのは見つからない場合があるので、スイッチサイエンスなどのインターネット通販をご利用ください。
 - LINE Notify や LINE BOT は、今後も使うので整えておきましょう
   - 今日は Visual Studio Code や Node.js を使う前提で、進めましたが
