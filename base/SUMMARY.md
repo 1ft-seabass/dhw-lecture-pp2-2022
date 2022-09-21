@@ -17,7 +17,10 @@
     - [サーバーにメッセージを送る](lecture02/01-03-m5stack-server-message.md)
   - [M5Stack から LINE 連携](lecture02/02-00-line-firststep.md)
     - [M5Stack + LINE Notify 連携](lecture02/02-01-line-notify.md)
-    - [M5Stack + LINE BOT 連携](lecture02/02-02-line-bot-push.md)
+    - [Gitpod をはじめる](lecture02/02-02-gitpod-linebot.md)
+    - [Gitpod で LINE BOT](lecture02/02-03-gitpod-start.md)
+    - [M5Stack + LINE BOT 連携](lecture02/02-04-m5stack-connect.md)
+  - 手順
     - [LINE BOT 作成手順](lecture02/12-line-bot-create.md)
     - [GitHub のアカウント取得する](lecture02/13-github-account.md)
     - [Gitpod のアカウントを取得する](lecture02/14-gitpod-account.md)

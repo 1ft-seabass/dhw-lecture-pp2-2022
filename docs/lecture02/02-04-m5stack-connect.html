@@ -5,12 +5,12 @@
         <meta charset="UTF-8">
         <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"></head>
         <meta property="og:type" content="article">
-        <meta property="og:url" content="lecture02/11-m5stack-trouble-shooting-tips.html">
+        <meta property="og:url" content="lecture02/02-04-m5stack-connect.html">
         <meta property="og:image" content="https://i.gyazo.com/800eb533b2b3a652c4e9973a62bb9f97.png">
         <meta property="og:title" content="デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料">
         <meta property="og:description" content="2022 授業資料">
         <meta property="og:locale" content="ja">
-        <title>トラブルシューティング TIPS · デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料</title>
+        <title>M5Stack + LINE BOT 連携 · デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -67,10 +67,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01-00-m5stack-firststep.html" />
     
-    
-    <link rel="prev" href="10-m5stack-check.html" />
+    <link rel="prev" href="02-03-gitpod-start.html" />
     
 
     </head>
@@ -237,7 +235,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.1.2" data-path="11-m5stack-trouble-shooting-tips.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="11-m5stack-trouble-shooting-tips.html">
             
                 <a href="11-m5stack-trouble-shooting-tips.html">
             
@@ -366,7 +364,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3.4" data-path="02-04-m5stack-connect.html">
+        <li class="chapter active" data-level="1.3.3.4" data-path="02-04-m5stack-connect.html">
             
                 <a href="02-04-m5stack-connect.html">
             
@@ -594,7 +592,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >トラブルシューティング TIPS</a>
+        <a href=".." >M5Stack + LINE BOT 連携</a>
     </h1>
 </div>
 
@@ -609,48 +607,181 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="m5stack-トラブルシューティング-tips"><a name="m5stack-トラブルシューティング-tips" class="plugin-anchor" href="#m5stack-トラブルシューティング-tips"><i class="fa fa-link" aria-hidden="true"></i></a>M5Stack トラブルシューティング TIPS</h1>
-<p>ここでは、セットアップ周辺でSlack などのやり取りで出てきたトラブルシューティング TIPSをまとめています。</p>
-<h2 id="コンパイルしようとすると「使用できない名前のライブラリは無視します」と言われる"><a name="コンパイルしようとすると「使用できない名前のライブラリは無視します」と言われる" class="plugin-anchor" href="#コンパイルしようとすると「使用できない名前のライブラリは無視します」と言われる"><i class="fa fa-link" aria-hidden="true"></i></a>コンパイルしようとすると「使用できない名前のライブラリは無視します」と言われる</h2>
-<p>（小林さん遭遇）</p>
-<p><img src="https://i.gyazo.com/5077677cee5f067946716de80392e1f0.png" alt="image"></p>
-<p>原因：以前インストールした M5Stack ライブラリと重複していると予想</p>
-<p>対処：ライブラリの重複が怪しかったので、Mac内で「M5Stack」関係のデータ全て消してもう一度ライブラリ入れてみた（小林さん対応）</p>
-<h2 id="mac-big-sur-でコンパイルすると-valueerror-dlsymrtlddefault-kiomasterportdefault-symbol-not-found-エラーが出る"><a name="mac-big-sur-でコンパイルすると-valueerror-dlsymrtlddefault-kiomasterportdefault-symbol-not-found-エラーが出る" class="plugin-anchor" href="#mac-big-sur-でコンパイルすると-valueerror-dlsymrtlddefault-kiomasterportdefault-symbol-not-found-エラーが出る"><i class="fa fa-link" aria-hidden="true"></i></a>Mac Big Sur でコンパイルすると ValueError: dlsym(RTLD_DEFAULT, kIOMasterPortDefault): symbol not found エラーが出る</h2>
-<p>（小林さん遭遇）</p>
-<p>原因：どうやらBig Surの仕様のせいらしい</p>
-<p>対処：<a href="https://qiita.com/n0bisuke/items/69366541f4372cb49463" target="_blank">macOS Big SurでESP32のコンパイルが通らなかった件を解決したメモ #m5stack - Qiita</a>（小林さん対応）</p>
-<h2 id="no-protocol-というエラーが出る"><a name="no-protocol-というエラーが出る" class="plugin-anchor" href="#no-protocol-というエラーが出る"><i class="fa fa-link" aria-hidden="true"></i></a>no protocol というエラーが出る</h2>
-<p>（さわださん遭遇）</p>
-<p><img src="https://i.gyazo.com/c4acda3bd13af44e88a105a06efb6b21.png" alt="image"></p>
-<p>ひとまず、 M5Stack 関連のエラーじゃなさそうなので保留中。</p>
-<h2 id="シリアルモニタでデバッグしようにも文字化けしてしまう"><a name="シリアルモニタでデバッグしようにも文字化けしてしまう" class="plugin-anchor" href="#シリアルモニタでデバッグしようにも文字化けしてしまう"><i class="fa fa-link" aria-hidden="true"></i></a>シリアルモニタでデバッグしようにも文字化けしてしまう</h2>
-<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+                                <h1 id="linebot-に-m5stack-からメッセージを送る"><a name="linebot-に-m5stack-からメッセージを送る" class="plugin-anchor" href="#linebot-に-m5stack-からメッセージを送る"><i class="fa fa-link" aria-hidden="true"></i></a>LINEBOT に M5Stack からメッセージを送る</h1>
+<h2 id="事前準備：ホスト名を準備しましょう"><a name="事前準備：ホスト名を準備しましょう" class="plugin-anchor" href="#事前準備：ホスト名を準備しましょう"><i class="fa fa-link" aria-hidden="true"></i></a>事前準備：ホスト名を準備しましょう</h2>
+<p>この後の設定で、ホスト名というものが必要になるので、さきほどメモした Gitpod URL からホスト名を分離してメモしておきます。</p>
+<p>もし、 <code>https://3000-hoge-fuga-scnzIUgdS.gitpod.io/</code> という Gitpod URL の場合は <code>3000-hoge-fuga-scnzIUgdS.gitpod.io</code> としてホスト名をメモしておきます。</p>
+<h2 id="今回のプログラムはどのように動くか"><a name="今回のプログラムはどのように動くか" class="plugin-anchor" href="#今回のプログラムはどのように動くか"><i class="fa fa-link" aria-hidden="true"></i></a>今回のプログラムはどのように動くか</h2>
+<p><img src="https://i.gyazo.com/2aac11e5dafe4f5bf9045da64dccf3e2.jpg" alt="image"></p>
+<p>書き込みと同時に Wi-Fi がつながり Launched! というメッセージが Gitpod のサーバーに送られ、 LINE BOT にメッセージが通されます。</p>
+<p><img src="https://i.gyazo.com/9e3eb877028c7f9e4b54f1b5994ec2e6.jpg" alt="image"></p>
+<p>さらに A B C 各ボタンを押すと、</p>
+<p><img src="https://i.gyazo.com/f1c2f6f8d5ad04acee037335b99c1bfb.png" alt="image"></p>
+<p>押したボタンの情報が LINE BOT に表示されます。</p>
+<h2 id="ソースコードを反映＆保存"><a name="ソースコードを反映＆保存" class="plugin-anchor" href="#ソースコードを反映＆保存"><i class="fa fa-link" aria-hidden="true"></i></a>ソースコードを反映＆保存</h2>
+<p>Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを <code>dhw-pp2-study-07-LINEBotMessageHTTPSToGitpod</code> というファイル名で保存します。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;M5Stack.h&gt;</span></span>
+
+<span class="hljs-comment">// 以下2つはHTTPSでデータを送るためのライブラリ</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;WiFiClientSecure.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ssl_client.h&gt;</span></span>
+
+<span class="hljs-comment">// Wi-FiのSSID</span>
+<span class="hljs-keyword">char</span> *ssid = <span class="hljs-string">&quot;Wi-FiのSSID&quot;</span>;
+<span class="hljs-comment">// Wi-Fiのパスワード</span>
+<span class="hljs-keyword">char</span> *password = <span class="hljs-string">&quot;Wi-Fiのパスワード&quot;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-comment">// init lcd, serial, but don&apos;t init sd card</span>
+  <span class="hljs-comment">// LCD ディスプレイとシリアルは動かして、SDカードは動かさない設定</span>
   M5.begin(<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>);
 
-  <span class="hljs-comment">/*
-    Power chip connected to gpio21, gpio22, I2C device
-    Set battery charging voltage and current
-    If used battery, please call this function in your project
-  */</span>
-  M5.Power.begin();
-
-  M5.Lcd.clear(BLACK);
-  M5.Lcd.setTextColor(YELLOW);
+  <span class="hljs-comment">// スタート</span>
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setCursor(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+  M5.Lcd.setTextColor(WHITE);
   M5.Lcd.setTextSize(<span class="hljs-number">2</span>);
-  M5.Lcd.setCursor(<span class="hljs-number">65</span>, <span class="hljs-number">10</span>);
-  M5.Lcd.println(<span class="hljs-string">&quot;Serial example&quot;</span>);
-  Serial.println(<span class="hljs-string">&quot;Serial example&quot;</span>);
+
+  <span class="hljs-comment">// Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す</span>
+  Serial.print(<span class="hljs-string">&quot;START&quot;</span>);  <span class="hljs-comment">// Arduino のシリアルモニタにメッセージを出す</span>
+  M5.Lcd.print(<span class="hljs-string">&quot;START&quot;</span>);  <span class="hljs-comment">// M5Stack LCDディスプレイにメッセージを出す（英語のみ）</span>
+
+  <span class="hljs-comment">// WiFi 接続開始</span>
+  WiFi.begin(ssid, password);
+
+  <span class="hljs-keyword">while</span> (WiFi.status() != WL_CONNECTED) {
+      delay(<span class="hljs-number">500</span>);
+
+      <span class="hljs-comment">// Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す</span>
+      Serial.print(<span class="hljs-string">&quot;.&quot;</span>);
+      M5.Lcd.print(<span class="hljs-string">&quot;.&quot;</span>);
+  }
+
+  <span class="hljs-comment">// WiFi Connected</span>
+  <span class="hljs-comment">// WiFi 接続完了</span>
+  M5.Lcd.setCursor(<span class="hljs-number">10</span>, <span class="hljs-number">40</span>);
+  M5.Lcd.setTextColor(WHITE);
+  M5.Lcd.setTextSize(<span class="hljs-number">2</span>);
+
+  <span class="hljs-comment">// Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す</span>
+  <span class="hljs-comment">// 前のメッセージが print で改行入っていないので println で一つ入れる</span>
+  Serial.println(<span class="hljs-string">&quot;&quot;</span>);  <span class="hljs-comment">// Arduino のシリアルモニタにメッセージを出し改行が最後に入る</span>
+  M5.Lcd.println(<span class="hljs-string">&quot;&quot;</span>);  <span class="hljs-comment">// M5Stack LCDディスプレイにメッセージを出す改行が最後に入る（英語のみ） </span>
+
+  <span class="hljs-comment">// Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す</span>
+  Serial.println(<span class="hljs-string">&quot;WiFi Connected.&quot;</span>);  <span class="hljs-comment">// Arduino のシリアルモニタにメッセージを出す</span>
+  M5.Lcd.println(<span class="hljs-string">&quot;WiFi Connected.&quot;</span>);  <span class="hljs-comment">// M5Stack LCDディスプレイにメッセージを出す（英語のみ）</span>
+
+  <span class="hljs-comment">// 起動時に送る</span>
+  delay(<span class="hljs-number">1000</span>);
+  send_message(<span class="hljs-string">&quot;{\&quot;message\&quot;:\&quot;Launched!\&quot;}&quot;</span>);
+}
+
+<span class="hljs-comment">// HTTP でメッセージ送信部分</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">send_message</span><span class="hljs-params">(String msg)</span> </span>{
+
+  <span class="hljs-comment">// 今回送るホスト名 GitPod のホスト名 (https://なし)を反映</span>
+  <span class="hljs-comment">// https://3000-hoge-fuga-scnzIUgdS.gitpod.io/ の場合は 3000-hoge-fuga-scnzIUgdS.gitpod.io</span>
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* hostName = <span class="hljs-string">&quot;*********************.gitpod.io&quot;</span>;
+
+  WiFiClientSecure clientHTTPS;
+
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setCursor(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+
+  M5.Lcd.println(<span class="hljs-string">&quot;-&gt; send_message&quot;</span>);
+  M5.Lcd.print(<span class="hljs-string">&quot;msg: &quot;</span>);
+  M5.Lcd.println(msg);
+
+  Serial.println(<span class="hljs-string">&quot;-&gt; send_messagey&quot;</span>);
+  Serial.print(<span class="hljs-string">&quot;msg: &quot;</span>);
+  Serial.println(msg);
+
+  <span class="hljs-comment">// ngrok の HTTPS になぜかつながらないので HTTP で対応 ポート番号変更 443 → 80</span>
+  <span class="hljs-keyword">if</span> (!clientHTTPS.connect(hostName, <span class="hljs-number">443</span>)) {
+    delay(<span class="hljs-number">2000</span>);
+    <span class="hljs-keyword">return</span>;
+  }
+  String queryString = msg;
+
+  <span class="hljs-comment">// TestHTTP からの変更点 2</span>
+  <span class="hljs-comment">// Content-Type: application/json</span>
+  <span class="hljs-comment">// で POST 送信で /from/m5stack に送信</span>
+  String request = String(<span class="hljs-string">&quot;&quot;</span>) +
+   <span class="hljs-string">&quot;POST /from/m5stack HTTP/1.1\r\n&quot;</span> +
+   <span class="hljs-string">&quot;Host: &quot;</span> + hostName + <span class="hljs-string">&quot;\r\n&quot;</span> +
+   <span class="hljs-string">&quot;Content-Length: &quot;</span> + String(queryString.length()) +  <span class="hljs-string">&quot;\r\n&quot;</span> + 
+   <span class="hljs-string">&quot;Content-Type: application/json\r\n\r\n&quot;</span> +
+    queryString + <span class="hljs-string">&quot;\r\n&quot;</span>;
+
+  clientHTTPS.print(request);
+  M5.Lcd.println(<span class="hljs-string">&quot;clientHTTPS.printed&quot;</span>);
+  Serial.println(<span class="hljs-string">&quot;clientHTTPS.printed&quot;</span>);
+  <span class="hljs-keyword">while</span> (clientHTTPS.connected()) {
+    String response = clientHTTPS.readStringUntil(<span class="hljs-string">&apos;\n&apos;</span>);
+    <span class="hljs-keyword">if</span> (response == <span class="hljs-string">&quot;\r&quot;</span>) {
+      <span class="hljs-keyword">break</span>;
+    }
+  }
+
+  <span class="hljs-comment">// データ送信完了</span>
+  M5.Lcd.println(<span class="hljs-string">&quot;sended.&quot;</span>);
+  Serial.println(<span class="hljs-string">&quot;sended.&quot;</span>);
+
+  <span class="hljs-comment">// サーバーから返答を受け取ったらデータを表示</span>
+  String response = clientHTTPS.readStringUntil(<span class="hljs-string">&apos;\n&apos;</span>);
+
+  M5.Lcd.println(<span class="hljs-string">&quot;response:&quot;</span>);
+  M5.Lcd.println(response);
+
+  delay(<span class="hljs-number">2000</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  M5.update();
+
+  <span class="hljs-keyword">if</span> (M5.BtnA.wasReleased()) {
+    <span class="hljs-comment">// A ボタンを押したら JSON 形式のメッセージを飛ばす</span>
+    <span class="hljs-comment">// \&quot; はダブルクォーテーションで囲まれた中で JSON 内のダブルクォーテーションを表現するために \&quot; でエスケープしてます。</span>
+    send_message(<span class="hljs-string">&quot;{\&quot;message\&quot;:\&quot;Pushed A\&quot;}&quot;</span>);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (M5.BtnB.wasReleased()) {
+    <span class="hljs-comment">// B ボタンを押したら JSON 形式のメッセージを飛ばす</span>
+    send_message(<span class="hljs-string">&quot;{\&quot;message\&quot;:\&quot;Pushed B\&quot;}&quot;</span>);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (M5.BtnC.wasReleased()) {
+    <span class="hljs-comment">// C ボタンを押したら JSON 形式のメッセージを飛ばす</span>
+    send_message(<span class="hljs-string">&quot;{\&quot;message\&quot;:\&quot;Pushed C\&quot;}&quot;</span>);
+  }
 }
 </code></pre>
-<p>このような <code>Serial.println(&quot;Serial example&quot;);</code> を実行した時に</p>
-<p><img src="https://i.gyazo.com/5a318a7c28f406373fce40afcebd56f0.png" alt="image"></p>
-<p>文字化けしてしまう。（さわださん遭遇）</p>
-<p><img src="https://i.gyazo.com/c1ae6857179993d8e204a2e82972eab1.png" alt="image"></p>
-<p>シリアルモニタ右下を 115200 bps に設定すると文字化けせず受信できます。</p>
-<p><img src="https://i.gyazo.com/4679862f1ea0dce4753ce20829a05650.png" alt="image"></p>
-<p>うまくいくとこのように表示されます。</p>
+<h2 id="wi-fi-情報を反映"><a name="wi-fi-情報を反映" class="plugin-anchor" href="#wi-fi-情報を反映"><i class="fa fa-link" aria-hidden="true"></i></a>Wi-Fi 情報を反映</h2>
+<pre><code class="lang-c"><span class="hljs-comment">// Wi-FiのSSID</span>
+<span class="hljs-keyword">char</span> *ssid = <span class="hljs-string">&quot;Wi-FiのSSID&quot;</span>;
+<span class="hljs-comment">// Wi-Fiのパスワード</span>
+<span class="hljs-keyword">char</span> *password = <span class="hljs-string">&quot;Wi-Fiのパスワード&quot;</span>;
+</code></pre>
+<p>自分のつなぎたい Wi-Fi の SSID とパスワードを反映します。</p>
+<h2 id="gitpod-のホスト名を反映"><a name="gitpod-のホスト名を反映" class="plugin-anchor" href="#gitpod-のホスト名を反映"><i class="fa fa-link" aria-hidden="true"></i></a>Gitpod のホスト名を反映</h2>
+<pre><code class="lang-c">  <span class="hljs-comment">// 今回送るホスト名 Gitpod のホスト名 (https://なし)を反映</span>
+  <span class="hljs-comment">// https://3000-hoge-fuga-scnzIUgdS.gitpod.io/ の場合は 3000-hoge-fuga-scnzIUgdS.gitpod.io</span>
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* hostName = <span class="hljs-string">&quot;*********************.gitpod.io&quot;</span>;
+</code></pre>
+<p>今回送るホスト名 Gitpod のホスト名を反映します。</p>
+<h2 id="m5stack-に書き込んでみる"><a name="m5stack-に書き込んでみる" class="plugin-anchor" href="#m5stack-に書き込んでみる"><i class="fa fa-link" aria-hidden="true"></i></a>M5Stack に書き込んでみる</h2>
+<p>そして、もう一度保存します。（大事）</p>
+<p><img src="https://i.gyazo.com/45b0fd6ce672dc9a0055d45aa290e235.png" alt="image"></p>
+<p>M5Stack に書き込んでみましょう。</p>
+<h2 id="動かしてみる"><a name="動かしてみる" class="plugin-anchor" href="#動かしてみる"><i class="fa fa-link" aria-hidden="true"></i></a>動かしてみる</h2>
+<p><img src="https://i.gyazo.com/2aac11e5dafe4f5bf9045da64dccf3e2.jpg" alt="image"></p>
+<p>うまく設定できていれば、書き込みと同時に Wi-Fi がつながり Launched! というメッセージが Gitpod のサーバーに送られ、 LINE BOT にメッセージが通されます。</p>
+<p><img src="https://i.gyazo.com/9e3eb877028c7f9e4b54f1b5994ec2e6.jpg" alt="image"></p>
+<p>さらに A B C 各ボタンを押すと、</p>
+<p><img src="https://i.gyazo.com/f1c2f6f8d5ad04acee037335b99c1bfb.png" alt="image"></p>
+<p>押したボタンの情報が LINE BOT に表示されます。</p>
+<h1 id="質疑応答"><a name="質疑応答" class="plugin-anchor" href="#質疑応答"><i class="fa fa-link" aria-hidden="true"></i></a>質疑応答</h1>
+<p><img src="https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png" alt="image"></p>
+<p>ここまでで質問があればどうぞ！</p>
+<h1 id="次にすすみましょう"><a name="次にすすみましょう" class="plugin-anchor" href="#次にすすみましょう"><i class="fa fa-link" aria-hidden="true"></i></a>次にすすみましょう</h1>
+<p>左のナビゲーションから「SNS からのアウトプットの事例や世界観を把握する」にすすみましょう。</p>
 
                                 
                                 </section>
@@ -678,14 +809,10 @@
 
             
                 
-                <a href="10-m5stack-check.html" class="navigation navigation-prev " aria-label="Previous page: セットアップチェック">
+                <a href="02-03-gitpod-start.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Gitpod で LINE BOT">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="01-00-m5stack-firststep.html" class="navigation navigation-next " aria-label="Next page: M5Stack の導入">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -694,7 +821,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"トラブルシューティング TIPS","level":"1.3.1.2","depth":3,"next":{"title":"M5Stack の導入","level":"1.3.2","depth":2,"path":"lecture02/01-00-m5stack-firststep.md","ref":"lecture02/01-00-m5stack-firststep.md","articles":[{"title":"Wi-Fi リスト確認","level":"1.3.2.1","depth":3,"path":"lecture02/01-01-m5stack-wifi-list.md","ref":"lecture02/01-01-m5stack-wifi-list.md","articles":[]},{"title":"Wi-Fi につなぐ","level":"1.3.2.2","depth":3,"path":"lecture02/01-02-m5stack-wifi-connect.md","ref":"lecture02/01-02-m5stack-wifi-connect.md","articles":[]},{"title":"サーバーにメッセージを送る","level":"1.3.2.3","depth":3,"path":"lecture02/01-03-m5stack-server-message.md","ref":"lecture02/01-03-m5stack-server-message.md","articles":[]}]},"previous":{"title":"セットアップチェック","level":"1.3.1.1","depth":3,"path":"lecture02/10-m5stack-check.md","ref":"lecture02/10-m5stack-check.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/11-m5stack-trouble-shooting-tips.md","mtime":"2021-10-08T11:32:54.263Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-21T13:01:23.218Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"M5Stack + LINE BOT 連携","level":"1.3.3.4","depth":3,"next":{"title":"手順","level":"1.3.4","depth":2,"ref":"","articles":[{"title":"LINE BOT 作成手順","level":"1.3.4.1","depth":3,"path":"lecture02/12-line-bot-create.md","ref":"lecture02/12-line-bot-create.md","articles":[]},{"title":"GitHub のアカウント取得する","level":"1.3.4.2","depth":3,"path":"lecture02/13-github-account.md","ref":"lecture02/13-github-account.md","articles":[]},{"title":"Gitpod のアカウントを取得する","level":"1.3.4.3","depth":3,"path":"lecture02/14-gitpod-account.md","ref":"lecture02/14-gitpod-account.md","articles":[]}]},"previous":{"title":"Gitpod で LINE BOT","level":"1.3.3.3","depth":3,"path":"lecture02/02-03-gitpod-start.md","ref":"lecture02/02-03-gitpod-start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/02-04-m5stack-connect.md","mtime":"2022-09-21T12:58:25.752Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-21T13:01:23.218Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

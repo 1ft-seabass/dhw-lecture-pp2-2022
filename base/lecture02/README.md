@@ -9,10 +9,10 @@
 ```
 
 - はじめに 5 分
-- [IoT開発ボード M5Stack の導入](01-m5stack-firststep.md) 25 分
-- [IoT開発ボード M5Stack から LINE BOT にメッセージを送る](02-line.md) 30 分
-- [SNS からのアウトプットの事例や世界観を把握する](03-sns-autoput.md) 15 分
-- [次回への準備](99-next-preparation.md) 15 分
+- IoT開発ボード M5Stack の導入 25 分
+- IoT開発ボード M5Stack から LINE BOT にメッセージを送る 30 分
+- SNS からのアウトプットの事例や世界観を把握する 15 分
+- 次回への準備] 15 分
 
 ## はじめに
 
