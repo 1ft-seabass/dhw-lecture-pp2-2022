@@ -19,6 +19,8 @@
     - [M5Stack + LINE Notify 連携](lecture02/02-01-line-notify.md)
     - [M5Stack + LINE BOT 連携](lecture02/02-02-line-bot-push.md)
     - [LINE BOT 作成手順](lecture02/12-line-bot-create.md)
+    - [GitHub のアカウント取得する](lecture02/13-github-account.md)
+    - [Gitpod のアカウントを取得する](lecture02/14-gitpod-account.md)
   - [SNS からのアウトプットの事例や世界観を把握する](lecture02/03-sns-output.md)
   - [次回への準備](lecture02/99-next-preparation.md)
 - 第3回 IoT開発ボード M5Stack 入門

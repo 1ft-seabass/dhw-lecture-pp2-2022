@@ -5,12 +5,12 @@
         <meta charset="UTF-8">
         <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"></head>
         <meta property="og:type" content="article">
-        <meta property="og:url" content="lecture02/01-00-m5stack-firststep.html">
+        <meta property="og:url" content="lecture02/13-github-account.html">
         <meta property="og:image" content="https://i.gyazo.com/800eb533b2b3a652c4e9973a62bb9f97.png">
         <meta property="og:title" content="デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料">
         <meta property="og:description" content="2022 授業資料">
         <meta property="og:locale" content="ja">
-        <title>M5Stack の導入 · デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料</title>
+        <title>GitHub のアカウント取得する · デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -67,10 +67,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01-01-m5stack-wifi-list.html" />
+    <link rel="next" href="14-gitpod-account.html" />
     
     
-    <link rel="prev" href="11-m5stack-trouble-shooting-tips.html" />
+    <link rel="prev" href="12-line-bot-create.html" />
     
 
     </head>
@@ -255,7 +255,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="01-00-m5stack-firststep.html">
+        <li class="chapter " data-level="1.3.2" data-path="01-00-m5stack-firststep.html">
             
                 <a href="01-00-m5stack-firststep.html">
             
@@ -366,7 +366,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3.4" data-path="13-github-account.html">
+        <li class="chapter active" data-level="1.3.3.4" data-path="13-github-account.html">
             
                 <a href="13-github-account.html">
             
@@ -549,7 +549,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >M5Stack の導入</a>
+        <a href=".." >GitHub のアカウント取得する</a>
     </h1>
 </div>
 
@@ -564,112 +564,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="m5stack-の導入"><a name="m5stack-の導入" class="plugin-anchor" href="#m5stack-の導入"><i class="fa fa-link" aria-hidden="true"></i></a>M5Stack の導入</h1>
-<p><img src="https://i.gyazo.com/2fe8f1e2d461451f6b5212996272c3ee.jpg" alt="image"></p>
-<h2 id="まずはチェック"><a name="まずはチェック" class="plugin-anchor" href="#まずはチェック"><i class="fa fa-link" aria-hidden="true"></i></a>まずはチェック</h2>
-<p>チェックがまだな人もいるかもしれないので、念のためチェックしていきましょう。</p>
+                                <h1 id="github-のアカウント取得する"><a name="github-のアカウント取得する" class="plugin-anchor" href="#github-のアカウント取得する"><i class="fa fa-link" aria-hidden="true"></i></a>GitHub のアカウント取得する</h1>
+<p><img src="https://i.gyazo.com/e4bd057b9b3daf8676e449621a69df92.jpg" alt="image"></p>
+<p><a href="https://github.com/" target="_blank">https://github.com/</a> にアクセスします。</p>
+<p><img src="https://i.gyazo.com/b1149c857e6864595ccb2ae13b9401a8.png" alt="image"></p>
+<p>Sign up をクリック。</p>
+<p><img src="https://i.gyazo.com/f64426db991d3cf1022522f339cec071.png" alt="image"></p>
 <ul>
-<li><a href="10-m5stack-check.html">M5Stack セットアップチェック</a></li>
-</ul>
-<h3 id="今回のプログラムはどのように動くか"><a name="今回のプログラムはどのように動くか" class="plugin-anchor" href="#今回のプログラムはどのように動くか"><i class="fa fa-link" aria-hidden="true"></i></a>今回のプログラムはどのように動くか</h3>
-<p><img src="https://i.gyazo.com/8b62e0c3bf9dad23c0e9ca6362aea085.jpg" alt="image"></p>
-<p>無事に書き込まれると <code>Hello World</code> の文が表示されます。</p>
-<h3 id="ソースコードを反映"><a name="ソースコードを反映" class="plugin-anchor" href="#ソースコードを反映"><i class="fa fa-link" aria-hidden="true"></i></a>ソースコードを反映</h3>
-<p><img src="https://i.gyazo.com/a61828fccd84836aabfac60ab103489b.png" alt="image"></p>
-<p>Arduino IDE を起動して、新規ファイルをクリックします。</p>
-<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;M5Stack.h&gt;</span></span>
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
-  M5.begin();
-
-  M5.Lcd.println(<span class="hljs-string">&quot;Hello World&quot;</span>);
-}
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
-
-}
-</code></pre>
-<p>上記のソースコードをコピーアンドペーストします。実はチェック時のコードと同じです。</p>
-<p><img src="https://i.gyazo.com/48fe8f4590406a9eeb1d9cf3be21f12f.png" alt="image"></p>
-<p>コードにこのように色がついていれば OK です。ライブラリが正しくインストールされて効いている状態です。</p>
-<h3 id="ファイルを保存"><a name="ファイルを保存" class="plugin-anchor" href="#ファイルを保存"><i class="fa fa-link" aria-hidden="true"></i></a>ファイルを保存</h3>
-<p><img src="https://i.gyazo.com/5923c3950bc2a2ef1576dd6d1afe42f4.png" alt="image"></p>
-<p><code>dhw-pp2-study-01-HelloWorld</code> で保存しておきます。</p>
-<h3 id="確認して書き込み"><a name="確認して書き込み" class="plugin-anchor" href="#確認して書き込み"><i class="fa fa-link" aria-hidden="true"></i></a>確認して書き込み</h3>
-<p>念のため、もう一度、以下の設定は確認しておきましょう。</p>
-<ul>
-<li>PC から M5Stack 同梱の USB ケーブルで M5Stack につながっている</li>
-<li>ツール &gt; ボード &gt; M5Stack-Core-ESP32 を選択</li>
-<li>ツール &gt; シリアルポート に M5Stack のポートが認識されている<ul>
-<li>Windows 10 の場合 <code>COM</code> が頭にあるシリアルポート名が表示 例: <code>COM3</code></li>
-<li>Mac の場合は <code>/dev/tty.SLAB_</code> が頭にあるシリアルポート名が表示 例: <code>/dev/tty.SLAB_USBtoUART</code></li>
+<li>Enter your email<ul>
+<li>GitHub登録用メールアドレス</li>
 </ul>
 </li>
-<li><code>#include &lt;M5Stack.h&gt;</code> などに色がついている 例: <img src="https://i.gyazo.com/377362c26b20027e2a6fd3d6a6801227.png" alt="image"></li>
+<li>Create a password<ul>
+<li>パスワードを指定</li>
 </ul>
-<p>確認できたら、</p>
-<p><img src="https://i.gyazo.com/62a4680dee3f56a2ca23fad41e8d28f6.png" alt="image"></p>
-<p>マイコンボードを書き込むボタンをクリックします。</p>
-<p><img src="https://i.gyazo.com/bbbda50bc7f265d291cb3a803e7924b1.png" alt="image"></p>
-<p>コンパイルを待ちます。</p>
-<p><img src="https://i.gyazo.com/459cb6b9ad74028375743347a5d6a5af.png" alt="image"></p>
-<p>このようなログと共に書き込まれます。</p>
-<p>以下がログの全文です。参考までに。</p>
-<pre><code>最大1310720バイトのフラッシュメモリのうち、スケッチが347205バイト（26%）を使っています。
-最大327680バイトのRAMのうち、グローバル変数が17596バイト（5%）を使っていて、ローカル変数で310084バイト使うことができます。
-esptool.py v3.0-dev
-Serial port COM3
-Connecting.....
-Chip is ESP32-D0WDQ6-V3 (revision 3)
-Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
-Crystal is 40MHz
-MAC: 08:3a:f2:44:60:74
-Uploading stub...
-Running stub...
-Stub running...
-Changing baud rate to 921600
-Changed.
-Configuring flash size...
-Auto-detected Flash size: 16MB
-Compressed 8192 bytes to 47...
-Writing at 0x0000e000... (100 %)
-Wrote 8192 bytes (47 compressed) at 0x0000e000 in 0.0 seconds (effective 10922.6 kbit/s)...
-Hash of data verified.
-Flash params set to 0x024f
-Compressed 17392 bytes to 11186...
-Writing at 0x00001000... (100 %)
-Wrote 17392 bytes (11186 compressed) at 0x00001000 in 0.2 seconds (effective 909.4 kbit/s)...
-Hash of data verified.
-Compressed 347328 bytes to 154525...
-Writing at 0x00010000... (10 %)
-Writing at 0x00014000... (20 %)
-Writing at 0x00018000... (30 %)
-Writing at 0x0001c000... (40 %)
-Writing at 0x00020000... (50 %)
-Writing at 0x00024000... (60 %)
-Writing at 0x00028000... (70 %)
-Writing at 0x0002c000... (80 %)
-Writing at 0x00030000... (90 %)
-Writing at 0x00034000... (100 %)
-Wrote 347328 bytes (154525 compressed) at 0x00010000 in 2.6 seconds (effective 1074.1 kbit/s)...
-Hash of data verified.
-Compressed 3072 bytes to 128...
-Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (128 compressed) at 0x00008000 in 0.0 seconds (effective 3510.9 kbit/s)...
-Hash of data verified.
-
-Leaving...
-Hard resetting via RTS pin...
-</code></pre><h3 id="動かしてみる"><a name="動かしてみる" class="plugin-anchor" href="#動かしてみる"><i class="fa fa-link" aria-hidden="true"></i></a>動かしてみる</h3>
-<p>書き込まれたら M5Stack を確認しましょう。</p>
-<p><img src="https://i.gyazo.com/8b62e0c3bf9dad23c0e9ca6362aea085.jpg" alt="image"></p>
-<p>無事に書き込まれると <code>Hello World</code> の文が表示されます。</p>
-<p><img src="https://i.gyazo.com/a7c051278279d9fb57ca6ce2e10bcb76.jpg" alt="image"></p>
-<p>そう、最小のフォントサイズ 1 だとこんなに小さいんですが、キレイに表示されるのがすごいですね。</p>
-<p>もし「もっと文字大きくしたいなー」など思ったなら、自己フィードバックが生まれて何かしたくなってる良い傾向です！</p>
-<p>フォントサイズが厳密に気になるひとはこちら → <a href="https://www.1ft-seabass.jp/memo/2021/02/12/m5stack-basic-and-core2-default-fontsize-maybe-7px-knowledge/" target="_blank">M5Stack Basic と M5Stack Core2 のデフォルトフォントのサイズステップが分かったメモ – 1ft-seabass.jp.MEMO</a></p>
-<h1 id="次にすすみましょう"><a name="次にすすみましょう" class="plugin-anchor" href="#次にすすみましょう"><i class="fa fa-link" aria-hidden="true"></i></a>次にすすみましょう</h1>
-<p>左のナビゲーションから「Wi-Fi リスト確認」にすすみましょう。</p>
+</li>
+<li>Enter a username<ul>
+<li>任意のユーザー名</li>
+</ul>
+</li>
+<li>Would you like to receive product updates and announcements via email?<ul>
+<li>製品の最新情報、お知らせなどを不定期にメール受け取りたい場合は y</li>
+<li>受け取りたくない場合は n</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.gyazo.com/032a6f9b5471aa4739cd64436aa14741.png" alt="image"></p>
+<p>Verify your account でユーザー検証を押して進みます。</p>
+<p><img src="https://i.gyazo.com/a7c3f03cfe36c1644436c1dedeec962b.png" alt="image"></p>
+<p>検証が済むと Create Account ボタンが表示されるのでクリックします。</p>
+<p>以降は <a href="https://qiita.com/ayatokura/items/9eabb7ae20752e6dc79d" target="_blank">GitHubアカウントの作成方法 (2021年版) - Qiita</a> の、ステップ5移行を参考に、メール認証まで済ませてアカウントを作成してください。</p>
 
                                 
                                 </section>
@@ -697,12 +621,12 @@ Hard resetting via RTS pin...
 
             
                 
-                <a href="11-m5stack-trouble-shooting-tips.html" class="navigation navigation-prev " aria-label="Previous page: トラブルシューティング TIPS">
+                <a href="12-line-bot-create.html" class="navigation navigation-prev " aria-label="Previous page: LINE BOT 作成手順">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="01-01-m5stack-wifi-list.html" class="navigation navigation-next " aria-label="Next page: Wi-Fi リスト確認">
+                <a href="14-gitpod-account.html" class="navigation navigation-next " aria-label="Next page: Gitpod のアカウントを取得する">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -713,7 +637,7 @@ Hard resetting via RTS pin...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"M5Stack の導入","level":"1.3.2","depth":2,"next":{"title":"Wi-Fi リスト確認","level":"1.3.2.1","depth":3,"path":"lecture02/01-01-m5stack-wifi-list.md","ref":"lecture02/01-01-m5stack-wifi-list.md","articles":[]},"previous":{"title":"トラブルシューティング TIPS","level":"1.3.1.2","depth":3,"path":"lecture02/11-m5stack-trouble-shooting-tips.md","ref":"lecture02/11-m5stack-trouble-shooting-tips.md","articles":[]},"articles":[{"title":"Wi-Fi リスト確認","level":"1.3.2.1","depth":3,"path":"lecture02/01-01-m5stack-wifi-list.md","ref":"lecture02/01-01-m5stack-wifi-list.md","articles":[]},{"title":"Wi-Fi につなぐ","level":"1.3.2.2","depth":3,"path":"lecture02/01-02-m5stack-wifi-connect.md","ref":"lecture02/01-02-m5stack-wifi-connect.md","articles":[]},{"title":"サーバーにメッセージを送る","level":"1.3.2.3","depth":3,"path":"lecture02/01-03-m5stack-server-message.md","ref":"lecture02/01-03-m5stack-server-message.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/01-00-m5stack-firststep.md","mtime":"2021-09-30T13:23:22.138Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-21T11:56:27.747Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"GitHub のアカウント取得する","level":"1.3.3.4","depth":3,"next":{"title":"Gitpod のアカウントを取得する","level":"1.3.3.5","depth":3,"path":"lecture02/14-gitpod-account.md","ref":"lecture02/14-gitpod-account.md","articles":[]},"previous":{"title":"LINE BOT 作成手順","level":"1.3.3.3","depth":3,"path":"lecture02/12-line-bot-create.md","ref":"lecture02/12-line-bot-create.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/13-github-account.md","mtime":"2021-10-05T13:46:26.195Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-21T11:56:27.747Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
