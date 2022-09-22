@@ -27,9 +27,8 @@ Arduino IDE で新規ファイルを作成し、以下のコードをコピー�
 ```c
 #include <M5Stack.h>
 
-// 以下2つはHTTPSでデータを送るためのライブラリ
-#include <WiFiClientSecure.h>
-#include <ssl_client.h>
+// HTTP 通信を行うライブラリ
+#include <HTTPClient.h>
 
 // Wi-FiのSSID
 char *ssid = "Wi-FiのSSID";
@@ -87,9 +86,10 @@ void send_message(String msg) {
 
   // 今回送るホスト名 GitPod のホスト名 (https://なし)を反映
   // https://3000-hoge-fuga-scnzIUgdS.gitpod.io/ の場合は 3000-hoge-fuga-scnzIUgdS.gitpod.io
-  const char* hostName = "*********************.gitpod.io";
+  String hostName = "*********************.gitpod.io";
 
-  WiFiClientSecure clientHTTPS;
+  // 今回送るURL
+  String url = "https://" + hostName + "/from/m5stack";
 
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(10, 10);
@@ -102,42 +102,28 @@ void send_message(String msg) {
   Serial.print("msg: ");
   Serial.println(msg);
   
-  // ngrok の HTTPS になぜかつながらないので HTTP で対応 ポート番号変更 443 → 80
-  if (!clientHTTPS.connect(hostName, 443)) {
-    delay(2000);
-    return;
-  }
+  // 送るデータ
   String queryString = msg;
-
-  // TestHTTP からの変更点 2
-  // Content-Type: application/json
-  // で POST 送信で /from/m5stack に送信
-  String request = String("") +
-   "POST /from/m5stack HTTP/1.1\r\n" +
-   "Host: " + hostName + "\r\n" +
-   "Content-Length: " + String(queryString.length()) +  "\r\n" + 
-   "Content-Type: application/json\r\n\r\n" +
-    queryString + "\r\n";
+  // HTTPClient 準備
+  HTTPClient httpClient;
+  // URL 設定
+  httpClient.begin(url);
+  // Content-Type
+  httpClient.addHeader("Content-Type", "application/json");
   
-  clientHTTPS.print(request);
-  M5.Lcd.println("clientHTTPS.printed");
-  Serial.println("clientHTTPS.printed");
-  while (clientHTTPS.connected()) {
-    String response = clientHTTPS.readStringUntil('\n');
-    if (response == "\r") {
-      break;
-    }
-  }
-
   // データ送信完了
   M5.Lcd.println("sended.");
   Serial.println("sended.");
 
-  // サーバーから返答を受け取ったらデータを表示
-  String response = clientHTTPS.readStringUntil('\n');
-
-  M5.Lcd.println("response:");
-  M5.Lcd.println(response);
+  // ポストする
+  int status_code = httpClient.POST(queryString);
+  if( status_code == 200 ){
+    String response = httpClient.getString();
+    
+    M5.Lcd.println("response:");
+    M5.Lcd.println(response);
+  }
+  httpClient.end();
   
   delay(2000);
 }
@@ -179,7 +165,7 @@ char *password = "Wi-Fiのパスワード";
   String hostName = "*********************.gitpod.io";
 ```
 
-今回送るホスト名 Gitpod のホスト名を反映します。
+今回送るホスト名 Gitpod のホスト名を反映します。`https://3000-hoge-fuga-scnzIUgdS.gitpod.io/` の場合は `3000-hoge-fuga-scnzIUgdS.gitpod.io` です。
 
 ## M5Stack に書き込んでみる
 

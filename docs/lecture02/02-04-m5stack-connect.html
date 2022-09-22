@@ -622,9 +622,8 @@
 <p>Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを <code>dhw-pp2-study-07-LINEBotMessageHTTPSToGitpod</code> というファイル名で保存します。</p>
 <pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;M5Stack.h&gt;</span></span>
 
-<span class="hljs-comment">// 以下2つはHTTPSでデータを送るためのライブラリ</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;WiFiClientSecure.h&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ssl_client.h&gt;</span></span>
+<span class="hljs-comment">// HTTP 通信を行うライブラリ</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;HTTPClient.h&gt;</span></span>
 
 <span class="hljs-comment">// Wi-FiのSSID</span>
 <span class="hljs-keyword">char</span> *ssid = <span class="hljs-string">&quot;Wi-FiのSSID&quot;</span>;
@@ -682,9 +681,10 @@
 
   <span class="hljs-comment">// 今回送るホスト名 GitPod のホスト名 (https://なし)を反映</span>
   <span class="hljs-comment">// https://3000-hoge-fuga-scnzIUgdS.gitpod.io/ の場合は 3000-hoge-fuga-scnzIUgdS.gitpod.io</span>
-  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* hostName = <span class="hljs-string">&quot;*********************.gitpod.io&quot;</span>;
+  String hostName = <span class="hljs-string">&quot;*********************.gitpod.io&quot;</span>;
 
-  WiFiClientSecure clientHTTPS;
+  <span class="hljs-comment">// 今回送るURL</span>
+  String url = <span class="hljs-string">&quot;https://&quot;</span> + hostName + <span class="hljs-string">&quot;/from/m5stack&quot;</span>;
 
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setCursor(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
@@ -697,42 +697,28 @@
   Serial.print(<span class="hljs-string">&quot;msg: &quot;</span>);
   Serial.println(msg);
 
-  <span class="hljs-comment">// ngrok の HTTPS になぜかつながらないので HTTP で対応 ポート番号変更 443 → 80</span>
-  <span class="hljs-keyword">if</span> (!clientHTTPS.connect(hostName, <span class="hljs-number">443</span>)) {
-    delay(<span class="hljs-number">2000</span>);
-    <span class="hljs-keyword">return</span>;
-  }
+  <span class="hljs-comment">// 送るデータ</span>
   String queryString = msg;
-
-  <span class="hljs-comment">// TestHTTP からの変更点 2</span>
-  <span class="hljs-comment">// Content-Type: application/json</span>
-  <span class="hljs-comment">// で POST 送信で /from/m5stack に送信</span>
-  String request = String(<span class="hljs-string">&quot;&quot;</span>) +
-   <span class="hljs-string">&quot;POST /from/m5stack HTTP/1.1\r\n&quot;</span> +
-   <span class="hljs-string">&quot;Host: &quot;</span> + hostName + <span class="hljs-string">&quot;\r\n&quot;</span> +
-   <span class="hljs-string">&quot;Content-Length: &quot;</span> + String(queryString.length()) +  <span class="hljs-string">&quot;\r\n&quot;</span> + 
-   <span class="hljs-string">&quot;Content-Type: application/json\r\n\r\n&quot;</span> +
-    queryString + <span class="hljs-string">&quot;\r\n&quot;</span>;
-
-  clientHTTPS.print(request);
-  M5.Lcd.println(<span class="hljs-string">&quot;clientHTTPS.printed&quot;</span>);
-  Serial.println(<span class="hljs-string">&quot;clientHTTPS.printed&quot;</span>);
-  <span class="hljs-keyword">while</span> (clientHTTPS.connected()) {
-    String response = clientHTTPS.readStringUntil(<span class="hljs-string">&apos;\n&apos;</span>);
-    <span class="hljs-keyword">if</span> (response == <span class="hljs-string">&quot;\r&quot;</span>) {
-      <span class="hljs-keyword">break</span>;
-    }
-  }
+  <span class="hljs-comment">// HTTPClient 準備</span>
+  HTTPClient httpClient;
+  <span class="hljs-comment">// URL 設定</span>
+  httpClient.begin(url);
+  <span class="hljs-comment">// Content-Type</span>
+  httpClient.addHeader(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/json&quot;</span>);
 
   <span class="hljs-comment">// データ送信完了</span>
   M5.Lcd.println(<span class="hljs-string">&quot;sended.&quot;</span>);
   Serial.println(<span class="hljs-string">&quot;sended.&quot;</span>);
 
-  <span class="hljs-comment">// サーバーから返答を受け取ったらデータを表示</span>
-  String response = clientHTTPS.readStringUntil(<span class="hljs-string">&apos;\n&apos;</span>);
+  <span class="hljs-comment">// ポストする</span>
+  <span class="hljs-keyword">int</span> status_code = httpClient.POST(queryString);
+  <span class="hljs-keyword">if</span>( status_code == <span class="hljs-number">200</span> ){
+    String response = httpClient.getString();
 
-  M5.Lcd.println(<span class="hljs-string">&quot;response:&quot;</span>);
-  M5.Lcd.println(response);
+    M5.Lcd.println(<span class="hljs-string">&quot;response:&quot;</span>);
+    M5.Lcd.println(response);
+  }
+  httpClient.end();
 
   delay(<span class="hljs-number">2000</span>);
 }
@@ -765,7 +751,7 @@
   <span class="hljs-comment">// https://3000-hoge-fuga-scnzIUgdS.gitpod.io/ の場合は 3000-hoge-fuga-scnzIUgdS.gitpod.io</span>
   String hostName = <span class="hljs-string">&quot;*********************.gitpod.io&quot;</span>;
 </code></pre>
-<p>今回送るホスト名 Gitpod のホスト名を反映します。</p>
+<p>今回送るホスト名 Gitpod のホスト名を反映します。<code>https://3000-hoge-fuga-scnzIUgdS.gitpod.io/</code> の場合は <code>3000-hoge-fuga-scnzIUgdS.gitpod.io</code> です。</p>
 <h2 id="m5stack-に書き込んでみる"><a name="m5stack-に書き込んでみる" class="plugin-anchor" href="#m5stack-に書き込んでみる"><i class="fa fa-link" aria-hidden="true"></i></a>M5Stack に書き込んでみる</h2>
 <p>そして、もう一度保存します。（大事）</p>
 <p><img src="https://i.gyazo.com/45b0fd6ce672dc9a0055d45aa290e235.png" alt="image"></p>
@@ -821,7 +807,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"M5Stack + LINE BOT 連携","level":"1.3.3.4","depth":3,"next":{"title":"手順","level":"1.3.4","depth":2,"ref":"","articles":[{"title":"LINE BOT 作成手順","level":"1.3.4.1","depth":3,"path":"lecture02/12-line-bot-create.md","ref":"lecture02/12-line-bot-create.md","articles":[]},{"title":"GitHub のアカウント取得する","level":"1.3.4.2","depth":3,"path":"lecture02/13-github-account.md","ref":"lecture02/13-github-account.md","articles":[]},{"title":"Gitpod のアカウントを取得する","level":"1.3.4.3","depth":3,"path":"lecture02/14-gitpod-account.md","ref":"lecture02/14-gitpod-account.md","articles":[]}]},"previous":{"title":"Gitpod で LINE BOT","level":"1.3.3.3","depth":3,"path":"lecture02/02-03-gitpod-start.md","ref":"lecture02/02-03-gitpod-start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/02-04-m5stack-connect.md","mtime":"2022-09-21T14:54:57.448Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-21T14:57:04.520Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"M5Stack + LINE BOT 連携","level":"1.3.3.4","depth":3,"next":{"title":"手順","level":"1.3.4","depth":2,"ref":"","articles":[{"title":"LINE BOT 作成手順","level":"1.3.4.1","depth":3,"path":"lecture02/12-line-bot-create.md","ref":"lecture02/12-line-bot-create.md","articles":[]},{"title":"GitHub のアカウント取得する","level":"1.3.4.2","depth":3,"path":"lecture02/13-github-account.md","ref":"lecture02/13-github-account.md","articles":[]},{"title":"Gitpod のアカウントを取得する","level":"1.3.4.3","depth":3,"path":"lecture02/14-gitpod-account.md","ref":"lecture02/14-gitpod-account.md","articles":[]}]},"previous":{"title":"Gitpod で LINE BOT","level":"1.3.3.3","depth":3,"path":"lecture02/02-03-gitpod-start.md","ref":"lecture02/02-03-gitpod-start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/02-04-m5stack-connect.md","mtime":"2022-09-22T01:44:00.142Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-22T02:24:53.517Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

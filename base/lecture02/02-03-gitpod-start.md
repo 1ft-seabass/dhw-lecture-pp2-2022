@@ -121,7 +121,7 @@ node app.js
 
 ## Webhook URL の更新
 
-https://developers.line.biz/ja/ こちらから、
+LINE Developer コンソールの自分の LINE BOT 設定に戻ります。
 
 ![image](https://i.gyazo.com/5d1457a134175c620f142f92177ab373.png)
 
@@ -148,6 +148,21 @@ Webhook URL の項目に移動して以下の手順を行います。（大事�
 ![image](https://i.gyazo.com/3bf69c731aca0696a7f70f2dfdd9a670.png)
 
 こちらで設定は出来ました。
+
+## LINE BOT のプレゼンテーション時に便利なPC版アプリ
+
+LINE BOT のプレゼンテーション時に便利なPC版アプリを紹介します。画面共有時にも状況が見せやすくなるのでおススメです。
+
+![image](https://i.gyazo.com/895157df89c2ef3c8127e202c065eb76.png)
+
+- パソコンでLINEを利用する｜LINEみんなの使い方ガイド
+  - https://guide.line.me/ja/services/pc-line.html
+
+こちらをみつつ、インストールしていきましょう。
+
+![image](https://i.gyazo.com/a9812231b44c092ae5c3b7a072207e7a.png)
+
+QR コードログインがおススメです。
 
 # 次にすすみましょう
 

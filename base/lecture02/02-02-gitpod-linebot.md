@@ -33,6 +33,49 @@
 
 また、LINE BOT が出来上がった時に ngrok を使って公開した URL を発行できるようにしますが、そういった部分も Gitpod も替わりに準備してくれます。
 
+## LINE BOT とは
+
+![image](https://i.gyazo.com/7552a5640c527078da82aa458641bb01.png)
+
+LINE BOT は、LINE 上で動作する BOT です。後述する Messaging API を使ってあなたのサービスとLINEユーザーの双方向コミュニケーションを可能にします。
+
+### LINE BOT と LINE Notify の違い
+
+ポイントは双方向コミュニケーションができるかできないかの違いです。
+
+LINE BOT は双方向コミュニケーションが可能で、IoT やデバイスを組み合わせると、現実世界と色々なかかわりができます。
+
+なにかの特定のメッセージをユーザーが送ると LINE BOT が反応しセンサーから現実世界のデータを受け取って LINE に返答するようなことができます。動力のあるもの（アクチュエータ）と絡めると遠隔操作ができて自分の制作物でできることがひろがります。
+
+もちろん、LINE Notify と同じように通知の役割もできます。デバイスが現実世界のデータをセンサーで取得して、データが何らかの値を越えた場合に通知するような仕組みもできます。
+
+### LINE BOT の仕組み
+
+- Messaging APIの概要
+  - https://developers.line.biz/ja/docs/messaging-api/overview/ 
+
+Messaging APIを使って、ユーザー個人に合わせた体験をLINE上で提供するボットを作成できます。
+
+作成したボットは、LINEプラットフォームのチャネルに紐づけます。チャネルを作成すると生成されるLINE公式アカウントをボットモードで運用すると、LINE公式アカウントがボットとして動作します。
+
+Messaging APIの仕組み
+https://developers.line.biz/ja/docs/messaging-api/overview/#how-messaging-api-works
+
+> ![image](https://i.gyazo.com/98f96b5609ecdd010d65a1e6ea8d9eee.png)
+> 
+> https://developers.line.biz/ja/docs/messaging-api/overview/#how-messaging-api-works より
+
+Messaging APIを使って、ボットサーバーとLINEプラットフォームの間でデータを交換できます。リクエストは、JSON形式でHTTPSを使って送信されます。
+
+- ユーザーが、LINE公式アカウントにメッセージを送信します。
+- LINEプラットフォームからボットサーバーのWebhook URLに、Webhookイベントが送信されます。
+- Webhookイベントに応じて、ボットサーバーからユーザーにLINEプラットフォームを介して応答します。
+
+今回は YOUR SYSTEM と表現されている、Webhookイベントに応じて、ボットサーバーからユーザーにLINEプラットフォームを介して応答するサーバー部分をつくります。
+
+- Messaging APIでできること・料金について
+  - https://developers.line.biz/ja/docs/messaging-api/overview/#what-you-can-do 
+
 # 次にすすみましょう
 
 左のナビゲーションから「Gitpod で LINE BOT」にすすみましょう。
