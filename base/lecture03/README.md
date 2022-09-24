@@ -11,11 +11,13 @@
 ※書かれている時間は予想の所要時間です。前後する可能性があります。
 
 - はじめに 5 分 → このページ
-- [宿題について](99-homework.md) 5 分
-- [Gitpod で LINE BOT と M5Stack 連携を学ぶ](01-00-gitpod-linebot.md) 20 分
-- [M5Stack のボタンやディスプレイの実装を学ぶ](02-00-button-display.md) 20 分
-- [M5Stack のセンサー連携を学ぶ その1](03-00-sensor01-firststep.md) 30 分
-- [M5Stack 事例を通してプロトタイプをアウトプットする世界観を学ぶ](04-m5stack-output.md) 10 分
+- Gitpod で LINE BOT と M5Stack 連携を学ぶ 20 分
+- M5Stack のボタンやディスプレイの実装を学ぶ 20 分
+- M5Stack のセンサー連携を学ぶ その 1 30 分
+- M5Stack 事例を通してプロトタイプをアウトプットする世界観を学ぶ 10 分
+- 宿題について 5 分
+- 余裕があれば
+  - Grove 情報検索ナレッジ
 
 ## はじめに
 

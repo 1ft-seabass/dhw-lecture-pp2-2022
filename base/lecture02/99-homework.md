@@ -42,7 +42,7 @@
 
 ## 厳守事項
 
-- M5Stack Gray を必ず使用します
+- M5Stack Base を必ず使用します
 - LINE BOT or LINE Notify を必ず使用します
 
 ## 採点基準
@@ -121,14 +121,14 @@
 
 ![image](https://i.gyazo.com/ff5cb71c3ed20c019f4657af37ee46bb.png)
 
-- 10/14 木 23:59 厳守
+- 4 回目授業 1日前 23:59 厳守
   - 上記時間までに後述する `提出場所` で自分の行の必須項目に書き込んであることが採点される条件です。この時間に記載されてない場合、採点の対象になりません。
 
 ## アウトプットTwitter アカウント URL を事前準備しましょう
 
 ![image](https://i.gyazo.com/3e1ce3d6bea1099b2f8365cb65cfa882.png)
 
-https://docs.google.com/spreadsheets/d/1W_IXR57dBmdn17ZQ4fJIVjkdXdt3nkCzr-5xSjY26KY/edit#gid=0
+https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9x1c/edit#gid=0
 
 - `Twitter アカウント URL` の自分の行に、https://twitter.com/1ft_seabass のような https://twitter.com からはじまるURLでアカウントを記入しましょう。
 - このタイミングで、この授業で Twitter でアウトプットしていくアカウントを確定しましょう。
@@ -192,4 +192,4 @@ https://docs.google.com/spreadsheets/d/1W_IXR57dBmdn17ZQ4fJIVjkdXdt3nkCzr-5xSjY2
 
 # 次にすすみましょう
 
-左のナビゲーションから「」にすすみましょう。
+左のナビゲーションから「README」にすすみましょう。

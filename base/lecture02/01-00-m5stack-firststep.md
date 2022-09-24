@@ -43,7 +43,7 @@ void loop() {
 
 ![image](https://i.gyazo.com/5923c3950bc2a2ef1576dd6d1afe42f4.png)
 
-`dhw-pp2-study-01-HelloWorld` で保存しておきます。
+`dhw-pp2-study-02-01-HelloWorld` で保存しておきます。
 
 ### 確認して書き込み
 

@@ -8,7 +8,7 @@ Wi-Fi リストで、つなげたい Wi-FI が存在していることが分か�
 
 ## ソースコードを反映
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-03-TestWiFi` で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-02-03-TestWiFi` で保存します。
 
 ```c
 #include <WiFiClient.h>

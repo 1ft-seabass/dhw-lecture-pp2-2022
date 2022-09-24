@@ -466,6 +466,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.7" data-path="99-homework.html">
+            
+                <a href="99-homework.html">
+            
+                    
+                    宿題 1 について
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -481,6 +494,135 @@
                 </span>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../lecture03/">
+            
+                <a href="../lecture03/">
+            
+                    
+                    第3回README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="99-homework.html">
+            
+                <a href="99-homework.html">
+            
+                    
+                    宿題 1 について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../lecture03/02-00-button-display.html">
+            
+                <a href="../lecture03/02-00-button-display.html">
+            
+                    
+                    ディスプレイとボタン実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../lecture03/03-00-sensor01-firststep.html">
+            
+                <a href="../lecture03/03-00-sensor01-firststep.html">
+            
+                    
+                    センサー連携を学ぶ その1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../lecture03/03-01-pir-sensor.html">
+            
+                <a href="../lecture03/03-01-pir-sensor.html">
+            
+                    
+                    人感センサー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../lecture03/03-02-light-sensor.html">
+            
+                <a href="../lecture03/03-02-light-sensor.html">
+            
+                    
+                    光センサー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../lecture03/03-03-temp-humid-sensor.html">
+            
+                <a href="../lecture03/03-03-temp-humid-sensor.html">
+            
+                    
+                    温度・湿度センサー
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../lecture03/04-m5stack-output.html">
+            
+                <a href="../lecture03/04-m5stack-output.html">
+            
+                    
+                    M5Stack 事例を通してプロトタイプをアウトプットする世界観を学ぶ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../lecture03/11-grove-search-knowledge.html">
+            
+                <a href="../lecture03/11-grove-search-knowledge.html">
+            
+                    
+                    Grove 情報検索ナレッジ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -608,6 +750,9 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="linebot-に-m5stack-からメッセージを送る"><a name="linebot-に-m5stack-からメッセージを送る" class="plugin-anchor" href="#linebot-に-m5stack-からメッセージを送る"><i class="fa fa-link" aria-hidden="true"></i></a>LINEBOT に M5Stack からメッセージを送る</h1>
+<h2 id="今回作る仕組み"><a name="今回作る仕組み" class="plugin-anchor" href="#今回作る仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>今回作る仕組み</h2>
+<p><img src="https://i.gyazo.com/4fc47f8fa3d09bb9e57c199a3eabcc2d.png" alt="image"></p>
+<p>そこに、Gitpod の LINE BOT のサーバーで、M5Stack からメッセージを受け付ける入口も作っているので、M5Stack からメッセージを受け取ると、それがユーザーから見た LINE BOT にメッセージが届いています。</p>
 <h2 id="事前準備：ホスト名を準備しましょう"><a name="事前準備：ホスト名を準備しましょう" class="plugin-anchor" href="#事前準備：ホスト名を準備しましょう"><i class="fa fa-link" aria-hidden="true"></i></a>事前準備：ホスト名を準備しましょう</h2>
 <p>この後の設定で、ホスト名というものが必要になるので、さきほどメモした Gitpod URL からホスト名を分離してメモしておきます。</p>
 <p>もし、 <code>https://3000-hoge-fuga-scnzIUgdS.gitpod.io/</code> という Gitpod URL の場合は <code>3000-hoge-fuga-scnzIUgdS.gitpod.io</code> としてホスト名をメモしておきます。</p>
@@ -619,7 +764,7 @@
 <p><img src="https://i.gyazo.com/f1c2f6f8d5ad04acee037335b99c1bfb.png" alt="image"></p>
 <p>押したボタンの情報が LINE BOT に表示されます。</p>
 <h2 id="ソースコードを反映＆保存"><a name="ソースコードを反映＆保存" class="plugin-anchor" href="#ソースコードを反映＆保存"><i class="fa fa-link" aria-hidden="true"></i></a>ソースコードを反映＆保存</h2>
-<p>Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを <code>dhw-pp2-study-07-LINEBotMessageHTTPSToGitpod</code> というファイル名で保存します。</p>
+<p>Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを <code>dhw-pp2-study-02-06-LINEBotMessageHTTPSToGitpod</code> というファイル名で保存します。</p>
 <pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;M5Stack.h&gt;</span></span>
 
 <span class="hljs-comment">// HTTP 通信を行うライブラリ</span>
@@ -763,6 +908,8 @@
 <p>さらに A B C 各ボタンを押すと、</p>
 <p><img src="https://i.gyazo.com/f1c2f6f8d5ad04acee037335b99c1bfb.png" alt="image"></p>
 <p>押したボタンの情報が LINE BOT に表示されます。</p>
+<p><img src="https://i.gyazo.com/4fc47f8fa3d09bb9e57c199a3eabcc2d.png" alt="image"></p>
+<p>このような仕組みで動いています。</p>
 <h1 id="質疑応答"><a name="質疑応答" class="plugin-anchor" href="#質疑応答"><i class="fa fa-link" aria-hidden="true"></i></a>質疑応答</h1>
 <p><img src="https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png" alt="image"></p>
 <p>ここまでで質問があればどうぞ！</p>
@@ -807,7 +954,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"M5Stack + LINE BOT 連携","level":"1.3.3.4","depth":3,"next":{"title":"手順","level":"1.3.4","depth":2,"ref":"","articles":[{"title":"LINE BOT 作成手順","level":"1.3.4.1","depth":3,"path":"lecture02/12-line-bot-create.md","ref":"lecture02/12-line-bot-create.md","articles":[]},{"title":"GitHub のアカウント取得する","level":"1.3.4.2","depth":3,"path":"lecture02/13-github-account.md","ref":"lecture02/13-github-account.md","articles":[]},{"title":"Gitpod のアカウントを取得する","level":"1.3.4.3","depth":3,"path":"lecture02/14-gitpod-account.md","ref":"lecture02/14-gitpod-account.md","articles":[]}]},"previous":{"title":"Gitpod で LINE BOT","level":"1.3.3.3","depth":3,"path":"lecture02/02-03-gitpod-start.md","ref":"lecture02/02-03-gitpod-start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/02-04-m5stack-connect.md","mtime":"2022-09-22T01:44:00.142Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-22T02:24:53.517Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"M5Stack + LINE BOT 連携","level":"1.3.3.4","depth":3,"next":{"title":"手順","level":"1.3.4","depth":2,"ref":"","articles":[{"title":"LINE BOT 作成手順","level":"1.3.4.1","depth":3,"path":"lecture02/12-line-bot-create.md","ref":"lecture02/12-line-bot-create.md","articles":[]},{"title":"GitHub のアカウント取得する","level":"1.3.4.2","depth":3,"path":"lecture02/13-github-account.md","ref":"lecture02/13-github-account.md","articles":[]},{"title":"Gitpod のアカウントを取得する","level":"1.3.4.3","depth":3,"path":"lecture02/14-gitpod-account.md","ref":"lecture02/14-gitpod-account.md","articles":[]}]},"previous":{"title":"Gitpod で LINE BOT","level":"1.3.3.3","depth":3,"path":"lecture02/02-03-gitpod-start.md","ref":"lecture02/02-03-gitpod-start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture02/02-04-m5stack-connect.md","mtime":"2022-09-24T02:17:53.046Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-24T04:26:26.780Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

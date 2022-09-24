@@ -1,5 +1,11 @@
 # LINEBOT に M5Stack からメッセージを送る
 
+## 今回作る仕組み
+
+![image](https://i.gyazo.com/4fc47f8fa3d09bb9e57c199a3eabcc2d.png)
+
+そこに、Gitpod の LINE BOT のサーバーで、M5Stack からメッセージを受け付ける入口も作っているので、M5Stack からメッセージを受け取ると、それがユーザーから見た LINE BOT にメッセージが届いています。
+
 ## 事前準備：ホスト名を準備しましょう
 
 この後の設定で、ホスト名というものが必要になるので、さきほどメモした Gitpod URL からホスト名を分離してメモしておきます。
@@ -22,7 +28,7 @@
 
 ## ソースコードを反映＆保存
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-07-LINEBotMessageHTTPSToGitpod` というファイル名で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-02-06-LINEBotMessageHTTPSToGitpod` というファイル名で保存します。
 
 ```c
 #include <M5Stack.h>
@@ -188,6 +194,10 @@ M5Stack に書き込んでみましょう。
 ![image](https://i.gyazo.com/f1c2f6f8d5ad04acee037335b99c1bfb.png)
 
 押したボタンの情報が LINE BOT に表示されます。
+
+![image](https://i.gyazo.com/4fc47f8fa3d09bb9e57c199a3eabcc2d.png)
+
+このような仕組みで動いています。
 
 # 質疑応答
 

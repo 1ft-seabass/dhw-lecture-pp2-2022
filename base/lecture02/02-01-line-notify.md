@@ -120,7 +120,7 @@ https://notify-bot.line.me/ja/ からログインします。QR コードログ�
 
 ## ソースコードを反映
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-05-TestLINENotify` で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-02-05-TestLINENotify` で保存します。
 
 ```c
 #include <M5Stack.h>

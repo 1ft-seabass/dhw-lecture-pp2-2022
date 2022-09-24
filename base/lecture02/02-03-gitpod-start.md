@@ -4,6 +4,12 @@
 
 - Chrome ブラウザのなるべく最新版でアクセスしましょう
 
+## 今回作る仕組み
+
+![image](https://i.gyazo.com/4bed29421b7aaea13d3caf413b7d95c8.png)
+
+まず、シンプルに Gitpod で LINE BOT のサーバーを立てることで、ユーザーから見た LINE BOT でオウム返しができています。
+
 ## 使う Git リポジトリ
 
 すでに、今回の LINE BOT をはじめる環境は作ってあります。

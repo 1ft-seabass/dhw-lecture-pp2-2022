@@ -99,7 +99,7 @@ A ボタンは OK 、 B ボタンは CANCEL 、 C ボタンは RESET です。
 
 ## ソースコードを反映＆保存
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-11-Button-Display` というファイル名で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-03-01-Button-Display` というファイル名で保存します。
 
 ```c
 #include <M5Stack.h>

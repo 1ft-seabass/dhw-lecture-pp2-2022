@@ -25,7 +25,7 @@ https://dhw-pp2-test01.herokuapp.com/ui
 
 ## ソースコードを反映
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-04-TestHTTP` で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-02-04-TestHTTP` で保存します。
 
 ```c
 #include <M5Stack.h>

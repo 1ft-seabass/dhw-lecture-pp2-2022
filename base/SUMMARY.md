@@ -26,7 +26,17 @@
     - [Gitpod のアカウントを取得する](lecture02/14-gitpod-account.md)
   - [SNS からのアウトプットの事例や世界観を把握する](lecture02/03-sns-output.md)
   - [次回への準備](lecture02/99-next-preparation.md)
+  - [宿題 1 について](lecture02/99-homework.md)
 - 第3回 IoT開発ボード M5Stack 入門
+  - [第3回README](lecture03/README.md)
+  - [宿題 1 について](lecture02/99-homework.md)
+  - [ディスプレイとボタン実装](lecture03/02-00-button-display.md)
+  - [センサー連携を学ぶ その1](lecture03/03-00-sensor01-firststep.md)
+    - [人感センサー](lecture03/03-01-pir-sensor.md)
+    - [光センサー](lecture03/03-02-light-sensor.md)
+    - [温度・湿度センサー](lecture03/03-03-temp-humid-sensor.md)
+  - [M5Stack 事例を通してプロトタイプをアウトプットする世界観を学ぶ](lecture03/04-m5stack-output.md)
+  - [Grove 情報検索ナレッジ](lecture03/11-grove-search-knowledge.md)
 - 第4回 IoT開発ボード M5Stack 入門
 - 第5回 IoT開発ボード設置・外装入門
 - 第6回 IoT開発ボード設置・外装実践
