@@ -59,13 +59,13 @@ M5Stack 関連のインストールファイルはファイルサイズが重く
 
 ### 参考キャプチャ
 
-M5Stack のボードマネージャでインストールするバージョンは 1.0.7。
+2022/09/24 現在、M5Stack のボードマネージャでインストールするバージョンは ~~1.0.7~~ 2.0.1。
 
-![image](https://i.gyazo.com/9797d2f4483c8cd2f69a162813482dd2.png)
+![image](https://i.gyazo.com/bbe4732809190a7a4de4121cb0cbc5aa.png)
 
-M5Stack のライブラリマネージャでインストールするバージョンは 0.3.0。
+2022/09/24 現在、M5Stack のライブラリマネージャでインストールするバージョンは ~~0.3.0~~ 0.4.1。
 
-![image](https://i.gyazo.com/08500d83586c5ad94f31b493d1022d1f.png)
+![image](https://i.gyazo.com/922fa43691178b7cd6cdf5d5dba8861e.png)
 
 ## 3. LINE BOT の作成をお願いします
 

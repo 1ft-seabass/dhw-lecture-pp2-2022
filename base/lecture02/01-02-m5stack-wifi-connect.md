@@ -23,46 +23,48 @@ char *password = "Wi-Fiのパスワード";
 ////////////////////////////////////////////////////////////////////////////////
    
 void setup() {
-    // init lcd, serial, but don't init sd card
-    // LCD ディスプレイとシリアルは動かして、SDカードは動かさない設定
-    M5.begin(true, false, true);
- 
-    // スタート
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.setCursor(10, 10);
-    M5.Lcd.setTextColor(WHITE);
-    M5.Lcd.setTextSize(3);
+  // init lcd, serial, but don't init sd card
+  // LCD ディスプレイとシリアルは動かして、SDカードは動かさない設定
+  M5.begin(true, false, true);
 
-    // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
-    Serial.print("START");  // Arduino のシリアルモニタにメッセージを出す
-    M5.Lcd.print("START");  // M5Stack LCDディスプレイにメッセージを出す（英語のみ）
-     
-    // WiFi 接続開始
-    WiFi.begin(ssid, password);
-   
-    while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
+  // スタート
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setCursor(10, 10);
+  M5.Lcd.setTextColor(WHITE);
+  M5.Lcd.setTextSize(3);
 
-        // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
-        Serial.print(".");
-        M5.Lcd.print(".");
-    }
- 
-    // WiFi Connected
-    // WiFi 接続完了
-    M5.Lcd.setCursor(10, 40);
-    M5.Lcd.setTextColor(WHITE);
-    M5.Lcd.setTextSize(3);
-
-    // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
-    // 前のメッセージが print で改行入っていないので println で一つ入れる
-    Serial.println("");  // Arduino のシリアルモニタにメッセージを出し改行が最後に入る
-    M5.Lcd.println("");  // M5Stack LCDディスプレイにメッセージを出す改行が最後に入る（英語のみ） 
+  // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
+  Serial.print("START");  // Arduino のシリアルモニタにメッセージを出す
+  M5.Lcd.print("START");  // M5Stack LCDディスプレイにメッセージを出す（英語のみ）
     
-    // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
-    Serial.println("WiFi Connected.");  // Arduino のシリアルモニタにメッセージを出す
-    M5.Lcd.println("WiFi Connected.");  // M5Stack LCDディスプレイにメッセージを出す（英語のみ）
-   
+  // WiFi 接続開始
+  WiFi.begin(ssid, password);
+  // 勝手に Button A が押されることを回避
+  WiFi.setSleep(false);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+
+      // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
+      Serial.print(".");
+      M5.Lcd.print(".");
+  }
+
+  // WiFi Connected
+  // WiFi 接続完了
+  M5.Lcd.setCursor(10, 40);
+  M5.Lcd.setTextColor(WHITE);
+  M5.Lcd.setTextSize(3);
+
+  // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
+  // 前のメッセージが print で改行入っていないので println で一つ入れる
+  Serial.println("");  // Arduino のシリアルモニタにメッセージを出し改行が最後に入る
+  M5.Lcd.println("");  // M5Stack LCDディスプレイにメッセージを出す改行が最後に入る（英語のみ） 
+  
+  // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
+  Serial.println("WiFi Connected.");  // Arduino のシリアルモニタにメッセージを出す
+  M5.Lcd.println("WiFi Connected.");  // M5Stack LCDディスプレイにメッセージを出す（英語のみ）
+  
 }
 
 void loop() {
