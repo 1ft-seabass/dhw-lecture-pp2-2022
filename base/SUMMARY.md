@@ -16,7 +16,6 @@
     - [Wi-Fi につなぐ](lecture02/01-02-m5stack-wifi-connect.md)
     - [サーバーにメッセージを送る](lecture02/01-03-m5stack-server-message.md)
   - [M5Stack から LINE 連携](lecture02/02-00-line-firststep.md)
-    - [M5Stack + LINE Notify 連携](lecture02/02-01-line-notify.md)
     - [Gitpod をはじめる](lecture02/02-02-gitpod-linebot.md)
     - [Gitpod で LINE BOT](lecture02/02-03-gitpod-start.md)
     - [M5Stack + LINE BOT 連携](lecture02/02-04-m5stack-connect.md)
@@ -24,7 +23,10 @@
     - [LINE BOT 作成手順](lecture02/12-line-bot-create.md)
     - [GitHub のアカウント取得する](lecture02/13-github-account.md)
     - [Gitpod のアカウントを取得する](lecture02/14-gitpod-account.md)
-  - [SNS からのアウトプットの事例や世界観を把握する](lecture02/03-sns-output.md)
+  - 試せる人が試そう
+    - [M5Stack + LINE Notify 連携](lecture02/02-01-line-notify.md)
+  - 第3回へ移動
+    - SNS からのアウトプットの事例や世界観を把握する
   - [次回への準備](lecture02/99-next-preparation.md)
   - [宿題 1 について](lecture02/99-homework.md)
 - 第3回 IoT開発ボード M5Stack 入門
@@ -35,6 +37,7 @@
     - [人感センサー](lecture03/03-01-pir-sensor.md)
     - [光センサー](lecture03/03-02-light-sensor.md)
     - [温度・湿度センサー](lecture03/03-03-temp-humid-sensor.md)
+  - [SNS からのアウトプットの事例や世界観を把握する](lecture02/03-sns-output.md)
   - [M5Stack 事例を通してプロトタイプをアウトプットする世界観を学ぶ](lecture03/04-m5stack-output.md)
   - [Grove 情報検索ナレッジ](lecture03/11-grove-search-knowledge.md)
 - 第4回 IoT開発ボード M5Stack 入門
