@@ -1,48 +1,24 @@
-# Grove 人感センサー（PIR センサー）を動かす
+# Grove 超音波距離センサ を動かす
 
-![image](https://i.gyazo.com/9fcf63bc6544379ec184829112da96a4.jpg)
-
-## はじめるまえに
-
-まずは動かす。というプロトタイピングを優先します。つなぐための情報をたどるところは省略し、すぐ挿してプログラムを動かしてみるという流れでお伝えします。
-
-授業中に時間があれば、右メニューの [Grove 情報検索ナレッジ](13-grove-search-knowledge.md) をお伝えする予定です。
+![image](https://i.gyazo.com/10d6754abbe13d1e7bec436dc3c2d15a.jpg)
 
 ## 今回のプログラムはどのように動くか
 
-![image](https://i.gyazo.com/bc2eb4c34f1e5c361b585a28512b324b.jpg)
+![image](https://i.gyazo.com/bd1d04513fd60ee4739023ac8929f653.jpg)
 
-書き込みすると、センサーに向けて手をかざすと人の気配を感知（人感）して Sensor ON という大文字が赤背景で出てきます。
-
-![image](https://i.gyazo.com/f0dab9fdedb02b2520208f37cd8a6f0f.jpg)
-
-手をかざすのをやめて、しばらく待っていると、 Sensor OFF に戻ります。
+書き込むと障害物とセンサーの距離データが表示されます。
 
 ## Grove への Grove ケーブルのつなぎかた
 
-![image](https://i.gyazo.com/f543983e1e18d468f2b155090a24328c.jpg)
-
-機材リストで購入した GROVE 4ピン ジャンパオスケーブル と Grove 人感センサーを用意します。
-
-![image](https://i.gyazo.com/cec530b6f80baed72d7991d269bab922.jpg)
-
 Grove と Grove ケーブルのツメを合わせるように差し込みます。
 
-![image](https://i.gyazo.com/76ad5acfd93bd875b3136ff19d3d4246.jpg)
+![image](https://i.gyazo.com/3e283b2790f9ca7ee3fd06e51ba6c294.jpg)
 
 このように差し込みました。
 
-## 外すときはツメを上げてから取りましょう
-
-![image](https://i.gyazo.com/ba514e766c4081d9f5c1042cdd3f7fe6.jpg)
-
-GROVE 4ピン ジャンパオスケーブル は外すときはツメを上げてから取りましょう。
-
-ツメが噛んでいる状態無理やり抜こうとすると、最悪、Grove コネクタやセンサーが歯損したりします。
-
 ## M5Stack への Grove ケーブルのつなぎかた
 
-![image](https://i.gyazo.com/f647ce7a0fce3c02fd6ef24b8521aa83.jpg)
+![image](https://i.gyazo.com/581886e629731f2469336f0becc14eb0.jpg)
 
 裏面右側のピン番号を合わせて以下のようにつなぎます。
 
@@ -55,64 +31,76 @@ GROVE 4ピン ジャンパオスケーブル は外すときはツメを上げ�
 - 黄ケーブル
   - 2
 
+## ライブラリをインストール
+
+GitHub の [Grove 超音波距離センサセンサーのライブラリページ](https://github.com/Seeed-Studio/Seeed_Arduino_UltrasonicRanger) にアクセスします。
+
+![image](https://i.gyazo.com/b239ed35340ebfaf0dcadf614b46313d.png)
+
+Code ボタンをクリックして Download ZIP ボタンからダウンロードします。
+
+![image](https://i.gyazo.com/854ed3b2de05ebb38e187135f9e58de2.png)
+
+スケッチ > ライブラリをインクルード > .ZIP形式のライブラリをインストール をクリックします。
+
+![image](https://i.gyazo.com/ad18eb8e7c692616c2d1d1abc507d292.png)
+
+先ほどダウンロードした ZIP ファイルを選択してインストールします。こちらは Windows のファイル選択ですが、Mac の人は適宜読み替えてください。
+
+これでインストール完了です。
+
+![image](https://i.gyazo.com/0926b156ff8ee87a9a8b626d80bbeb92.png)
+
+ツール > ライブラリを管理で、
+
+![image](https://i.gyazo.com/012e66cc87a7748de1fad34821e44a92.png)
+
+タイプをインストール済みで絞り込んで、Grove Ultrasonic Ranger がインストールされていればインストール成功です。
+
 ## ソースコードを反映＆保存
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-03-02-PIR-sensor` というファイル名で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-03-08-UltraSonicRanger-sensor` というファイル名で保存します。
 
 ```c
 #include <M5Stack.h>
 
-// 最新のボタンの状態
-int currentButtonState = LOW;
-
-// 記録しているボタンの状態（前の状態を比較する）
-int buttonState = LOW;
-
-// 黄色いケーブルを差し込む M5Stack ピン番号
-int digitalPin = 2;
+// 今回のセンサーライブラリの呼び出し
+#include "Ultrasonic.h"
+// 黄色いケーブルを挿すピンは 2 番ピン
+Ultrasonic ultrasonic(2);
 
 void setup() {
-  
-  // LCD ディスプレイとシリアルは動かして、SDカードは動かさない設定
+  // init lcd, serial, but don't init sd card
   M5.begin(true, false, true);
 
+  Wire.begin();
+  
   M5.Power.begin();
 
   M5.Lcd.clear(BLACK);
   M5.Lcd.setTextSize(3);
+  M5.Lcd.println("UltraSonic");
+  M5.Lcd.print("Ranger");
   M5.Lcd.setTextColor(WHITE);
-  M5.Lcd.print("PIR Digital");
 
 }
 
 void loop() {
   M5.update();
 
-  // 値を取得
-  int currentButtonState = digitalRead(digitalPin);
+  M5.Lcd.clear(BLACK);
+  M5.Lcd.setCursor(0, 100);
 
-  // 値に変化があれば通知
-  if( currentButtonState != buttonState ){
-    // 現在の状態を記録
-    buttonState = currentButtonState;
-    if (buttonState == HIGH) {
-      // 人感検出 ON
-      M5.Lcd.setTextSize(5);
-      M5.Lcd.clear(RED);
-      M5.Lcd.setCursor(10, 100);  // 良い感じに真ん中に出すカーソル移動
-      M5.Lcd.setTextColor(BLACK);
-      M5.Lcd.print("Sensor ON");
-    } else {
-      // 人感検出 OFF
-      M5.Lcd.setTextSize(3);
-      M5.Lcd.clear(BLACK);
-      M5.Lcd.setCursor(10, 100);  // 良い感じに真ん中に出すカーソル移動
-      M5.Lcd.setTextColor(WHITE);
-      M5.Lcd.print("Sensor OFF");
-    }
-  }
+  long RangeInCentimeters;
+  RangeInCentimeters = ultrasonic.MeasureInCentimeters();
+  Serial.print(RangeInCentimeters); // 0 ~ 400cm
+  Serial.println(" cm");
+
+  M5.Lcd.print("Range : ");
+  M5.Lcd.print(RangeInCentimeters);
+  M5.Lcd.println(" cm");
   
-  delay(500);
+  delay(1000); // データ取得のため 250 ms 以上のインターバルを持つ
 }
 ```
 
@@ -124,17 +112,17 @@ M5Stack に書き込んでみましょう。
 
 ## 動かしてみる
 
-![image](https://i.gyazo.com/bc2eb4c34f1e5c361b585a28512b324b.jpg)
+![image](https://i.gyazo.com/bd1d04513fd60ee4739023ac8929f653.jpg)
 
-書き込みすると、センサーに向けて手をかざすと人の気配を感知（人感）して Sensor ON という大文字が赤背景で出てきます。
+動かしてみると、このように障害物とセンサーの距離データが表示されます。
 
-![image](https://i.gyazo.com/f0dab9fdedb02b2520208f37cd8a6f0f.jpg)
+![image](https://i.gyazo.com/32056ffe80f0b86f1de9e6e41c27e167.jpg)
 
-手をかざすのをやめて、しばらく待っていると、 Sensor OFF に戻ります。
+手で距離を縮めてみると変化します。
 
 ## LINE BOT と連携するソースコードを試す
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-03-03-PIR-sensor-LINEBOT` というファイル名で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-03-09-UltraSonicRanger-sensor-LINEBOT` というファイル名で保存します。
 
 ```c
 #include <M5Stack.h>
@@ -147,14 +135,13 @@ char *ssid = "Wi-FiのSSID";
 // Wi-Fiのパスワード
 char *password = "Wi-Fiのパスワード";
 
-// 最新のボタンの状態
-int currentButtonState = LOW;
+// 今回のセンサーライブラリの呼び出し
+#include "Ultrasonic.h"
+// 黄色いケーブルを挿すピンは 2 番ピン
+Ultrasonic ultrasonic(2);
 
-// 記録しているボタンの状態（前の状態を比較する）
-int buttonState = LOW;
-
-// 黄色いケーブルを差し込む M5Stack ピン番号
-int digitalPin = 2;
+// カウントダウン用変数 メッセージを送った時間
+long messageSentAt = 0;
 
 void setup() {
   // init lcd, serial, but don't init sd card
@@ -202,6 +189,7 @@ void setup() {
   // 起動時に送る
   delay(1000);
   send_message("{\"message\":\"Launched!\"}");
+  
 }
 
 // HTTP でメッセージ送信部分
@@ -213,11 +201,6 @@ void send_message(String msg) {
 
   // 今回送るURL
   String url = "https://" + hostName + "/from/m5stack";
-
-  /*
-  M5.Lcd.fillScreen(BLACK);
-  M5.Lcd.setCursor(10, 10);
-  */
   
   Serial.println("-> send_message");
   Serial.print("msg: ");
@@ -233,7 +216,6 @@ void send_message(String msg) {
   httpClient.addHeader("Content-Type", "application/json");
   
   // データ送信完了
-  // M5.Lcd.println("sended.");
   Serial.println("sended.");
 
   // ポストする
@@ -241,8 +223,8 @@ void send_message(String msg) {
   if( status_code == 200 ){
     String response = httpClient.getString();
     
-    // M5.Lcd.println("response:");
-    // M5.Lcd.println(response);
+    Serial.println("response:");
+    Serial.println(response);
   }
   httpClient.end();
   
@@ -252,32 +234,37 @@ void send_message(String msg) {
 void loop() {
   M5.update();
 
-  // センサーから値を取得
-  int currentButtonState = digitalRead(digitalPin);
+  // 以前の時間から現在の時間 millis() でどれだけ経過したかを計算
+  long spanTime = millis() - messageSentAt;
 
-  // 値に変化があれば通知
-  if( currentButtonState != buttonState ){
-    // 現在の状態を記録
-    buttonState = currentButtonState;
-    if (buttonState == HIGH) {
-      // 人感検出 ON
-      M5.Lcd.setTextSize(5);
-      M5.Lcd.clear(RED);
-      M5.Lcd.setCursor(10, 100);  // 良い感じに真ん中に出すカーソル移動
-      M5.Lcd.setTextColor(BLACK);
-      M5.Lcd.print("Sensor ON");
-      // JSON 形式のメッセージを飛ばす
-      send_message("{\"message\":\"Sensor ON\"}");
+  // 5秒 = 5000ミリ秒に1回送る
+  // センサー取得時間は3秒くらいは確保する
+  if (spanTime > 5000) {
+    // 送った時間を更新
+    messageSentAt = millis();
+    
+    M5.Lcd.clear(BLACK);
+    M5.Lcd.setCursor(0, 100);
+
+    // センサーデータを取得
+    long RangeInCentimeters;
+    RangeInCentimeters = ultrasonic.MeasureInCentimeters();
+    Serial.print(RangeInCentimeters); // 0 ~ 400cm
+    Serial.println(" cm");
+
+    M5.Lcd.print("Range : ");
+    M5.Lcd.print(RangeInCentimeters);
+    M5.Lcd.println(" cm");
+
+    // 50 cm 以下は接近とする
+    if(RangeInCentimeters < 50){
+      // JSON 形式のメッセージを送る
+      send_message("{\"message\":\"(o_o)< ALERT!!\"}");
     } else {
-      // 人感検出 OFF
-      M5.Lcd.setTextSize(3);
-      M5.Lcd.clear(BLACK);
-      M5.Lcd.setCursor(10, 100);  // 良い感じに真ん中に出すカーソル移動
-      M5.Lcd.setTextColor(WHITE);
-      M5.Lcd.print("Sensor OFF");
-      // JSON 形式のメッセージを飛ばす
-      send_message("{\"message\":\"Sensor OFF\"}");
+      // JSON 形式のメッセージを送る
+      send_message("{\"message\":\"(-_-)\"}");
     }
+
   }
   
   if (M5.BtnA.wasReleased()) {
@@ -292,7 +279,7 @@ void loop() {
     send_message("{\"message\":\"Pushed C\"}");
   }
 
-  delay(500);
+  delay(1000);
 }
 ```
 
@@ -330,13 +317,23 @@ M5Stack に書き込んでみましょう。
 
 起動してみると Launched! というメッセージが Gitpod 経由で LINE BOT のほうに送られます。
 
-![image](https://i.gyazo.com/bc2eb4c34f1e5c361b585a28512b324b.jpg)
+![image](https://i.gyazo.com/100d5f685229110090f0735a02faf6d5.jpg)
 
-センサーに向けて手をかざすと人の気配を感知（人感）して Sensor ON という大文字が赤背景で出たうえで Sensor ON というメッセージが送られます。
+5秒に1回のタイミングで、センサーからデータが取得され距離データが表示されます。
 
-![image](https://i.gyazo.com/7dd395ce41abe0c8ae92268404115e18.png)
+![image](https://i.gyazo.com/977328619a0518c1f117c955bc63e6f3.jpg)
+
+同時に、50cm 以下に近づいたら `(o_o)< ALERT!!` というメッセージ、それ以上距離が離れていたら `(-_-)` というメッセージが Gitpod 経由で LINE BOT のほうに送られます。
+
+![image](https://i.gyazo.com/64a96731a23f670e6f5ff7f2f0deb38f.png)
 
 LINE BOT はこのようにメッセージが送られています。
+
+# 質疑応答
+
+![image](https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png)
+
+ここまでで質問があればどうぞ！
 
 # 次にすすみましょう
 

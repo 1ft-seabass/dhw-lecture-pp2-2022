@@ -37,6 +37,7 @@
     - [人感センサー](lecture03/03-01-pir-sensor.md)
     - [光センサー](lecture03/03-02-light-sensor.md)
     - [温度・湿度センサー](lecture03/03-03-temp-humid-sensor.md)
+    - [超音波距離センサー](lecture03/03-04-ultrasonic-sensor.md)
   - [SNS からのアウトプットの事例や世界観を把握する](lecture02/03-sns-output.md)
   - [M5Stack 事例を通してプロトタイプをアウトプットする世界観を学ぶ](lecture03/04-m5stack-output.md)
   - [Grove 情報検索ナレッジ](lecture03/11-grove-search-knowledge.md)
