@@ -139,7 +139,7 @@ https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9
 
 ![image](https://i.gyazo.com/3e1ce3d6bea1099b2f8365cb65cfa882.png)
 
-https://docs.google.com/spreadsheets/d/1W_IXR57dBmdn17ZQ4fJIVjkdXdt3nkCzr-5xSjY26KY/edit#gid=0
+https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9x1c/edit#gid=0
 
 こちらのスプレッドシートに記入します。
 
