@@ -39,7 +39,7 @@
 
 ということで動かしていきましょう。
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-13-Speaker` というファイル名で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-04-02-Speaker` というファイル名で保存します。
 
 ```c
 #include <M5Stack.h>
@@ -216,7 +216,7 @@ LINE BOT から `sound1` ・ `sound2` ・ `sound3` とメッセージを送り�
 
 ## LINE BOT と連携するソースコードを試す
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-14-Speaker-LINE-BOT` というファイル名で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-04-03-Speaker-LINEBOT` というファイル名で保存します。
 
 ```c
 #include <M5Stack.h>

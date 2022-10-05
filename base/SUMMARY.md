@@ -41,7 +41,18 @@
   - [SNS からのアウトプットの事例や世界観を把握する](lecture02/03-sns-output.md)
   - [M5Stack 事例を通してプロトタイプをアウトプットする世界観を学ぶ](lecture03/04-m5stack-output.md)
   - [Grove 情報検索ナレッジ](lecture03/11-grove-search-knowledge.md)
+  - [次回の頭だし](lecture04/01-00-linebot-mqtt.md)
 - 第4回 IoT開発ボード M5Stack 入門
+  - [第4回 README](lecture04/README.md)
+  - [LINE BOT と M5Stack の MQTT 発展](lecture04/01-00-linebot-mqtt.md)
+    - [LINE BOT と MQTT の仕組みを起動する](lecture04/01-02-gitpod-mqtt-launch.md)
+    - [M5Stack 側の仕組みをつくる](lecture04/01-03-linebot-arduino.md)
+  - センサー連携を学ぶ その2
+    - [スピーカー](lecture04/02-01-speaker.md)
+    - [サーボ](lecture04/02-02-servo.md)
+    - [さまざまな連携例](lecture04/02-03-variety-example.md)
+  - [いままでの実装とアウトプットへの関係性を学ぶ](lecture04/03-00-m5stack-output.md)
+  - [次回の宿題について](lecture04/04-00-homework-next.md)
 - 第5回 IoT開発ボード設置・外装入門
 - 第6回 IoT開発ボード設置・外装実践
 - 第7回 制作物デモ発表 ／ プレゼンテーション

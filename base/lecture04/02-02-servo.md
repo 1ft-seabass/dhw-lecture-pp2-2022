@@ -1,183 +1,149 @@
-# M5Stack スピーカーを動かす
+# Grove サーボモータ
 
-内蔵されているスピーカーを鳴らします。
+![image](https://i.gyazo.com/3adc4bb764b6a3a1805ddff57b581750.jpg)
 
 ## 今回のプログラムはどのように動くか
 
-![image](https://i.gyazo.com/1dfc9a4a72a623e02dc6a3d008299de8.jpg)
+![image](https://i.gyazo.com/71e72d85154a2ec03f3af33dd0c27d61.jpg)
 
-以前のボタンとディスプレイのサンプルに、スピーカーで音を鳴らすのも加えています。より押したときの楽しさが伝わるのと、何が起こったかがメロディによって分かるようにいています。
+書き込むと A ボタンで -90 度、B ボタンで 0 度、C ボタンで 90 度にサーボモータの角度が操れます。
 
-![image](https://i.gyazo.com/67ee6368fad0b12028ec549849f752a1.jpg)
+## Grove への Grove ケーブルのつなぎかた
 
-動画での様子はツイート済みです。→ https://twitter.com/1ft_seabass/status/1448820901340876838
+今回はサーボモータに直接つながっているので Grove 変換ケーブルをつなぐ必要はありません。
 
-## スピーカーの関数
+## サーボモータにパーツを装着
 
-![image](https://i.gyazo.com/9b87e36a19925728592abbf3822c88fe.png)
+![image](https://i.gyazo.com/2c3150b68beaeb1905d11c17396da14c.jpg)
 
-スピーカーを動かす関数は以下に説明があります。
+サーボモータと同行されているパーツのうち、こちらの白いプラスチック製の長いパーツを取り出します。
 
-- 本家の英語のドキュメント
-  - [m5\-docs](https://docs.m5stack.com/en/api/speaker)
-- ちょっと以前の情報だけど日本語訳のドキュメント
-  - [m5\-docs/speaker\.md at master · m5stack/m5\-docs](https://github.com/m5stack/m5-docs/blob/master/docs/ja/api/speaker.md)
+![image](https://i.gyazo.com/61f83f347e0650ed68c7be18d6c3b541.jpg)
 
-音を止める、ボリュームを設定する、音階で指定の期間鳴らるといったシンプルな構成です。
+サーボ側の白い出っ張りのギザギザと、
 
-### 音階で鳴らすときはトーンという値で周波数を指定する
+![image](https://i.gyazo.com/cd1d8e06b541779403c9c3f5bfb6085c.jpg)
 
-[圧電ブザーを鳴らせてみよう · Arduino docs](https://fabkura.gitbooks.io/arduino-docs/content/chapter7.html)
+パーツ側のギザギザの凹みを合わせてはめ込みます。
 
-音階で鳴らすときはトーンという値で周波数を指定しますが、こちらのページ具体的な値の指定の仕方が載っています。Arduinoでの鳴らし方ですが、M5Stackでの tone 値にも同じように適用できます。
+![image](https://i.gyazo.com/e33c7875b52fde2beef0e5efd39e8d49.jpg)
 
-![image](https://i.gyazo.com/4d7b1697599d83b73e510bcded042a29.png)
+よく確認しましょう。
 
-より、ひろーい音階が気になる人は [Play a Melody using the tone\(\) function \| Arduino](https://www.arduino.cc/en/Tutorial/BuiltInExamples/toneMelody) こちらも参考になります。
+![image](https://i.gyazo.com/b22d6830013ae89b91f57f038f8f701a.jpg)
+
+はめ込むことで角度の変化がより分かりやすくなります。
+
+実際にこのパーツ含めたパーツ群は、何かを動かすときに力を伝えるための軸の役割しています。
+
+## PORT A という Grove ポートを確認
+
+![image](https://i.gyazo.com/cfed896c7b6274658b500ed829f5f795.jpg)
+
+今回は PORT A という Grove ポートにつなぐので確認します。
+
+GPIO としては 21 と 22 で操作できます。今回は 22 で指示を出します。
+
+## M5Stack への Grove ケーブルのつなぎかた
+
+![image](https://i.gyazo.com/77ead28b9239790ae6595d6b8127ad18.jpg)
+
+PORT A に挿しこみます。
+
+![image](https://i.gyazo.com/6dcc43aae0d608f527196dddc7f4f424.jpg)
+
+このように接続できます。
 
 ## ソースコードを反映＆保存
 
-ということで動かしていきましょう。
-
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-13-Speaker` というファイル名で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-04-04-Servo` というファイル名で保存します。
 
 ```c
 #include <M5Stack.h>
 
+#define SERVO_MIN_WIDTH_MS  0.6
+#define SERVO_MAX_WIDTH_MS  2.4
+#define LEDC_CHANNEL_3      3   // LEDCのチャンネル指定
+#define LEDC_TIMER_BIT      16  // LEDCのPWMタイマーの精度設定
+#define LEDC_SERVO_FREQ     50  // サーボ信号の１サイクル　50Hz:20ms
+#define SERVO_PIN           22  // Servo ピン
 
 void setup() {
-  // M5Stack 自体の初期化
-  M5.begin(true, false, true);
-
-  // 電源まわりの初期化
-  // こうしないとバッテリー状態が更新されない模様
-  M5.Power.begin();
   
-  M5.Lcd.clear(TFT_BLACK);
+  M5.begin(
+    true,  // LCD ディスプレイ ON
+    false, // SDカードは動かさない設定
+    true,  // シリアル ON
+    false  // I2C 無効(PORT A を GPIO で使用するため)
+  );
 
-  // 線を引いてみた目を区切る ちなみに画面サイズは 320 x 240
-  M5.Lcd.drawLine(0,200,320,200,WHITE);
-  
-  // 下部にボタンナビゲーションをつける
-  // 描画順は背景から書いて文字を載せる
-
-  // A ボタンの背景
-  M5.Lcd.fillRect(28, 204, 80, 26, BLUE);
-  M5.Lcd.drawRect(28, 231, 80, 7, BLUE);
-
-  // B ボタンの背景
-  M5.Lcd.fillRect(28 + 80 + 15 , 204, 80, 26, RED);
-  M5.Lcd.drawRect(28 + 80 + 15, 231, 80, 7, RED);
-
-  // C ボタンの背景
-  M5.Lcd.fillRect(28 + 80 + 15 + 80 + 15 , 204, 75, 26, TFT_GREEN);
-  M5.Lcd.drawRect(28 + 80 + 15 + 80 + 15, 231, 75, 7, TFT_GREEN);
-  
-  // A ボタンの説明
+  // スタート
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setCursor(10, 100);
   M5.Lcd.setTextColor(WHITE);
-  M5.Lcd.setTextSize(2);
-  M5.Lcd.setCursor(55, 210);  // 結構合ってるけど何度も書き出して目視で合わせている
-  M5.Lcd.print("OK");
+  M5.Lcd.setTextSize(3);
 
-  // B ボタンの説明
-  M5.Lcd.setCursor(127, 210);
-  M5.Lcd.print("CANCEL");
+  // Arduino のシリアルモニタ・M5Stack LCDディスプレイ両方にメッセージを出す
+  Serial.print("Servo");  // Arduino のシリアルモニタにメッセージを出す
+  M5.Lcd.print("Servo");  // M5Stack LCDディスプレイにメッセージを出す（英語のみ）
 
-  // C ボタンの説明
-  M5.Lcd.setTextColor(BLACK);
-  M5.Lcd.setCursor(227, 210);
-  M5.Lcd.print("RESET");
+  // servoモーター設定
+  servo_setup();
+}
 
-  // バッテリーレベル
-  M5.Lcd.setTextSize(2);
-  M5.Lcd.setCursor(0, 0);
-  M5.Lcd.setTextColor(WHITE);
-  M5.Lcd.print("Battery:");
-  M5.Lcd.print(M5.Power.getBatteryLevel());
+// サーボ角度 PWM 補助
+int servo_pwm_count(int v)
+{
+  float vv = (v + 90) / 180.0 ;
+  return (int)(65536 * (SERVO_MIN_WIDTH_MS + vv * (SERVO_MAX_WIDTH_MS -SERVO_MIN_WIDTH_MS)) / 20.0) ;
+}
 
-  // テキストを真ん中あたりに出す
-  M5.Lcd.setTextSize(4);
-  M5.Lcd.setCursor(20, 85);
-  M5.Lcd.setTextColor(WHITE);
-  M5.Lcd.print("PUSH BUTTON!");
+// サーボ設定
+void servo_setup(){
+  // 16ビット精度で制御
+  ledcSetup(LEDC_CHANNEL_3, LEDC_SERVO_FREQ, LEDC_TIMER_BIT) ;
+  // CH3 を SERVO にする
+  ledcAttachPin(SERVO_PIN, LEDC_CHANNEL_3) ;
+}
 
-  // スピーカー音量は 3
-  M5.Speaker.setVolume(2);
-
-  // 音を鳴らす ドミソ
-  // https://fabkura.gitbooks.io/arduino-docs/content/chapter7.html
-  M5.Speaker.tone(523, 200);
-  delay(200);
-  M5.Speaker.tone(659, 200);
-  delay(200);
-  M5.Speaker.tone(784, 200);
-
+// サーボの角度を設定
+void servo_degree(int degree){
+  ledcWrite(LEDC_CHANNEL_3, servo_pwm_count(degree)) ; 
 }
 
 void loop() {
   M5.update();
-  
+
   if (M5.BtnA.wasReleased()) {
-    // 音を鳴らす
-    M5.Speaker.tone(440, 200);
-    delay(200);
-    M5.Speaker.tone(440, 200);
-    // 上部だけ背景色で塗りつぶす
-    M5.Lcd.fillRect(0, 0, 320, 199, BLUE);
-    // テキストを真ん中あたりに出す
-    M5.Lcd.setTextSize(5);
-    M5.Lcd.setCursor(60, 80);
-    M5.Lcd.setTextColor(BLACK);
-    M5.Lcd.print("OK ^_^/");
-    // 下部の選択状態
-    M5.Lcd.fillRect(0, 231, 320, 7, BLACK); // 下部を細く黒で塗りつぶし
-    M5.Lcd.fillRect(28, 231, 80, 7, WHITE);  // 選択ホワイト
-    M5.Lcd.drawRect(28 + 80 + 15, 231, 80, 7, RED);
-    M5.Lcd.drawRect(28 + 80 + 15 + 80 + 15, 231, 75, 7, TFT_GREEN);
-  } else if (M5.BtnB.wasReleased()) {
-    // 音を鳴らす
-    M5.Speaker.tone(261, 200);
-    delay(200);
-    M5.Speaker.tone(261, 200);
-    // 上部だけ背景色で塗りつぶす
-    M5.Lcd.fillRect(0, 0, 320, 199, RED);
-    // テキストを真ん中あたりに出す
-    M5.Lcd.setTextSize(5);
-    M5.Lcd.setCursor(80, 80);  // わかる。ちょっと中央に寄ってないよね。
-    M5.Lcd.setTextColor(BLACK);
-    M5.Lcd.print("CANCEL");
-    // 下部の選択状態
-    M5.Lcd.fillRect(0, 231, 320, 7, BLACK); // 下部を細く黒で塗りつぶし
-    M5.Lcd.drawRect(28, 231, 80, 7, BLUE);
-    M5.Lcd.fillRect(28 + 80 + 15, 231, 80, 7, WHITE);  // 選択ホワイト
-    M5.Lcd.drawRect(28 + 80 + 15 + 80 + 15, 231, 75, 7, TFT_GREEN);
-  } else if (M5.BtnC.wasReleased()) {
-    // 上部だけ背景色で塗りつぶす
-    M5.Lcd.fillRect(0, 0, 320, 199, TFT_GREEN);
-    // テキストを真ん中あたりに出す
-    M5.Lcd.setTextSize(5);
-    M5.Lcd.setCursor(90, 80);
-    M5.Lcd.setTextColor(BLACK);
-    M5.Lcd.print("RESET");
-    // 下部の選択状態
-    M5.Lcd.fillRect(0, 231, 320, 7, BLACK); // 下部を細く黒で塗りつぶし
-    M5.Lcd.drawRect(28, 231, 80, 7, BLUE);
-    M5.Lcd.drawRect(28 + 80 + 15, 231, 80, 7, RED);
-    M5.Lcd.fillRect(28 + 80 + 15 + 80 + 15, 231, 75, 7, WHITE);  // 選択ホワイト
-    // 2 秒後、表示リセットする /////////////////////////
-    delay(2000);
-    // 上部だけ背景色で塗りつぶす
-    M5.Lcd.fillRect(0, 0, 320, 199, TFT_BLACK);
-    // テキストもリセット
-    M5.Lcd.setTextSize(4);
-    M5.Lcd.setCursor(20, 85);
+    // A ボタン
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setCursor(10, 100);
     M5.Lcd.setTextColor(WHITE);
-    M5.Lcd.print("PUSH BUTTON!");
-    // 下部もリセット
-    M5.Lcd.fillRect(0, 231, 320, 7, BLACK); // 下部を細く黒で塗りつぶし
-    M5.Lcd.drawRect(28, 231, 80, 7, BLUE);
-    M5.Lcd.drawRect(28 + 80 + 15, 231, 80, 7, RED);
-    M5.Lcd.drawRect(28 + 80 + 15 + 80 + 15, 231, 75, 7, WHITE);
+    M5.Lcd.setTextSize(3);
+    Serial.print("A");  //
+    M5.Lcd.print("A Degree:90");  //
+    // サーボの角度を設定
+    servo_degree(90) ; 
+  } else if (M5.BtnB.wasReleased()) {
+    // B ボタン
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setCursor(10, 100);
+    M5.Lcd.setTextColor(WHITE);
+    M5.Lcd.setTextSize(3);
+    Serial.print("B");  //
+    M5.Lcd.print("B Degree:0");  //
+    // サーボの角度を設定
+    servo_degree(0) ; 
+  } else if (M5.BtnC.wasReleased()) {
+    // C ボタン
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setCursor(10, 100);
+    M5.Lcd.setTextColor(WHITE);
+    M5.Lcd.setTextSize(3);
+    Serial.print("C");  //
+    M5.Lcd.print("C Degree:-90");  //
+    // サーボの角度を設定
+    servo_degree(-90) ; 
   }
 }
 ```
@@ -190,36 +156,27 @@ M5Stack に書き込んでみましょう。
 
 ## 動かしてみる
 
-![image](https://i.gyazo.com/1dfc9a4a72a623e02dc6a3d008299de8.jpg)
+![image](https://i.gyazo.com/3f75202f73fccd2a5400939e52ca2b27.jpg)
 
-以前のボタンとディスプレイのサンプルの動作に加えて、起動時のドミソ、OK と CANCEL ボタンで効果音が鳴るようにしています。
+動かしてみると、Servo という文字が現れます。
 
-## LINE BOT 連携のプログラムがどのように動くか
+![image](https://i.gyazo.com/01daaddb977d3be016f952029d7a5b68.jpg)
 
-つづいて、 LINE BOT 連携です。LINE BOT 連携のプログラムは以下のように動きます。
-
-![image](https://i.gyazo.com/db6aa153b83623eab272864fb2ae0fb1.jpg)
-
-書き込みと同時に Connected というメッセージが MQTT ブローカーに送信されます。
-
-![image](https://i.gyazo.com/5d8170e76d125d1e4dbd18ccc73e9d1b.png)
-
-LINE BOT から `sound1` ・ `sound2` ・ `sound3` とメッセージを送ります。
-
-![image](https://i.gyazo.com/c7837e3e08d85c3282e760a8fb97076d.jpg)
-
-たとえば、 sound1 というメッセージを LINE BOT から MQTT ブローカーへデータを送ると、M5Stack が MQTT ブローカー からデータを待ち受けているので sound1 というメッセージを受信して、ドミソとメロディが流れます。
-
-![image](https://i.gyazo.com/068c0cfa4f80d2b0916e8d06bbf1c930.png)
-
-実際の動作はこのようなイメージです。
+A ボタンで -90 度、B ボタンで 0 度、C ボタンで 90 度にサーボモータの角度が操れます。
 
 ## LINE BOT と連携するソースコードを試す
 
-Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-14-Speaker-LINE-BOT` というファイル名で保存します。
+Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-04-05-Servo-LINEBOT` というファイル名で保存します。
 
 ```c
 #include <M5Stack.h>
+
+#define SERVO_MIN_WIDTH_MS  0.6
+#define SERVO_MAX_WIDTH_MS  2.4
+#define LEDC_CHANNEL_3      3   // LEDCのチャンネル指定
+#define LEDC_TIMER_BIT      16  // LEDCのPWMタイマーの精度設定
+#define LEDC_SERVO_FREQ     50  // サーボ信号の１サイクル　50Hz:20ms
+#define SERVO_PIN           22  // Servo ピン
 
 // Wi-Fi をつなぐためのライブラリ
 // 今回は MQTT のため
@@ -318,11 +275,29 @@ void setup() {
   // MQTT の接続
   mqttConnect();
 
-  // スピーカー音量
-  M5.Speaker.setVolume(2);
+  // servoモーター設定
+  servo_setup();
 }
 
+// サーボ角度 PWM 補助
+int servo_pwm_count(int v)
+{
+  float vv = (v + 90) / 180.0 ;
+  return (int)(65536 * (SERVO_MIN_WIDTH_MS + vv * (SERVO_MAX_WIDTH_MS -SERVO_MIN_WIDTH_MS)) / 20.0) ;
+}
 
+// サーボ設定
+void servo_setup(){
+  // 16ビット精度で制御
+  ledcSetup(LEDC_CHANNEL_3, LEDC_SERVO_FREQ, LEDC_TIMER_BIT) ;
+  // CH3 を SERVO にする
+  ledcAttachPin(SERVO_PIN, LEDC_CHANNEL_3) ;
+}
+
+// サーボの角度を設定
+void servo_degree(int degree){
+  ledcWrite(LEDC_CHANNEL_3, servo_pwm_count(degree)) ; 
+}
 
 void mqttConnect() {
 
@@ -415,38 +390,12 @@ void mqttCallback (char* topic, byte* payload, unsigned int length) {
   // https://arduinojson.org/v6/example/parser/
   const char* message = jsonData["message"];
 
-  // 文字の比較は strcmp が　0 のときで一致している判定ができます
-  // https://programming.pc-note.net/c/mojiretsu5.html
-  if(strcmp(message, "sound1")==0){
-    // 音を鳴らす ドミソ
-    M5.Speaker.tone(523, 200);
-    delay(200);
-    M5.Speaker.tone(659, 200);
-    delay(200);
-    M5.Speaker.tone(784, 200);
-    // データの表示
-    M5.Lcd.setCursor(0, 100);
-    M5.Lcd.setTextSize(4);
-    M5.Lcd.println(message);
-  } else if(strcmp(message, "sound2")==0){
-    // 音を鳴らす ドド！
-    M5.Speaker.tone(523, 100);
-    delay(100);
-    M5.Speaker.tone(523, 100);
-    // データの表示
-    M5.Lcd.setCursor(0, 100);
-    M5.Lcd.setTextSize(4);
-    M5.Lcd.println(message);
-  } else if(strcmp(message, "sound3")==0){
-    // 音を鳴らす ソミー
-    M5.Speaker.tone(784, 200);
-    delay(200);
-    M5.Speaker.tone(659, 500);
-    // データの表示
-    M5.Lcd.setCursor(0, 100);
-    M5.Lcd.setTextSize(4);
-    M5.Lcd.println(message);
-  }
+  // データの表示
+  M5.Lcd.setCursor(0, 100);
+  M5.Lcd.setTextSize(4);
+  M5.Lcd.println(message);
+
+  servo_degree(message);
   
 }
 
@@ -506,7 +455,6 @@ char *password = "Wi-Fiのパスワード";
 ```
 
 自分のつなぎたい Wi-Fi の SSID とパスワードを反映します。
-
 ## MQTT の接続設定を反映
 
 LINE BOT と同じように 今回は私（講師）の方が、CloudMQTT というサービスで、ひとつブローカーを立ち上げているので、そのまま使いましょう。
@@ -580,14 +528,15 @@ M5Stack に書き込んでみましょう。
 
 実際に M5Stack から接続されているデバイスID（clientID）やデータを待ち受けるトピック subscribe が表示されているので YOURNAME になっていないかや、設定した名前が Gitpod 側で設定した名前と一致しているかを確認しましょう。
 
-![image](https://i.gyazo.com/5d8170e76d125d1e4dbd18ccc73e9d1b.png)
 
-LINE BOT から `sound1` ・ `sound2` ・ `sound3` とメッセージしてみましょう。
 
-![image](https://i.gyazo.com/c7837e3e08d85c3282e760a8fb97076d.jpg)
 
-たとえば、 sound1 というメッセージを LINE BOT から MQTT ブローカーへデータを送ると、M5Stack が MQTT ブローカー からデータを待ち受けているので sound1 というメッセージを受信して、ドミソとメロディが流るので試してみましょう。
+# 質疑応答
+
+![image](https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png)
+
+ここまでで質問があればどうぞ！
 
 # 次にすすみましょう
 
-左のナビゲーションから「動きセンサー」にすすみましょう。
+左のナビゲーションから次の教材にすすみましょう。

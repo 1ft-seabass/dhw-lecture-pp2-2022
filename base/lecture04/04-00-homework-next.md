@@ -195,5 +195,5 @@ https://docs.google.com/spreadsheets/d/1W_IXR57dBmdn17ZQ4fJIVjkdXdt3nkCzr-5xSjY2
 
 # 次にすすみましょう
 
-左のナビゲーションから README に戻りましょう。
+左のナビゲーションから次の教材にすすみましょう。
 
