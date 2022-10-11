@@ -877,6 +877,90 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../lecture05/">
+            
+                <a href="../lecture05/">
+            
+                    
+                    第5回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../lecture05/01-00-exterior-index.html">
+            
+                <a href="../lecture05/01-00-exterior-index.html">
+            
+                    
+                    外装や設置のプロトタイプの世界観
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../lecture05/02-00-material-index.html">
+            
+                <a href="../lecture05/02-00-material-index.html">
+            
+                    
+                    身近なものを外装や設置に活用1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../lecture05/02-01-material-extra.html">
+            
+                <a href="../lecture05/02-01-material-extra.html">
+            
+                    
+                    身近なものを外装や設置に活用2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../lecture05/03-00-baseline-index.html">
+            
+                <a href="../lecture05/03-00-baseline-index.html">
+            
+                    
+                    最低限押さえる注意ポイント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../lecture05/99-final-task.html">
+            
+                <a href="../lecture05/99-final-task.html">
+            
+                    
+                    最終課題について
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.7" >
@@ -1103,6 +1187,11 @@
 <p><img src="https://i.gyazo.com/01daaddb977d3be016f952029d7a5b68.jpg" alt="image"></p>
 <p>A ボタンで -90 度、B ボタンで 0 度、C ボタンで 90 度にサーボモータの角度が操れます。</p>
 <h2 id="line-bot-と連携するソースコードを試す"><a name="line-bot-と連携するソースコードを試す" class="plugin-anchor" href="#line-bot-と連携するソースコードを試す"><i class="fa fa-link" aria-hidden="true"></i></a>LINE BOT と連携するソースコードを試す</h2>
+<p>つづいて、LINE BOT 連携です。</p>
+<p><img src="https://i.gyazo.com/d6cd4d14ac43fa82fcbe05427db968cd.jpg" alt="image"></p>
+<p>0～180 の整数をおくってサーボの角度を制御してみましょう。</p>
+<p><img src="https://i.gyazo.com/d04434612e99118cd30d8b46ad749f75.jpg" alt="image"></p>
+<p>たとえば、60 と送ると 60 度に制御できる仕組みです。</p>
 <p>Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを <code>dhw-pp2-study-04-05-Servo-LINEBOT</code> というファイル名で保存します。</p>
 <pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;M5Stack.h&gt;</span></span>
 
@@ -1176,6 +1265,8 @@ WiFiClient httpClient;
 
   <span class="hljs-comment">// WiFi 接続開始</span>
   WiFi.begin(ssid, password);
+  <span class="hljs-comment">// 勝手に Button A が押されることを回避</span>
+  WiFi.setSleep(<span class="hljs-literal">false</span>);
 
   <span class="hljs-keyword">while</span> (WiFi.status() != WL_CONNECTED) {
       delay(<span class="hljs-number">500</span>);
@@ -1432,6 +1523,10 @@ StaticJsonDocument&lt;<span class="hljs-number">2048</span>&gt; jsonData;
 <p><img src="https://i.gyazo.com/db6aa153b83623eab272864fb2ae0fb1.jpg" alt="image"></p>
 <p>書き込みと同時に Connected というメッセージが MQTT ブローカーに送信されます。</p>
 <p>実際に M5Stack から接続されているデバイスID（clientID）やデータを待ち受けるトピック subscribe が表示されているので YOURNAME になっていないかや、設定した名前が Gitpod 側で設定した名前と一致しているかを確認しましょう。</p>
+<p><img src="https://i.gyazo.com/d6cd4d14ac43fa82fcbe05427db968cd.jpg" alt="image"></p>
+<p>0～180 の整数をおくってサーボの角度を制御してみましょう。</p>
+<p><img src="https://i.gyazo.com/d04434612e99118cd30d8b46ad749f75.jpg" alt="image"></p>
+<p>たとえば、60 と送ると 60 度に制御できます。</p>
 <h1 id="質疑応答"><a name="質疑応答" class="plugin-anchor" href="#質疑応答"><i class="fa fa-link" aria-hidden="true"></i></a>質疑応答</h1>
 <p><img src="https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png" alt="image"></p>
 <p>ここまでで質問があればどうぞ！</p>
@@ -1480,7 +1575,7 @@ StaticJsonDocument&lt;<span class="hljs-number">2048</span>&gt; jsonData;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"サーボ","level":"1.5.3.2","depth":3,"next":{"title":"さまざまな連携例","level":"1.5.3.3","depth":3,"path":"lecture04/02-03-variety-example.md","ref":"lecture04/02-03-variety-example.md","articles":[]},"previous":{"title":"スピーカー","level":"1.5.3.1","depth":3,"path":"lecture04/02-01-speaker.md","ref":"lecture04/02-01-speaker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture04/02-02-servo.md","mtime":"2022-10-05T05:35:09.932Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-10-05T06:30:33.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"サーボ","level":"1.5.3.2","depth":3,"next":{"title":"さまざまな連携例","level":"1.5.3.3","depth":3,"path":"lecture04/02-03-variety-example.md","ref":"lecture04/02-03-variety-example.md","articles":[]},"previous":{"title":"スピーカー","level":"1.5.3.1","depth":3,"path":"lecture04/02-01-speaker.md","ref":"lecture04/02-01-speaker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture04/02-02-servo.md","mtime":"2022-10-11T13:59:29.780Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-10-11T14:40:19.714Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

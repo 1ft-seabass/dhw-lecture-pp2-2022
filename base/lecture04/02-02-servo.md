@@ -166,6 +166,16 @@ A ボタンで -90 度、B ボタンで 0 度、C ボタンで 90 度にサー�
 
 ## LINE BOT と連携するソースコードを試す
 
+つづいて、LINE BOT 連携です。
+
+![image](https://i.gyazo.com/d6cd4d14ac43fa82fcbe05427db968cd.jpg)
+
+0～180 の整数をおくってサーボの角度を制御してみましょう。
+
+![image](https://i.gyazo.com/d04434612e99118cd30d8b46ad749f75.jpg)
+
+たとえば、60 と送ると 60 度に制御できる仕組みです。
+
 Arduino IDE で新規ファイルを作成し、以下のコードをコピーアンドペーストします。こちらを `dhw-pp2-study-04-05-Servo-LINEBOT` というファイル名で保存します。
 
 ```c
@@ -241,6 +251,8 @@ void setup() {
 
   // WiFi 接続開始
   WiFi.begin(ssid, password);
+  // 勝手に Button A が押されることを回避
+  WiFi.setSleep(false);
 
   while (WiFi.status() != WL_CONNECTED) {
       delay(500);
@@ -455,6 +467,7 @@ char *password = "Wi-Fiのパスワード";
 ```
 
 自分のつなぎたい Wi-Fi の SSID とパスワードを反映します。
+
 ## MQTT の接続設定を反映
 
 LINE BOT と同じように 今回は私（講師）の方が、CloudMQTT というサービスで、ひとつブローカーを立ち上げているので、そのまま使いましょう。
@@ -528,8 +541,13 @@ M5Stack に書き込んでみましょう。
 
 実際に M5Stack から接続されているデバイスID（clientID）やデータを待ち受けるトピック subscribe が表示されているので YOURNAME になっていないかや、設定した名前が Gitpod 側で設定した名前と一致しているかを確認しましょう。
 
+![image](https://i.gyazo.com/d6cd4d14ac43fa82fcbe05427db968cd.jpg)
 
+0～180 の整数をおくってサーボの角度を制御してみましょう。
 
+![image](https://i.gyazo.com/d04434612e99118cd30d8b46ad749f75.jpg)
+
+たとえば、60 と送ると 60 度に制御できます。
 
 # 質疑応答
 

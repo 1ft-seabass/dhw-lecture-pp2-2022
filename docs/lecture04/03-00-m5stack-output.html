@@ -877,6 +877,90 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../lecture05/">
+            
+                <a href="../lecture05/">
+            
+                    
+                    第5回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../lecture05/01-00-exterior-index.html">
+            
+                <a href="../lecture05/01-00-exterior-index.html">
+            
+                    
+                    外装や設置のプロトタイプの世界観
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../lecture05/02-00-material-index.html">
+            
+                <a href="../lecture05/02-00-material-index.html">
+            
+                    
+                    身近なものを外装や設置に活用1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../lecture05/02-01-material-extra.html">
+            
+                <a href="../lecture05/02-01-material-extra.html">
+            
+                    
+                    身近なものを外装や設置に活用2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../lecture05/03-00-baseline-index.html">
+            
+                <a href="../lecture05/03-00-baseline-index.html">
+            
+                    
+                    最低限押さえる注意ポイント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../lecture05/99-final-task.html">
+            
+                <a href="../lecture05/99-final-task.html">
+            
+                    
+                    最終課題について
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.7" >
@@ -996,15 +1080,10 @@
 <p><img src="https://i.gyazo.com/d7f5598b726b15ce670584a255837a2c.png" alt="image"></p>
 <p>M5Stack の 3 つのボタンは実装しやすく、M5Stack を触れた人が M5Stack と次のコミュニケーションをするための大切な入口になります。ディスプレイと組み合わせて説明付きのボタン操作で、分かりやすく自分のコンテンツに案内することもできるでしょう。</p>
 <p>ボタンをただ押すだけだと 3 つの操作しかできないように思いますが、長押しや素早い2度押しを組み合わせることで操作が広がります。複雑なコマンドもできるので、たとえば、素早い2度押しで仕組みのリセットをしたり、デバッグモードを長押しに仕込んでみたり、自分のつくった M5Stack をうまく拡張していきましょう。</p>
-<h2 id="動きまわりのセンサー（加速度・コンパス・ジャイロ）"><a name="動きまわりのセンサー（加速度・コンパス・ジャイロ）" class="plugin-anchor" href="#動きまわりのセンサー（加速度・コンパス・ジャイロ）"><i class="fa fa-link" aria-hidden="true"></i></a>動きまわりのセンサー（加速度・コンパス・ジャイロ）</h2>
-<p><img src="https://i.gyazo.com/d4a6eef783d0b1ba614eb4652f450c2a.png" alt="image"></p>
-<p>加速度・コンパス・ジャイロ センサーは、扱うためには少し難易度が高いです。</p>
-<p>ですが、うまく実装できると、ロボットの姿勢制御や人の複雑な動きの検知といったことも可能なので奥深いものです。</p>
-<p>加速度はモノの移動だけでなく震度を計算することができたり色々なことに使えるので、気になる人は調べてみるとイイでしょう。コンパスは地磁気をもとに方角を検知したり地面の方向を知ることができます。</p>
 <h2 id="内蔵バッテリー"><a name="内蔵バッテリー" class="plugin-anchor" href="#内蔵バッテリー"><i class="fa fa-link" aria-hidden="true"></i></a>内蔵バッテリー</h2>
 <p><img src="https://i.gyazo.com/45a1659f2b05f40e1df08b10e7abb9ce.png" alt="image"></p>
 <p>普段は USB で書き込んでいるため、常時給電されているので気づきにくいですが、 M5Stack はバッテリーがあるため、USB から離しても、内蔵バッテリーが続くかぎり給電なしで動かすことができます。</p>
-<p>ですが、<a href="https://docs.m5stack.com/en/core/gray" target="_blank">m5-docs</a> にもあるとおりで、<code>110mAh @ 3.7V</code> と、あまり大きい電池ではありません。</p>
+<p>ですが、<a href="https://docs.m5stack.com/en/core/basic" target="_blank">m5-docs</a> にもあるとおりで、<code>110mAh @ 3.7V</code> と、あまり大きい電池ではありません。</p>
 <p>また、Wi-Fi やインターネット接続を繰り返す処理は電池の消費が激しくてすぐにバッテリーがなくなってしまうでしょう。</p>
 <p>もちろん、サッと見せるときには心強い味方になってくれますが、使い続けるときには、他のモバイルバッテリーをつなげたり、PCやコンセントからの優先での給電も意識して自分のコンテンツを考えていきましょう。</p>
 <p>IoT では、電源問題はつねに意識する事柄なので、うまく付き合っていきましょう。</p>
@@ -1019,12 +1098,12 @@
 <p><img src="https://i.gyazo.com/ad4c9453685b492d9b9601a2c7464b15.png" alt="image"></p>
 <p>Grove センサーは以前の授業ですでに良さは伝えていますが、あらためて、M5Stack アウトプットの目線から言うと M5Stack から先の「広がり」を担当しています。</p>
 <ul>
-<li><a href="https://www.switch-science.com/catalog/list/145/" target="_blank">Grove - スイッチサイエンス</a></li>
+<li><a href="https://www.switch-science.com/collections/all/cat:%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E5%B0%8F%E5%88%86%E9%A1%9E_Grove" target="_blank">Grove - スイッチサイエンス</a></li>
 <li><a href="https://jp.seeedstudio.com/category/Grove-c-1003.html" target="_blank">Grove - Seeed Studio 社</a></li>
 </ul>
 <p>には、豊富な Grove シリーズが紹介されているので、アイデアの種として考えて自分の作りたいものと対話させていくのはおススメです。実は、講師の田中も定期的にエクササイズと考えて、リストを眺めながら発想を膨らませています。</p>
-<p><img src="https://i.gyazo.com/8bb32622e4297518448fcf6b5a267705.jpg" alt="image"></p>
-<p>↑ <a href="https://www.switch-science.com/catalog/list/379/" target="_blank">センサ - スイッチサイエンス</a> の一部</p>
+<p><img src="https://i.gyazo.com/e4ff3aa54d04bb9ef85faeabc28925a6.jpg" alt="image"></p>
+<p>↑ <a href="https://www.switch-science.com/search?type=article%2Cpage%2Cproduct&amp;q=Grove*+%E3%82%BB%E3%83%B3%E3%82%B5*" target="_blank">Grobe センサ検索 - スイッチサイエンス</a> の一部</p>
 <p>自分の発想をもとに使える技術を探して覚えていく探索も大切です。そして、このように技術（センサー）をベースに現実世界を想像しながら発想することも大切です。</p>
 <p>発想と技術を行き来させることで自分のスキルを磨いていきましょう。</p>
 <h1 id="質疑応答"><a name="質疑応答" class="plugin-anchor" href="#質疑応答"><i class="fa fa-link" aria-hidden="true"></i></a>質疑応答</h1>
@@ -1075,7 +1154,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"いままでの実装とアウトプットへの関係性を学ぶ","level":"1.5.4","depth":2,"next":{"title":"次回の宿題について","level":"1.5.5","depth":2,"path":"lecture04/04-00-homework-next.md","ref":"lecture04/04-00-homework-next.md","articles":[]},"previous":{"title":"さまざまな連携例","level":"1.5.3.3","depth":3,"path":"lecture04/02-03-variety-example.md","ref":"lecture04/02-03-variety-example.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture04/03-00-m5stack-output.md","mtime":"2022-10-05T05:31:15.838Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-10-05T06:30:33.902Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"いままでの実装とアウトプットへの関係性を学ぶ","level":"1.5.4","depth":2,"next":{"title":"次回の宿題について","level":"1.5.5","depth":2,"path":"lecture04/04-00-homework-next.md","ref":"lecture04/04-00-homework-next.md","articles":[]},"previous":{"title":"さまざまな連携例","level":"1.5.3.3","depth":3,"path":"lecture04/02-03-variety-example.md","ref":"lecture04/02-03-variety-example.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture04/03-00-m5stack-output.md","mtime":"2022-10-11T14:08:20.304Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-10-11T14:40:19.714Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

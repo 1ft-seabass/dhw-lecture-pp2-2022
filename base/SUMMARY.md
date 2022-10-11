@@ -54,6 +54,12 @@
   - [いままでの実装とアウトプットへの関係性を学ぶ](lecture04/03-00-m5stack-output.md)
   - [次回の宿題について](lecture04/04-00-homework-next.md)
 - 第5回 IoT開発ボード設置・外装入門
+  - [第5回 README](lecture05/README.md)
+  - [外装や設置のプロトタイプの世界観](lecture05/01-00-exterior-index.md)
+  - [身近なものを外装や設置に活用1](lecture05/02-00-material-index.md)
+  - [身近なものを外装や設置に活用2](lecture05/02-01-material-extra.md)
+  - [最低限押さえる注意ポイント](lecture05/03-00-baseline-index.md)
+  - [最終課題について](lecture05/99-final-task.md)
 - 第6回 IoT開発ボード設置・外装実践
 - 第7回 制作物デモ発表 ／ プレゼンテーション
 - 第8回 フィードバックブラッシュアップ／ プレゼンテーション
