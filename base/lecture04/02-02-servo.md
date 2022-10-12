@@ -400,7 +400,7 @@ void mqttCallback (char* topic, byte* payload, unsigned int length) {
 
   // データの取り出し
   // https://arduinojson.org/v6/example/parser/
-  const char* message = jsonData["message"];
+  const int message = jsonData["message"];
 
   // データの表示
   M5.Lcd.setCursor(0, 100);

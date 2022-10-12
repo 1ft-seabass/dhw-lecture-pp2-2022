@@ -26,7 +26,7 @@ Arduino IDE を起動して、新規ファイルをクリックします。
 
 ![image](https://i.gyazo.com/903d4cda78f3cf10c84f036cad08fe03.jpg)
 
-M5Stack Gray に付属していた USB ケーブルを用意します。
+M5Stack に付属していた USB ケーブルを用意します。
 
 ![image](https://i.gyazo.com/2a86c7f1b721555abfaf0105f161ea9f.jpg)
 
