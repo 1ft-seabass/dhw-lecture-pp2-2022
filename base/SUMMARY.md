@@ -61,6 +61,12 @@
   - [最低限押さえる注意ポイント](lecture05/03-00-baseline-index.md)
   - [最終課題について](lecture05/99-final-task.md)
 - 第6回 IoT開発ボード設置・外装実践
+  - [第6回 README](lecture06/README.md)
+  - [外装や設置のプロトタイプの実践](lecture06/01-00-exterior-nextstep.md)
+    - [3Dプリンタプロトタイピング TIPS](lecture06/01-01-3dprinter-prototype-tips.md)
+  - [再度の最終課題説明](lecture05/99-final-task.md)
+  - [アウトプットしフィードバックを得る手法](lecture06/02-00-output-feedback.md)
+  - [フィードバックを得るためのアンケート手法](lecture06/03-00-feedback-form.md)
 - 第7回 制作物デモ発表 ／ プレゼンテーション
 - 第8回 フィードバックブラッシュアップ／ プレゼンテーション
 - ナレッジ
