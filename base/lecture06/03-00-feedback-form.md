@@ -7,10 +7,10 @@
 - 発表後、フィードバックフォームから「良かった点」「気になった点、こうするといいなっていう点」フィードバックを書き込み
   - これは生徒全員が他の生徒全員に対して授業時間内のリミットで行います
   - 予定フォーム → URL 見えますか？
-    - https://forms.gle/VrjbHhUuNANiv2Ln9
+    - https://forms.gle/Jr3zBQN6uQTYm54F9
 - 授業終了後、フィードバックを踏まえて第 8 回にブラッシュアップ
     - 生徒の皆さんが見れる予定スプレッドシート → URL 見えますか？
-      - https://docs.google.com/spreadsheets/d/16UdnoAU8ZrRKaD_XdkZfyl4KTUWVXBuJJwjGSo410Y0/edit?resourcekey#gid=913017201
+      - https://docs.google.com/spreadsheets/d/1l7Ufbn1mRu-7pzShxOnAZG9pMadV_mDm8Kbm-WfyU2Q/edit?resourcekey=undefined#gid=161730486
 
 こちらのアンケートは講師の方で作りましたが、このアンケートについてのいくつかのポイントと、フィードバックに退治するときの心構えをお伝えします。
 
@@ -88,10 +88,10 @@
 - 発表後、フィードバックフォームから「良かった点」「気になった点、こうするといいなっていう点」フィードバックを書き込み
   - これは生徒全員が他の生徒全員に対して授業時間内のリミットで行います
   - 予定フォーム → URL 見えますか？
-    - https://forms.gle/VrjbHhUuNANiv2Ln9
+    - https://forms.gle/Jr3zBQN6uQTYm54F9
 - 授業終了後、フィードバックを踏まえて第 8 回にブラッシュアップ
     - 生徒の皆さんが見れる予定スプレッドシート → URL 見えますか？
-      - https://docs.google.com/spreadsheets/d/16UdnoAU8ZrRKaD_XdkZfyl4KTUWVXBuJJwjGSo410Y0/edit?resourcekey#gid=913017201
+      - https://docs.google.com/spreadsheets/d/1l7Ufbn1mRu-7pzShxOnAZG9pMadV_mDm8Kbm-WfyU2Q/edit?resourcekey=undefined#gid=161730486
 
 # 質疑応答
 

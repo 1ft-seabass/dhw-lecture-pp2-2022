@@ -60,10 +60,10 @@ M5Stack ・アウトプットすること・つくりつづけることを学ん
 - 発表後、フィードバックフォームから「良かった点」「気になった点、こうするといいなっていう点」フィードバックを書き込み
   - これは生徒全員が他の生徒全員に対して授業時間内のリミットで行います
   - 予定フォーム → URL 見えますか？
-    - https://forms.gle/VrjbHhUuNANiv2Ln9
+    - https://forms.gle/Jr3zBQN6uQTYm54F9
 - 授業終了後、フィードバックを踏まえて第 8 回にブラッシュアップ
     - 生徒の皆さんが見れる予定スプレッドシート → URL 見えますか？
-      - https://docs.google.com/spreadsheets/d/16UdnoAU8ZrRKaD_XdkZfyl4KTUWVXBuJJwjGSo410Y0/edit?resourcekey#gid=913017201
+      - https://docs.google.com/spreadsheets/d/1l7Ufbn1mRu-7pzShxOnAZG9pMadV_mDm8Kbm-WfyU2Q/edit?resourcekey=undefined#gid=161730486
 
 ## 第 8 回の流れ
 
@@ -186,7 +186,7 @@ https://drive.google.com/drive/folders/1Y2Dn5CksdUBBhC7HISjzPBY1ZWEnheO7
 
 ![image](https://i.gyazo.com/ff6d87f56597f436f7a3e5a1ebef0c00.png)
 
-https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9x1c/edit#gid=1289003154
+https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9x1c/edit#gid=49151246
 
 こちらのスプレッドシートに、今回の自分の最終課題についてコメントを記入しましょう。
 
@@ -204,7 +204,7 @@ https://drive.google.com/drive/folders/1_W_fVIOuMu5Z_rhdDHSY0AH_5YJBHIkR
 
 ![image](https://i.gyazo.com/bade2c607337ece8011631469039d536.png)
 
-https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9x1c/edit#gid=494069657
+https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9x1c/edit#gid=445459842
 
 こちらのスプレッドシートに、今回の自分のブラッシュアップについてコメントを記入しましょう。
   - どのフィードバックを自分なりに消化してブラッシュアップしたか（必須）
