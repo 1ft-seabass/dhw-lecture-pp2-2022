@@ -73,13 +73,13 @@
 
 ![image](https://i.gyazo.com/9470e97bd0c0637b9451de5031d1c8af.png)
 
-https://drive.google.com/drive/folders/1-qQM9du1tYWp1tsw825-xpabR5aLywDp
+https://drive.google.com/drive/folders/1_W_fVIOuMu5Z_rhdDHSY0AH_5YJBHIkR
 
-第 8 回終了までに、ブラッシュアップについて自分の発表したスライドをこちらにアップロードしましょう。
+第 8 回終了までに、ブラッシュアップについて自分の発表した ~~スプレッドシート~~ スライドをこちらにアップロードしましょう。Google スライド推奨。
 
 ![image](https://i.gyazo.com/bade2c607337ece8011631469039d536.png)
 
-https://docs.google.com/spreadsheets/d/1W_IXR57dBmdn17ZQ4fJIVjkdXdt3nkCzr-5xSjY26KY/edit#gid=167621219
+https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9x1c/edit#gid=445459842
 
 こちらのスプレッドシートに、今回の自分のブラッシュアップについてコメントを記入しましょう。
   - どのフィードバックを自分なりに消化してブラッシュアップしたか（必須）

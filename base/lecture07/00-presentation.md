@@ -12,14 +12,14 @@
     - どうつくりつづけたか
     - 制作デモ
       - 動画デモ or リアルタイムデモ必須
-- プレゼンテーションの制限時間は 1 人あたり 7 分以内
-- 発表中、フィードバックフォームから「良かった点」「気になった点、こうするといいなっていう点」フィードバックを書き込みます。
+- プレゼンテーションの制限時間は 1 人あたり  7 分以内
+- 発表後、フィードバックフォームから「良かった点」「気になった点、こうするといいなっていう点」フィードバックを書き込み
   - これは生徒全員が他の生徒全員に対して授業時間内のリミットで行います
-  - フィードバックフォーム
-    - https://forms.gle/VrjbHhUuNANiv2Ln9
+  - 予定フォーム → URL 見えますか？
+    - https://forms.gle/Jr3zBQN6uQTYm54F9
 - 授業終了後、フィードバックを踏まえて第 8 回にブラッシュアップ
     - 生徒の皆さんが見れる予定スプレッドシート → URL 見えますか？
-      - https://docs.google.com/spreadsheets/d/16UdnoAU8ZrRKaD_XdkZfyl4KTUWVXBuJJwjGSo410Y0/edit?resourcekey#gid=913017201
+      - https://docs.google.com/spreadsheets/d/1l7Ufbn1mRu-7pzShxOnAZG9pMadV_mDm8Kbm-WfyU2Q/edit?resourcekey=undefined#gid=161730486
 
 ## いち発表中の動き
 
@@ -32,7 +32,7 @@
 フィードバックする人は、発表者以外の生徒全員が必ず 1 回は行います。「良かった点」「気になった点、こうするといいなっていう点」フィードバックを書き込みます。貯めずに、随時フォームからフィードバックしましょう。
 
 - 書き込むフィードバックフォーム
-  - https://forms.gle/VrjbHhUuNANiv2Ln9
+  - https://forms.gle/Jr3zBQN6uQTYm54F9
 
 ## 厳守事項
 
@@ -66,13 +66,13 @@
 
 ![image](https://i.gyazo.com/f31f0a37c64f84203adf5ebd7e86b647.png)
 
-https://drive.google.com/drive/folders/1jrOE4hWfi3x_jQZz_Xn-FsVDfeAKtk9o
+https://drive.google.com/drive/folders/1Y2Dn5CksdUBBhC7HISjzPBY1ZWEnheO7
 
 第 7 回終了までに、最終課題を発表した自分の ~~スプレッドシート~~ スライドをこちらにアップロードしましょう。Google スライド推奨。
 
 ![image](https://i.gyazo.com/ff6d87f56597f436f7a3e5a1ebef0c00.png)
 
-https://docs.google.com/spreadsheets/d/1W_IXR57dBmdn17ZQ4fJIVjkdXdt3nkCzr-5xSjY26KY/edit#gid=386298483
+https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9x1c/edit#gid=49151246
 
 こちらのスプレッドシートに、今回の自分の最終課題についてコメントを記入しましょう。
 
