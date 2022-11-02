@@ -86,7 +86,7 @@ https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9
 
 いろいろなフィードバックをもらいつつ、その中で制作物に関するフィードバックに注力しましょう。
 
-https://docs.google.com/spreadsheets/d/16UdnoAU8ZrRKaD_XdkZfyl4KTUWVXBuJJwjGSo410Y0/edit#gid=913017201
+https://docs.google.com/spreadsheets/d/1l7Ufbn1mRu-7pzShxOnAZG9pMadV_mDm8Kbm-WfyU2Q/edit?resourcekey=undefined#gid=161730486
 
 フィードバックフォームの下部に、自分へのフィードバックが自動分類されるような仕組みを作ってみました。試してみてくださいー。
 
@@ -118,7 +118,7 @@ https://docs.google.com/spreadsheets/d/16UdnoAU8ZrRKaD_XdkZfyl4KTUWVXBuJJwjGSo41
 
 いろいろなフィードバックをもらいつつ、その中で制作物に関するフィードバックに注力しましょう。
 
-https://docs.google.com/spreadsheets/d/16UdnoAU8ZrRKaD_XdkZfyl4KTUWVXBuJJwjGSo410Y0/edit#gid=913017201
+https://docs.google.com/spreadsheets/d/1l7Ufbn1mRu-7pzShxOnAZG9pMadV_mDm8Kbm-WfyU2Q/edit?resourcekey=undefined#gid=161730486
 
 フィードバックフォームの下部に、自分へのフィードバックが自動分類されるような仕組みを作ってみました。試してみてくださいー。
 
