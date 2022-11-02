@@ -68,5 +68,11 @@
   - [アウトプットしフィードバックを得る手法](lecture06/02-00-output-feedback.md)
   - [フィードバックを得るためのアンケート手法](lecture06/03-00-feedback-form.md)
 - 第7回 制作物デモ発表 ／ プレゼンテーション
+  - [第7回 README](lecture07/README.md)
+  - [プレゼンテーション](lecture07/00-presentation.md)
 - 第8回 フィードバックブラッシュアップ／ プレゼンテーション
+  - [第8回 README](lecture08/README.md)
+  - [プレゼンテーション](lecture08/00-presentation.md)
+  - [エンドトーク](lecture08/99-end-talk.md)
 - ナレッジ
+  - [M5Stack](knowledge/knowledge-m5stack.md)
