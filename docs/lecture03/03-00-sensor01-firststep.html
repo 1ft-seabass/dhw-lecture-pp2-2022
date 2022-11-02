@@ -1,0 +1,1431 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"></head>
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="lecture03/03-00-sensor01-firststep.html">
+        <meta property="og:image" content="https://i.gyazo.com/800eb533b2b3a652c4e9973a62bb9f97.png">
+        <meta property="og:title" content="デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料">
+        <meta property="og:description" content="2022 授業資料">
+        <meta property="og:locale" content="ja">
+        <title>センサー連携を学ぶ その1 · デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.5">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-01-pir-sensor.html" />
+    
+    
+    <link rel="prev" href="02-00-button-display.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    授業全体 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第1回 プロトタイピング発展概論・環境構築
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../lecture01/">
+            
+                <a href="../lecture01/">
+            
+                    
+                    第1回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../lecture01/00-introduction.html">
+            
+                <a href="../lecture01/00-introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../lecture01/01-understanding-the-curriculum.html">
+            
+                <a href="../lecture01/01-understanding-the-curriculum.html">
+            
+                    
+                    本講義のゴールを把握する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../lecture01/02-firststep.html">
+            
+                <a href="../lecture01/02-firststep.html">
+            
+                    
+                    ファーストステップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../lecture01/99-homework.html">
+            
+                <a href="../lecture01/99-homework.html">
+            
+                    
+                    宿題
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第2回 プロトタイピング発展概論・環境構築
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../lecture02/">
+            
+                <a href="../lecture02/">
+            
+                    
+                    第2回 README
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../lecture02/10-m5stack-check.html">
+            
+                <a href="../lecture02/10-m5stack-check.html">
+            
+                    
+                    セットアップチェック
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../lecture02/11-m5stack-trouble-shooting-tips.html">
+            
+                <a href="../lecture02/11-m5stack-trouble-shooting-tips.html">
+            
+                    
+                    トラブルシューティング TIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../lecture02/01-00-m5stack-firststep.html">
+            
+                <a href="../lecture02/01-00-m5stack-firststep.html">
+            
+                    
+                    M5Stack の導入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../lecture02/01-01-m5stack-wifi-list.html">
+            
+                <a href="../lecture02/01-01-m5stack-wifi-list.html">
+            
+                    
+                    Wi-Fi リスト確認
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../lecture02/01-02-m5stack-wifi-connect.html">
+            
+                <a href="../lecture02/01-02-m5stack-wifi-connect.html">
+            
+                    
+                    Wi-Fi につなぐ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../lecture02/01-03-m5stack-server-message.html">
+            
+                <a href="../lecture02/01-03-m5stack-server-message.html">
+            
+                    
+                    サーバーにメッセージを送る
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../lecture02/02-00-line-firststep.html">
+            
+                <a href="../lecture02/02-00-line-firststep.html">
+            
+                    
+                    M5Stack から LINE 連携
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../lecture02/02-02-gitpod-linebot.html">
+            
+                <a href="../lecture02/02-02-gitpod-linebot.html">
+            
+                    
+                    Gitpod をはじめる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../lecture02/02-03-gitpod-start.html">
+            
+                <a href="../lecture02/02-03-gitpod-start.html">
+            
+                    
+                    Gitpod で LINE BOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../lecture02/02-04-m5stack-connect.html">
+            
+                <a href="../lecture02/02-04-m5stack-connect.html">
+            
+                    
+                    M5Stack + LINE BOT 連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    手順
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../lecture02/12-line-bot-create.html">
+            
+                <a href="../lecture02/12-line-bot-create.html">
+            
+                    
+                    LINE BOT 作成手順
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../lecture02/13-github-account.html">
+            
+                <a href="../lecture02/13-github-account.html">
+            
+                    
+                    GitHub のアカウント取得する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../lecture02/14-gitpod-account.html">
+            
+                <a href="../lecture02/14-gitpod-account.html">
+            
+                    
+                    Gitpod のアカウントを取得する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" >
+            
+                <span>
+            
+                    
+                    試せる人が試そう
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../lecture02/02-01-line-notify.html">
+            
+                <a href="../lecture02/02-01-line-notify.html">
+            
+                    
+                    M5Stack + LINE Notify 連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" >
+            
+                <span>
+            
+                    
+                    第3回へ移動
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" >
+            
+                <span>
+            
+                    
+                    SNS からのアウトプットの事例や世界観を把握する
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../lecture02/99-next-preparation.html">
+            
+                <a href="../lecture02/99-next-preparation.html">
+            
+                    
+                    次回への準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../lecture02/99-homework.html">
+            
+                <a href="../lecture02/99-homework.html">
+            
+                    
+                    宿題 1 について
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第3回 IoT開発ボード M5Stack 入門
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第3回README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../lecture02/99-homework.html">
+            
+                <a href="../lecture02/99-homework.html">
+            
+                    
+                    宿題 1 について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="02-00-button-display.html">
+            
+                <a href="02-00-button-display.html">
+            
+                    
+                    ディスプレイとボタン実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="03-00-sensor01-firststep.html">
+            
+                <a href="03-00-sensor01-firststep.html">
+            
+                    
+                    センサー連携を学ぶ その1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="03-01-pir-sensor.html">
+            
+                <a href="03-01-pir-sensor.html">
+            
+                    
+                    人感センサー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="03-02-light-sensor.html">
+            
+                <a href="03-02-light-sensor.html">
+            
+                    
+                    光センサー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="03-03-temp-humid-sensor.html">
+            
+                <a href="03-03-temp-humid-sensor.html">
+            
+                    
+                    温度・湿度センサー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="03-04-ultrasonic-sensor.html">
+            
+                <a href="03-04-ultrasonic-sensor.html">
+            
+                    
+                    超音波距離センサー
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../lecture02/03-sns-output.html">
+            
+                <a href="../lecture02/03-sns-output.html">
+            
+                    
+                    SNS からのアウトプットの事例や世界観を把握する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="04-m5stack-output.html">
+            
+                <a href="04-m5stack-output.html">
+            
+                    
+                    M5Stack 事例を通してプロトタイプをアウトプットする世界観を学ぶ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="11-grove-search-knowledge.html">
+            
+                <a href="11-grove-search-knowledge.html">
+            
+                    
+                    Grove 情報検索ナレッジ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../lecture04/01-00-linebot-mqtt.html">
+            
+                <a href="../lecture04/01-00-linebot-mqtt.html">
+            
+                    
+                    次回の頭だし
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第4回 IoT開発ボード M5Stack 入門
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../lecture04/">
+            
+                <a href="../lecture04/">
+            
+                    
+                    第4回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../lecture04/01-00-linebot-mqtt.html">
+            
+                <a href="../lecture04/01-00-linebot-mqtt.html">
+            
+                    
+                    LINE BOT と M5Stack の MQTT 発展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../lecture04/01-02-gitpod-mqtt-launch.html">
+            
+                <a href="../lecture04/01-02-gitpod-mqtt-launch.html">
+            
+                    
+                    LINE BOT と MQTT の仕組みを起動する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../lecture04/01-03-linebot-arduino.html">
+            
+                <a href="../lecture04/01-03-linebot-arduino.html">
+            
+                    
+                    M5Stack 側の仕組みをつくる
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    センサー連携を学ぶ その2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../lecture04/02-01-speaker.html">
+            
+                <a href="../lecture04/02-01-speaker.html">
+            
+                    
+                    スピーカー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../lecture04/02-02-servo.html">
+            
+                <a href="../lecture04/02-02-servo.html">
+            
+                    
+                    サーボ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../lecture04/02-03-variety-example.html">
+            
+                <a href="../lecture04/02-03-variety-example.html">
+            
+                    
+                    さまざまな連携例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../lecture04/03-00-m5stack-output.html">
+            
+                <a href="../lecture04/03-00-m5stack-output.html">
+            
+                    
+                    いままでの実装とアウトプットへの関係性を学ぶ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../lecture04/04-00-homework-next.html">
+            
+                <a href="../lecture04/04-00-homework-next.html">
+            
+                    
+                    次回の宿題について
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第5回 IoT開発ボード設置・外装入門
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../lecture05/">
+            
+                <a href="../lecture05/">
+            
+                    
+                    第5回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../lecture05/01-00-exterior-index.html">
+            
+                <a href="../lecture05/01-00-exterior-index.html">
+            
+                    
+                    外装や設置のプロトタイプの世界観
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../lecture05/02-00-material-index.html">
+            
+                <a href="../lecture05/02-00-material-index.html">
+            
+                    
+                    身近なものを外装や設置に活用1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../lecture05/02-01-material-extra.html">
+            
+                <a href="../lecture05/02-01-material-extra.html">
+            
+                    
+                    身近なものを外装や設置に活用2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../lecture05/03-00-baseline-index.html">
+            
+                <a href="../lecture05/03-00-baseline-index.html">
+            
+                    
+                    最低限押さえる注意ポイント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../lecture05/99-final-task.html">
+            
+                <a href="../lecture05/99-final-task.html">
+            
+                    
+                    最終課題について
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    第6回 IoT開発ボード設置・外装実践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../lecture06/">
+            
+                <a href="../lecture06/">
+            
+                    
+                    第6回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../lecture06/01-00-exterior-nextstep.html">
+            
+                <a href="../lecture06/01-00-exterior-nextstep.html">
+            
+                    
+                    外装や設置のプロトタイプの実践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../lecture06/01-01-3dprinter-prototype-tips.html">
+            
+                <a href="../lecture06/01-01-3dprinter-prototype-tips.html">
+            
+                    
+                    3Dプリンタプロトタイピング TIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../lecture05/99-final-task.html">
+            
+                <a href="../lecture05/99-final-task.html">
+            
+                    
+                    再度の最終課題説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../lecture06/02-00-output-feedback.html">
+            
+                <a href="../lecture06/02-00-output-feedback.html">
+            
+                    
+                    アウトプットしフィードバックを得る手法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../lecture06/03-00-feedback-form.html">
+            
+                <a href="../lecture06/03-00-feedback-form.html">
+            
+                    
+                    フィードバックを得るためのアンケート手法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    第7回 制作物デモ発表 ／ プレゼンテーション
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../lecture07/">
+            
+                <a href="../lecture07/">
+            
+                    
+                    第7回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../lecture07/00-presentation.html">
+            
+                <a href="../lecture07/00-presentation.html">
+            
+                    
+                    プレゼンテーション
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    第8回 フィードバックブラッシュアップ／ プレゼンテーション
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../lecture08/">
+            
+                <a href="../lecture08/">
+            
+                    
+                    第8回 README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../lecture08/00-presentation.html">
+            
+                <a href="../lecture08/00-presentation.html">
+            
+                    
+                    プレゼンテーション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../lecture08/99-end-talk.html">
+            
+                <a href="../lecture08/99-end-talk.html">
+            
+                    
+                    エンドトーク
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    ナレッジ
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../knowledge/knowledge-m5stack.html">
+            
+                <a href="../knowledge/knowledge-m5stack.html">
+            
+                    
+                    M5Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >センサー連携を学ぶ その1</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="m5stack-のセンサー連携を学ぶ-その1"><a name="m5stack-のセンサー連携を学ぶ-その1" class="plugin-anchor" href="#m5stack-のセンサー連携を学ぶ-その1"><i class="fa fa-link" aria-hidden="true"></i></a>M5Stack のセンサー連携を学ぶ その1</h1>
+<p><img src="https://i.gyazo.com/2fe8f1e2d461451f6b5212996272c3ee.jpg" alt="image"></p>
+<h2 id="これからセンサーをつなげていきます"><a name="これからセンサーをつなげていきます" class="plugin-anchor" href="#これからセンサーをつなげていきます"><i class="fa fa-link" aria-hidden="true"></i></a>これからセンサーをつなげていきます</h2>
+<h2 id="grove-システムがなぜよいか"><a name="grove-システムがなぜよいか" class="plugin-anchor" href="#grove-システムがなぜよいか"><i class="fa fa-link" aria-hidden="true"></i></a>Grove システムがなぜよいか</h2>
+<p><a href="https://jp.seeedstudio.com/category/Grove-c-1003.html" target="_blank">Grove - Seeed Studio Electronics</a></p>
+<p><img src="https://i.gyazo.com/b359d329236a0414701c4ccd40fa74d5.jpg" alt="image"></p>
+<p>Grove は Seeed Studio 社が開発した Grove ポートと呼ばれる M5Stack などベースシールド側にある入口に差し込むだけで、すぐにセンサーや動作するもの（アクチュエータ）が使える仕組みです。</p>
+<p>3つの特徴があります。</p>
+<h3 id="すぐに使える"><a name="すぐに使える" class="plugin-anchor" href="#すぐに使える"><i class="fa fa-link" aria-hidden="true"></i></a>すぐに使える</h3>
+<p><img src="https://i.gyazo.com/8265ccd6ddf4957580a7f6aef702acfd.jpg" alt="image"></p>
+<p>Grove コネクタと Grove ポートには逆に差さないように出っ張りがあり、挿し方を間違えて壊してしまったり動かないことが避けられています。</p>
+<p>後述するモジュール化やオープンソースであることで、つなぎ方や使い方に（あまり）迷わずすぐに使えます。</p>
+<h3 id="モジュール化"><a name="モジュール化" class="plugin-anchor" href="#モジュール化"><i class="fa fa-link" aria-hidden="true"></i></a>モジュール化</h3>
+<p>光センサーの例です。</p>
+<p><img src="https://i.gyazo.com/bba7efd90c24ac240a80295dc22733e4.jpg" alt="image"></p>
+<p><img src="https://i.gyazo.com/cc53b30650e81d15eab4e7260fa64cde.jpg" alt="image"></p>
+<p>Grove の各パーツは、他にはんだづけやブレッドボードで回路を必要がなく、モジュール（装置・機械・システムを構成する、機能的にまとまった部分）としてまとまっています。</p>
+<p><img src="https://i.gyazo.com/a354df133058457c43d811da85e1dbc1.jpg" alt="image"></p>
+<p>たとえば、この光センサーも本来であれば、ブレッドボード上でセンサー抵抗とケーブルが必要です。また、電気の流れを深く理解して回路を作る必要があります。</p>
+<p><img src="https://i.gyazo.com/aeb145960b5b0a1ee296c2b7f174d2ef.jpg" alt="image"></p>
+<p>もちろん、回路がうまくいっても実際に動かすマイコンに対して、間違えなくつなげる必要があります。Grove はこのあたりの大部分をカバーしてくれます。</p>
+<h3 id="オープンソース"><a name="オープンソース" class="plugin-anchor" href="#オープンソース"><i class="fa fa-link" aria-hidden="true"></i></a>オープンソース</h3>
+<p><img src="https://i.gyazo.com/c22ea19f0e1c9ab4aa3e328876a35f42.jpg" alt="image"></p>
+<p>このスイッチサイエンスさんの <a href="https://www.switch-science.com/catalog/2854/" target="_blank">GROVE - 光センサ（パネルタイプ） v1.1</a> のページですが、情報がとても充実しています。</p>
+<p><a href="https://wiki.seeedstudio.com/Grove-Light_Sensor/" target="_blank">Grove - Light Sensor - Seeed Wiki</a></p>
+<p><img src="https://i.gyazo.com/889cae183c6a9c42235c466965761b9b.jpg" alt="image"></p>
+<p>それは、Grove の情報がオープンソースだからです。Grove パーツには、このように、Seeed Studio 社の手厚い Wiki のリファレンスがあり、そこを見るだけで Arduino としてのハードウェアのつなぎ方やソフトウェアとしてのプログラムの書き方がすぐに把握することができます。</p>
+<p>実は、電子工作で使うセンサーでもネット上にあまり情報がなかったり、回路図や使い方といった情報も見つかりにくいと、とても開発がしにくく、実際に動かしてたその先、発想して、創造する、アウトプットするところに、なかなか辿り着くことができません。</p>
+<p>Grove の仕組みは、オープンソースで情報を公開することによって、制作者がすぐに作れるようにサポートして、さらに触れたことのある人がお互いに情報を共有しやすくしています。</p>
+<h2 id="m5stack-でも-grove-が使える"><a name="m5stack-でも-grove-が使える" class="plugin-anchor" href="#m5stack-でも-grove-が使える"><i class="fa fa-link" aria-hidden="true"></i></a>M5Stack でも Grove が使える</h2>
+<p><img src="https://i.gyazo.com/66c41f307332b60ef4f1a35f9589751a.png" alt="image"></p>
+<p>もちろん、M5Stack でも連携ができます。外装がしっかりした M5Stack に対して、機能がひと固まりで、ケーブルを挿すだけで使える Grove をつかえば、基板がむき出しになる場所がかな少なくなり、今後できたものを見せたり触ってもらうときにも、すぐに行動に移すことができます。</p>
+<p><img src="https://i.gyazo.com/3a83ebae6f049cf22288a13b2b939e4d.jpg" alt="image"></p>
+<p>今回の機材リストで購入した GROVE 4ピン ジャンパオスケーブルを使うことで M5Stack のピンが挿せます。</p>
+<p><img src="https://i.gyazo.com/a40caafe567107837f463d51077fa6c4.jpg" alt="image"></p>
+<p>また、M5Stack には Grove のポートを備えています。ここは I2C 系のセンサーやアクチュエータが使えますが、I2C 機能をオフにすることで、デジタル入出力・アナログ入力・PWM といったやり取りにも使えます。</p>
+<p>I2C でつなぐセンサーは高性能で、少し高価（1500～3000円以上）ではあるので、みなさんのつくりたいものに必要になったら検討してみましょう。授業でも I2C センサーについても、状況に応じてご紹介していく予定です。</p>
+<h1 id="次にすすみましょう"><a name="次にすすみましょう" class="plugin-anchor" href="#次にすすみましょう"><i class="fa fa-link" aria-hidden="true"></i></a>次にすすみましょう</h1>
+<p>左のナビゲーションから次の教材にすすみましょう。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-00-button-display.html" class="navigation navigation-prev " aria-label="Previous page: ディスプレイとボタン実装">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-01-pir-sensor.html" class="navigation navigation-next " aria-label="Next page: 人感センサー">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"センサー連携を学ぶ その1","level":"1.4.4","depth":2,"next":{"title":"人感センサー","level":"1.4.4.1","depth":3,"path":"lecture03/03-01-pir-sensor.md","ref":"lecture03/03-01-pir-sensor.md","articles":[]},"previous":{"title":"ディスプレイとボタン実装","level":"1.4.3","depth":2,"path":"lecture03/02-00-button-display.md","ref":"lecture03/02-00-button-display.md","articles":[]},"articles":[{"title":"人感センサー","level":"1.4.4.1","depth":3,"path":"lecture03/03-01-pir-sensor.md","ref":"lecture03/03-01-pir-sensor.md","articles":[]},{"title":"光センサー","level":"1.4.4.2","depth":3,"path":"lecture03/03-02-light-sensor.md","ref":"lecture03/03-02-light-sensor.md","articles":[]},{"title":"温度・湿度センサー","level":"1.4.4.3","depth":3,"path":"lecture03/03-03-temp-humid-sensor.md","ref":"lecture03/03-03-temp-humid-sensor.md","articles":[]},{"title":"超音波距離センサー","level":"1.4.4.4","depth":3,"path":"lecture03/03-04-ultrasonic-sensor.md","ref":"lecture03/03-04-ultrasonic-sensor.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"デジタルハリウッド大学院大学 2022 プロダクトプロトタイピングII 授業資料","language":"ja","gitbook":"*","description":"2022 授業資料"},"file":{"path":"lecture03/03-00-sensor01-firststep.md","mtime":"2022-10-05T05:51:48.679Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-11-02T10:07:08.308Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
