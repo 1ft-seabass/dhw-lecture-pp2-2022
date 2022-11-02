@@ -94,23 +94,6 @@ https://docs.google.com/spreadsheets/d/1_owL4DISsGJSIAdaiRX6RHB9JOpax7d9PA4bbgw9
 
 ![image](https://i.gyazo.com/151fb74f6fca4222ac12a14fd5cb630b.png)
 
-## 提出よろしくお願いします！
-
-![image](https://i.gyazo.com/9470e97bd0c0637b9451de5031d1c8af.png)
-
-https://drive.google.com/drive/folders/1-qQM9du1tYWp1tsw825-xpabR5aLywDp
-
-第 8 回終了までに、ブラッシュアップについて自分の発表したスライドをこちらにアップロードしましょう。
-
-![image](https://i.gyazo.com/bade2c607337ece8011631469039d536.png)
-
-https://docs.google.com/spreadsheets/d/1W_IXR57dBmdn17ZQ4fJIVjkdXdt3nkCzr-5xSjY26KY/edit#gid=167621219
-
-こちらのスプレッドシートに、今回の自分のブラッシュアップについてコメントを記入しましょう。
-  - どのフィードバックを自分なりに消化してブラッシュアップしたか（必須）
-  - 今後どのようにつくりつづけていくかの考え（必須）
-  - そのほか自分のアウトプットへの熱いメッセージあれば
-
 # 質疑応答
 
 ![image](https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png)
