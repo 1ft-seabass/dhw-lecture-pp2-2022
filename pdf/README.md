@@ -393,7 +393,7 @@ https://docs.google.com/spreadsheets/d/1wIQr7Tai836nZ1UZrN1AgeSWpsEOh4kjj_LGNmx6
   - おそらく到着までに1～2日かかるので、この土日に完了しておいたほうが安心です。
   - 授業は機材がある前提で進行します
 - そのほか伝達事項
-  - M5Stack Gray 単体でも、ディスプレイ・ボタン・スピーカー（音）・加速度・ジャイロ・磁気（コンパス）が使えます。
+  - M5Stack 単体でも、ディスプレイ・ボタン・スピーカー（音）・加速度・ジャイロ・磁気（コンパス）が使えます。
   - シラバスでは「 7000 円程度～」としていましたが 8300 円に落ち着きました。
   - スイッチサイエンスに在庫があり手に入りやすいもので選びなおしました。
   - サーボや他のセンサーについては授業が進んでから、みなさんの必要度や進捗次第でいくつか加えるかもしれませんが、ひとまずこれですすめます。
@@ -404,7 +404,7 @@ https://docs.google.com/spreadsheets/d/1wIQr7Tai836nZ1UZrN1AgeSWpsEOh4kjj_LGNmx6
 
 という Slack のメッセージにリアクションお願いします！
 
-### 余談：私も最近の M5Stack Gray セットアップしてみました
+### 余談：私も最近の M5Stack セットアップしてみました
 
 https://twitter.com/1ft_seabass/status/1439097633751003138
 
@@ -554,7 +554,7 @@ M5Stack の持つ機能や魅力を把握しながら、自分の最終制作で
 理想形ではあるので、現実に合わせて調整して進めていく予定です！
 
 - 機材リストで示した機材が購入できていて揃っている状態
-  - M5Stack Gray は今日の授業で使うので必須
+  - M5Stack は今日の授業で使うので必須
 - Arduino IDE に M5Stack の開発環境が整っている状態
   - 前回の宿題でセットアップが済み
   - Slack で連絡した事前チェックが済んでいるとよりよい（トラブルなく始められる確率が高まります）
@@ -619,7 +619,7 @@ Arduino IDE を起動して、新規ファイルをクリックします。
 
 ![image](https://i.gyazo.com/903d4cda78f3cf10c84f036cad08fe03.jpg)
 
-M5Stack Gray に付属していた USB ケーブルを用意します。
+M5Stack に付属していた USB ケーブルを用意します。
 
 ![image](https://i.gyazo.com/2a86c7f1b721555abfaf0105f161ea9f.jpg)
 
@@ -2612,7 +2612,7 @@ M5Stack のボタンやディスプレイの実装をはじめ、センサー連
 
 ## 厳守事項
 
-- M5Stack Gray を必ず使用します
+- M5Stack を必ず使用します
 - LINE BOT or LINE Notify を必ず使用します
 
 ## 採点基準
@@ -3059,7 +3059,7 @@ Techinical details の Supply Voltage が 3.3 - 5V なのでどちらでも行�
     - [UARTとは？通信の仕組みを解説 – 衛星ラボ](https://eiseilab.com/uart/)
 - I2C
   - Arduino 上でつなぎ方を SDA(データ線) SCL(クロック線) で表現される
-  - M5Stack Gray には Grove I2C ポートがあるのでそれを使うのがおススメ
+  - M5Stack には Grove I2C ポートがあるのでそれを使うのがおススメ
   - 言葉そのものの参考資料（分からなくても使えます）
     - [I2Cの仕組みと使い方 – 衛星ラボ](https://eiseilab.com/i2c/)
 - SPI
@@ -6387,11 +6387,11 @@ LINE BOT から `sound1` ・ `sound2` ・ `sound3` とメッセージしてみ�
 
 左のナビゲーションから「動きセンサー」にすすみましょう。# 動きセンサー（加速度・ジャイロ・磁気）
 
-M5Stack Gray の内蔵センサーとして動きセンサー（加速度・ジャイロ・磁気）があります。
+M5Stack の内蔵センサーとして動きセンサー（加速度・ジャイロ・磁気）があります。
 
 > ![image](https://static-cdn.m5stack.com/resource/docs/static/assets/img/product_pics/core/core_mpu6886_bmm150_axis.webp)
 
-詳しくは [M5Stack Grayの仕様](https://docs.m5stack.com/en/core/gray) に書かれていますが、引用したこちらの図の通り、地球の磁気で地面の方向が分かり、加速度・ジャイロで M5Stack Gray 自体の回転する動きを検出できます。
+詳しくは [M5Stackの仕様](https://docs.m5stack.com/en/core/gray) に書かれていますが、引用したこちらの図の通り、地球の磁気で地面の方向が分かり、加速度・ジャイロで M5Stack 自体の回転する動きを検出できます。
 
 ![image](https://i.gyazo.com/51d40e9c3fb28753ea88364fd477c1c0.jpg)
 
@@ -7258,7 +7258,7 @@ Grove センサーは以前の授業ですでに良さは伝えていますが�
   - 他者フィードバック例
     - ツイートにもらったコメントを他者フィードバックとして自分なりにちょっとでも磨く
     - 家族や友人などを他者フィードバックとして自分なりにちょっとでも磨く
-- 制作物には M5Stack Gray を必ず使用します
+- 制作物には M5Stack を必ず使用します
 - 制作物には 自分でつくったフロントエンド or LINE BOT or LINE Notify を必ず使用します
 
 ## アウトプットするツイートについて
@@ -7977,7 +7977,7 @@ M5Stack ・アウトプットすること・つくりつづけることを学ん
 
 ## 厳守事項
 
-- 制作物には M5Stack Gray を使用した IoT の仕組みにしましょう
+- 制作物には M5Stack を使用した IoT の仕組みにしましょう
   - 例：
     - M5Stack を操作画面（LINE BOT or LINE Notify or 何かしら自作のWebの仕組み ）で遠隔操作する
     - M5Stackで何かしらのセンサーや入力によって Web 上の何か（LINE BOT or LINE Notify or 何かしら自作のWebの仕組み ）を動かす
@@ -8970,7 +8970,7 @@ LEGO のようなメジャーなパーツは以下のようなサイトで 3D �
 
 ## 厳守事項
 
-- 制作物には M5Stack Gray を使用した IoT の仕組みにしましょう
+- 制作物には M5Stack を使用した IoT の仕組みにしましょう
   - 例：
     - M5Stack を操作画面（LINE BOT or LINE Notify or 何かしら自作のWebの仕組み ）で遠隔操作する
     - M5Stackで何かしらのセンサーや入力によって Web 上の何か（LINE BOT or LINE Notify or 何かしら自作のWebの仕組み ）を動かす
@@ -9247,7 +9247,7 @@ https://docs.google.com/spreadsheets/d/16UdnoAU8ZrRKaD_XdkZfyl4KTUWVXBuJJwjGSo41
 
 ## 厳守事項
 
-- 制作物には M5Stack Gray を使用した IoT の仕組みにしましょう
+- 制作物には M5Stack を使用した IoT の仕組みにしましょう
   - 例：
     - M5Stack を操作画面（LINE BOT or LINE Notify or 何かしら自作のWebの仕組み ）で遠隔操作する
     - M5Stackで何かしらのセンサーや入力によって Web 上の何か（LINE BOT or LINE Notify or 何かしら自作のWebの仕組み ）を動かす

@@ -26,7 +26,7 @@ https://docs.google.com/spreadsheets/d/1Zrg56YYNQ_q3FpneM_CBub8n36qtzyQ5cQ0Z1DTf
 
 という Slack のメッセージにリアクションお願いします！
 
-### 私も M5Stack Gray セットアップあらためてしてみたので、ご参考までに
+### 私も M5Stack セットアップあらためてしてみたので、ご参考までに
 
 https://twitter.com/1ft_seabass/status/1439097633751003138
 

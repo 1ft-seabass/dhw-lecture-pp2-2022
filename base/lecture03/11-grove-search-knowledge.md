@@ -161,7 +161,7 @@ Techinical details の Supply Voltage が 3.3 - 5V なのでどちらでも行�
     - [UARTとは？通信の仕組みを解説 – 衛星ラボ](https://eiseilab.com/uart/)
 - I2C
   - Arduino 上でつなぎ方を SDA(データ線) SCL(クロック線) で表現される
-  - M5Stack Gray には Grove I2C ポートがあるのでそれを使うのがおススメ
+  - M5Stack には Grove I2C ポートがあるのでそれを使うのがおススメ
   - 言葉そのものの参考資料（分からなくても使えます）
     - [I2Cの仕組みと使い方 – 衛星ラボ](https://eiseilab.com/i2c/)
 - SPI

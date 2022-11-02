@@ -36,7 +36,7 @@
 
 ## 厳守事項
 
-- 制作物には M5Stack Gray を使用した IoT の仕組みにしましょう
+- 制作物には M5Stack を使用した IoT の仕組みにしましょう
   - 例：
     - M5Stack を操作画面（LINE BOT or LINE Notify or 何かしら自作のWebの仕組み ）で遠隔操作する
     - M5Stackで何かしらのセンサーや入力によって Web 上の何か（LINE BOT or LINE Notify or 何かしら自作のWebの仕組み ）を動かす

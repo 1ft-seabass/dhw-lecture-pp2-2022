@@ -1,10 +1,10 @@
 # 動きセンサー（加速度・ジャイロ・磁気）
 
-M5Stack Gray の内蔵センサーとして動きセンサー（加速度・ジャイロ・磁気）があります。
+M5Stack の内蔵センサーとして動きセンサー（加速度・ジャイロ・磁気）があります。
 
 > ![image](https://static-cdn.m5stack.com/resource/docs/static/assets/img/product_pics/core/core_mpu6886_bmm150_axis.webp)
 
-詳しくは [M5Stack Grayの仕様](https://docs.m5stack.com/en/core/gray) に書かれていますが、引用したこちらの図の通り、地球の磁気で地面の方向が分かり、加速度・ジャイロで M5Stack Gray 自体の回転する動きを検出できます。
+詳しくは [M5Stackの仕様](https://docs.m5stack.com/en/core/gray) に書かれていますが、引用したこちらの図の通り、地球の磁気で地面の方向が分かり、加速度・ジャイロで M5Stack 自体の回転する動きを検出できます。
 
 ![image](https://i.gyazo.com/51d40e9c3fb28753ea88364fd477c1c0.jpg)
 
